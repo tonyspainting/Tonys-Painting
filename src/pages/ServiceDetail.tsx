@@ -240,23 +240,6 @@ const SEO_BY_SLUG: Record<string, { title: string; description: string; h1: stri
       { question: "How soon after construction can you clean?", answer: "We can schedule within one to two days after construction is complete. For large projects, we can stage the cleaning as work is finished in each area." },
     ],
   },
-  handyman: {
-    title: "Handyman Services in Massachusetts | Tony's Painting & Remodeling",
-    description:
-      "Repairs, fixes and property upkeep for homeowners in Martha's Vineyard, Cape Cod and the South Shore. Licensed and insured. Call 508-982-9675.",
-    h1: "Handyman services for Massachusetts homeowners.",
-    h2: "What our handyman crew takes on.",
-    keywords: "handyman Massachusetts, handyman services Massachusetts, property repairs Massachusetts, general repairs MA",
-    breadcrumbs: [
-      { name: "Home", url: "https://tonyspaintingmv.com/" },
-      { name: "Services", url: "https://tonyspaintingmv.com/services" },
-      { name: "Handyman Services", url: "https://tonyspaintingmv.com/services/handyman" },
-    ],
-    faqs: [
-      { question: "What types of handyman services do you offer?", answer: "We handle deck repair, fence repair, stair repair, door and window trim, construction cleaning and general property repairs throughout Martha's Vineyard and Cape Cod." },
-      { question: "Do you take on small jobs or only large projects?", answer: "We take both. No job is too small. Many of our clients start with a small repair and return for larger painting or remodeling projects." },
-    ],
-  },
 };
 
 
@@ -316,19 +299,6 @@ const SERVICES: Record<string, ServiceData> = {
       "General carpentry",
       "Countertop installation",
       "Finish work and moldings",
-    ],
-  },
-  handyman: {
-    slug: "handyman",
-    name: "Handyman Services",
-    description:
-      "Small jobs matter. We handle repairs, fixes and general property upkeep that don't fit neatly into a single trade — deck boards, door hardware, minor carpentry, cleanup after a contractor and similar work. If something's been on your list and you're not sure who to call, we can take a look and give you a straight answer.",
-    includes: [
-      "Deck and stair repair",
-      "Fence installation and repair",
-      "Construction cleaning",
-      "General repairs",
-      "Door and window trim",
     ],
   },
   "deck-stairs": {
@@ -509,7 +479,6 @@ const ServiceDetail = () => {
               "remodeling": ["/images/remodeling-02.jpg", "/images/flooring-01.jpg", "/images/project-04.jpg", "/images/project-16.jpg", "/images/project-15.jpg"],
               "flooring": ["/images/flooring-01.jpg", "/images/flooring-03.jpg", "/images/flooring-02.jpg"],
               "countertop": ["/images/interior-02.jpg", "/images/interior-01.jpg", "/images/interior-04.jpg", "/images/project-16.jpg"],
-              "handyman": ["/images/project-08.jpg", "/images/project-07.jpg", "/images/project-09.jpg", "/images/project-11.jpg"],
               "deck-stairs": [deck01.url, deck02.url, deck03.url, deck04.url, deck05.url, deck06.url, deck07.url, deck08.url]
             };
             const images = service.slug ? (gallery[service.slug] || []) : [];
