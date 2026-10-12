@@ -164,7 +164,6 @@ const GlassForm = () => {
           "Interior Painting",
           "Exterior Painting",
           "Remodeling",
-          "Handyman Services",
           "Deck and Stairs",
           "Flooring",
           "Ceramic Tile",

@@ -56,12 +56,6 @@ const services = [
     image: '/images/interior-01.jpg',
   },
   {
-    name: 'Handyman Services',
-    description: "Repairs and small fixes done by an experienced crew. We show up when we say we will.",
-    href: '/services/handyman',
-    image: '/images/project-09.jpg',
-  },
-  {
     name: 'Fence',
     description: "Wood and vinyl fence installation and repair. Properly set posts, level rails and a clean finish.",
     href: '/services/fence',

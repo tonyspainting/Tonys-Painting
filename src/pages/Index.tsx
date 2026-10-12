@@ -87,7 +87,6 @@ const Index = () => {
               { "@type": "Offer", itemOffered: { "@type": "Service", name: "Fence" } },
               { "@type": "Offer", itemOffered: { "@type": "Service", name: "Countertop" } },
               { "@type": "Offer", itemOffered: { "@type": "Service", name: "Construction Cleaning" } },
-              { "@type": "Offer", itemOffered: { "@type": "Service", name: "Handyman Services" } },
             ],
           },
         }}

@@ -24,7 +24,6 @@ const SERVICES = [
   "Deck and Stairs",
   "General Carpentry",
   "Flooring",
-  "Handyman Services",
 ];
 
 const CityPainting = ({

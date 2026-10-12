@@ -19,7 +19,6 @@ const SERVICES = [
   "Interior Painting",
   "Exterior Painting",
   "Remodeling",
-  "Handyman Services",
   "Multiple Services",
   "Not Sure Yet",
 ];
