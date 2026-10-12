@@ -152,7 +152,7 @@ const ThankYou = () => {
             Have you worked with us before?
           </h3>
           <a
-            href=\"https://g.page/r/CRCRcjd7niVbEBM/review\"
+            href=\"https://g.page/r/CexcHtUGdNMDEAE/review\"
             target=\"_blank\"
             rel=\"noopener noreferrer\"
             style={{

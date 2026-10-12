@@ -72,7 +72,7 @@ const Footer = () => {
             </a>
             {/* Google Review */}
             <a
-              href="https://g.page/r/CRCRcjd7niVbEBM/review"
+              href="https://g.page/r/CexcHtUGdNMDEAE/review"
               target="_blank"
               rel="noopener noreferrer"
               title="Leave us a Google Review"

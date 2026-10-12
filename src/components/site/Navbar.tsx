@@ -9,7 +9,6 @@ const services = [
   { label: "Interior Painting", href: "/services/interior-painting" },
   { label: "Exterior Painting", href: "/services/exterior-painting" },
   { label: "Remodeling", href: "/services/remodeling" },
-  { label: "Handyman Services", href: "/services/handyman" },
   { label: "Deck and Stairs", href: "/services/deck-stairs" },
   { label: "Construction Cleaning", href: "/services/construction-cleaning" },
   { label: "General Carpentry", href: "/services/carpentry" },
@@ -313,7 +312,7 @@ const Navbar = () => {
         </ul>
 
         <a
-          href="https://g.page/r/CRCRcjd7niVbEBM/review"
+          href="https://g.page/r/CexcHtUGdNMDEAE/review"
           target="_blank"
           rel="noopener noreferrer"
           onClick={() => setOpen(false)}
