@@ -18,7 +18,7 @@ const ReviewButton = () => {
 
   return (
     <a
-      href="https://g.page/r/CRCRcjd7niVbEBM/review"
+      href="https://g.page/r/CexcHtUGdNMDEAE/review"
       target="_blank"
       rel="noopener noreferrer"
       onMouseEnter={() => setHovered(true)}
