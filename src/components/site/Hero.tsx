@@ -117,6 +117,9 @@ const GlassForm = () => {
       <div style={{ display: "flex", gap: "10px" }}>
         <input
           placeholder="Full Name"
+          aria-label="Full name"
+          name="name"
+          autoComplete="name"
           required
           style={inputStyle}
           value={formData.fullName}
@@ -126,6 +129,9 @@ const GlassForm = () => {
         />
         <input
           placeholder="Phone Number"
+          aria-label="Phone number"
+          name="phone"
+          autoComplete="tel"
           required
           type="tel"
           style={inputStyle}
@@ -138,6 +144,9 @@ const GlassForm = () => {
 
       <input
         placeholder="Email Address"
+        aria-label="Email address"
+        name="email"
+        autoComplete="email"
         required
         type="email"
         style={inputStyle}
@@ -149,6 +158,8 @@ const GlassForm = () => {
 
       <select
         required
+        aria-label="Service needed"
+        name="service"
         style={{ ...inputStyle, appearance: "none", cursor: "pointer" }}
         value={formData.service}
         onChange={(e) => setFormData({ ...formData, service: e.target.value })}
@@ -178,6 +189,8 @@ const GlassForm = () => {
 
       <textarea
         placeholder="Tell us about your project"
+        aria-label="Project details"
+        name="project"
         rows={3}
         style={{ ...inputStyle, height: "auto", padding: "10px 14px", resize: "none" }}
         value={formData.project}

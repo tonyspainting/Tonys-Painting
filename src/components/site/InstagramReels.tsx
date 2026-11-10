@@ -90,7 +90,9 @@ const ReelCard = ({ reel }: { reel: typeof reels[0] }) => {
           objectFit: "contain",
           display: "block",
         }}
-      />
+      >
+        <track kind="captions" src="/captions/no-audio.vtt" srcLang="en" label="No audio" />
+      </video>
 
       <div
         style={{

@@ -100,7 +100,7 @@ const Footer = () => {
         </div>
 
         <div>
-          <div className="text-xs uppercase tracking-[0.2em] text-background/50 mb-4">Explore</div>
+          <div className="text-xs uppercase tracking-[0.2em] text-background/70 mb-4">Explore</div>
           <ul className="space-y-2 text-sm">
             {[
               { label: "Services", href: "/services" },
@@ -118,7 +118,7 @@ const Footer = () => {
         </div>
 
         <div>
-          <div className="text-xs uppercase tracking-[0.2em] text-background/50 mb-4">Areas We Serve</div>
+          <div className="text-xs uppercase tracking-[0.2em] text-background/70 mb-4">Areas We Serve</div>
           <ul className="space-y-2 text-sm">
             {[
               { label: "Martha's Vineyard", href: "/painting-contractor-edgartown" },
@@ -142,7 +142,7 @@ const Footer = () => {
         </div>
 
         <div>
-          <div className="text-xs uppercase tracking-[0.2em] text-background/50 mb-4">Contact</div>
+          <div className="text-xs uppercase tracking-[0.2em] text-background/70 mb-4">Contact</div>
           <ul className="space-y-2 text-sm text-background/80">
             <li>11 Cook Rd, Vineyard Haven, MA 02568</li>
             <li>2 Williams Ave, Pocasset, MA</li>
@@ -162,7 +162,7 @@ const Footer = () => {
 
         {/* Map column */}
         <div className="footer-map-col">
-          <div className="text-xs uppercase tracking-[0.2em] text-background/50 mb-4">
+          <div className="text-xs uppercase tracking-[0.2em] text-background/70 mb-4">
             Our Area
           </div>
 
@@ -310,7 +310,7 @@ const Footer = () => {
       </div>
 
       <div className="border-t border-white/5">
-        <div className="container py-6 flex flex-col md:flex-row justify-between items-center gap-3 text-xs text-background/50">
+        <div className="container py-6 flex flex-col md:flex-row justify-between items-center gap-3 text-xs text-background/70">
           <div>© {new Date().getFullYear()} Tony&apos;s Painting and Remodeling. All rights reserved.</div>
           <nav aria-label="Legal" className="flex items-center gap-3">
             <a href="/privacy" className="hover:text-primary transition-colors">

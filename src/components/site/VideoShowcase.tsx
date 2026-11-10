@@ -134,7 +134,9 @@ const VideoShowcase = () => {
                 objectFit: "cover",
                 display: "block",
               }}
-            />
+            >
+              <track kind="captions" src="/captions/no-audio.vtt" srcLang="en" label="No audio" />
+            </video>
             {!playing && (
               <div
                 onClick={handlePlay}

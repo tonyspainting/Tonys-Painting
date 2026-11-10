@@ -1,5 +1,5 @@
 import type React from "react";
-import { useEffect } from "react";
+import { lazy, Suspense, useEffect } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import { Toaster as Sonner } from "@/components/ui/sonner";
@@ -31,10 +31,13 @@ import Pocasset from "./pages/city/Pocasset.tsx";
 import Sandwich from "./pages/city/Sandwich.tsx";
 
 import NotFound from "./pages/NotFound.tsx";
-import LoginPage from "./pages/LoginPage.tsx";
-import DashboardPage from "./pages/DashboardPage.tsx";
 import ProtectedRoute from "./components/ProtectedRoute.tsx";
 import ReviewButton from "./components/site/ReviewButton.tsx";
+
+// O CRM (dashboard e login) carrega sob demanda: tira o recharts e as telas
+// internas do bundle público, que hoje e o maior custo de JavaScript.
+const LoginPage = lazy(() => import("./pages/LoginPage.tsx"));
+const DashboardPage = lazy(() => import("./pages/DashboardPage.tsx"));
 
 
 const queryClient = new QueryClient();
@@ -80,12 +83,21 @@ export const AnimatedRoutes = () => {
           <Route path="/lp/interior-painting" element={<LPInteriorPainting />} />
           <Route path="/lp/exterior-painting" element={<LPExteriorPainting />} />
           <Route path="/lp/remodeling" element={<LPRemodeling />} />
-          <Route path="/login" element={<LoginPage />} />
+          <Route
+            path="/login"
+            element={
+              <Suspense fallback={null}>
+                <LoginPage />
+              </Suspense>
+            }
+          />
           <Route
             path="/dashboard"
             element={
               <ProtectedRoute>
-                <DashboardPage />
+                <Suspense fallback={null}>
+                  <DashboardPage />
+                </Suspense>
               </ProtectedRoute>
             }
           />
