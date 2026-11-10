@@ -912,7 +912,82 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
       "Matching existing trim takes time. On historic homes we identify the profile, source or mill a match and blend the new work with what is already there.",
       "Site conditions add work. Out of square corners, uneven floors and walls that need furring out all require fitting rather than simple installation.",
     ],
+    process: [
+      {
+        title: "Measure and match",
+        description:
+          "We measure the actual openings, check the walls for square and take a profile from any trim that has to match.",
+      },
+      {
+        title: "Material selection",
+        description:
+          "You choose the material and profile, or we source a match for existing millwork. We confirm quantities before ordering.",
+      },
+      {
+        title: "Fabrication",
+        description:
+          "Pieces are cut and fitted in the shop where possible, which keeps the house cleaner and the installation faster.",
+      },
+      {
+        title: "Installation",
+        description:
+          "Trim, doors, casings and built-ins are fastened with the right method for the substrate and adjusted until the gaps are even.",
+      },
+      {
+        title: "Finish and walkthrough",
+        description:
+          "We fill, sand and leave the work paint ready, then walk it with you to check alignment and operation.",
+      },
+    ],
+    sections: [
+      {
+        heading: "What carpentry covers in an older Massachusetts home",
+        paragraphs: [
+          "Baseboards, crown molding, door and window casings, chair rail, wainscoting, built-in shelving, window seats, closet systems, stair parts and the structural wood repairs that show up around windows and doors. In older homes the carpentry is often where a renovation succeeds or fails, because that is where new work meets walls that have moved for a century.",
+        ],
+      },
+      {
+        heading: "Trim and moldings that match the house",
+        paragraphs: [
+          "Matching existing trim is part detective work. We take a profile from a piece that is already there, measure the reveal and the thickness, and either source a modern equivalent or have it milled. Blending new and old matters most in hallways and stairwells, where two profiles meet in the same sight line and a mismatch reads immediately.",
+        ],
+      },
+      {
+        heading: "Doors, windows and frames",
+        paragraphs: [
+          "A door that sticks, a frame that is out of square or a casing that has pulled away are common repair items. We adjust hinges, plane edges and reset frames rather than replacing what can be saved. When replacement is needed, the new unit is fitted to the existing opening and the casing is rebuilt to match the room.",
+        ],
+      },
+      {
+        heading: "Built-ins and storage",
+        paragraphs: [
+          "Bookcases, mudroom benches, window seats and closet systems are built to the space rather than bought to approximate it. We plan shelves for the things they will hold, allow for baseboard and outlets, and finish the unit so it reads as part of the room. On an island property, building on site avoids shipping a large cabinet across the water.",
+        ],
+      },
+      {
+        heading: "Wood repairs and rot",
+        paragraphs: [
+          "Soft sills, rotted thresholds and water damaged fascia are found during painting and carpentry work. We remove the damaged section, treat or replace it, and rebuild the detail so water sheds the way it should. Covering rot with caulk and paint is a short term fix that fails within a season or two.",
+        ],
+      },
+      {
+        heading: "Finishing ready for paint",
+        paragraphs: [
+          "Carpentry is not finished until it is ready for the painter. We set nails, fill the holes, sand the joints and caulk the seams that should be caulked, leaving the caulk lines that should not be visible clean. That preparation is what makes trim look crisp under a semi-gloss instead of wavy.",
+        ],
+      },
+    ],
     faqs: [
+      {
+        question: "Can you mill trim to match an old profile?",
+        answer:
+          "In many cases yes. We take a sample or a rubbing of the existing profile and either find a stock match or have a mill run it. Lead times are longer for custom profiles, so we plan that early in the project.",
+      },
+      {
+        question: "Do you repair water damage around windows and doors?",
+        answer:
+          "Yes. We open the area, replace softened wood, check the flashing and rebuild the trim. If the damage reaches the framing or sheathing, we scope that repair before closing it up and finishing.",
+      },
       {
         question: "Do you install crown molding and baseboards?",
         answer:
@@ -952,7 +1027,82 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
       "Terrain matters. Slopes need stepped panels, and rocky soil on the Cape and the islands can slow post setting considerably.",
       "Removal of an old fence and disposal adds a line to the estimate, and so does staining or sealing a new wood fence.",
     ],
+    process: [
+      {
+        title: "Line and layout",
+        description:
+          "We walk the property line, agree the height and spacing, and mark post locations before anything is dug.",
+      },
+      {
+        title: "Post setting",
+        description:
+          "Posts are set below the frost line and braced while they cure, so the fence stays straight through freeze and thaw.",
+      },
+      {
+        title: "Rails and panels",
+        description:
+          "Rails, panels and pickets are installed level and plumb, with the spacing checked as the run goes up.",
+      },
+      {
+        title: "Gates and hardware",
+        description:
+          "Gates are hung to swing freely, latches are aligned and posts that carry a gate are set deeper for support.",
+      },
+      {
+        title: "Finish and walkthrough",
+        description:
+          "New wood is stained or sealed when specified, and we walk the finished fence with you, including every gate.",
+      },
+    ],
+    sections: [
+      {
+        heading: "Choosing a fence for a New England property",
+        paragraphs: [
+          "Privacy, pets, property lines and pool code all point to different fences. A six foot privacy fence along a property line, a four foot picket in front of a Cape home and a pool barrier each have their own rules and their own look. We talk through the purpose first, because the right fence for a dog is not always the right fence for a view.",
+        ],
+      },
+      {
+        heading: "Posts, frost and soil",
+        paragraphs: [
+          "Every fence problem starts at the post. Massachusetts frost depth moves the ground every winter, so posts go below the frost line and are set in concrete in most soils. Rocky ground on the Cape and the islands can change the method, and we note that before quoting rather than discovering it on day one.",
+        ],
+      },
+      {
+        heading: "Wood versus vinyl",
+        paragraphs: [
+          "Wood suits older homes, can be repaired board by board and takes a stain that changes with the house. It also needs maintenance every few years. Vinyl holds color with almost no upkeep and costs more up front, though very cold weather can make it brittle. We price both from the same layout so the comparison is honest.",
+        ],
+      },
+      {
+        heading: "Gates, corners and slopes",
+        paragraphs: [
+          "Gates are the part of a fence that gets used, and the part that fails first. Gate posts are set deeper, hardware is chosen for the weight of the gate, and the swing is checked on site. On slopes we step the fence rather than letting panels rack, so the line stays level and the gaps stay even.",
+        ],
+      },
+      {
+        heading: "Repairing an existing fence",
+        paragraphs: [
+          "If most posts are sound, repair is almost always the better value. We replace broken pickets, reset loose posts, rebuild gates and re-stain sections that have weathered. When several posts have rotted at the ground line, replacement is usually cheaper than chasing repairs for another few years.",
+        ],
+      },
+      {
+        heading: "Staining and sealing a new fence",
+        paragraphs: [
+          "New pressure treated wood needs to dry before it will absorb a finish, usually several weeks. Cedar can be finished sooner. A penetrating stain on a new fence protects the wood without building a film, and a recoat every few years keeps it looking new rather than gray.",
+        ],
+      },
+    ],
     faqs: [
+      {
+        question: "How long does a wood fence last in Massachusetts?",
+        answer:
+          "Fifteen to twenty years for cedar or pressure treated posts set properly, depending on soil and maintenance. Posts fail before the panels do, which is why the setting method matters more than the board choice.",
+      },
+      {
+        question: "Do you remove and dispose of an old fence?",
+        answer:
+          "Yes. Removal, hauling and disposal are included when you ask for them, and we check for buried posts and concrete before starting so the site is left clean.",
+      },
       {
         question: "Wood or vinyl fence, which is better here?",
         answer:
@@ -991,7 +1141,82 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
       "Edge profiles and seams add fabrication time. A simple eased edge costs less than a built-up edge, and seam placement affects the layout.",
       "Removal and disposal of the old top adds a line, and so does any cabinet repair needed to support the new surface.",
     ],
+    process: [
+      {
+        title: "Measure the installed cabinets",
+        description:
+          "We measure the actual cabinet run, check level and straightness, and note any repairs needed before templating.",
+      },
+      {
+        title: "Choose material and edge",
+        description:
+          "Material, thickness, edge profile and seam locations are decided together, with samples in the room under its light.",
+      },
+      {
+        title: "Template and fabricate",
+        description:
+          "For stone we template on site, then the fabricator cuts. For other materials we order to the confirmed dimensions.",
+      },
+      {
+        title: "Remove and install",
+        description:
+          "The old top comes out, plumbing is disconnected, the new top is set, leveled and the sink or cooktop is fitted.",
+      },
+      {
+        title: "Seal and walkthrough",
+        description:
+          "Seams and edges are finished, the surface is cleaned, and we walk the kitchen with you before the plumber returns.",
+      },
+    ],
+    sections: [
+      {
+        heading: "What we install",
+        paragraphs: [
+          "Laminate, solid surface, butcher block and prefabricated stone, plus coordination with a local fabricator for custom quartz and granite. We handle the removal of the old top, the cutouts for sinks and cooktops, the seam layout and the final seal. Bathroom vanities are scoped the same way, with the same attention to the plumbing opening.",
+        ],
+      },
+      {
+        heading: "Measuring after the cabinets, not before",
+        paragraphs: [
+          "A countertop cut from a drawing will not fit a house. Walls are rarely straight, and cabinets settle. We measure the installed run in the field, check the corner angles and confirm the cabinet tops are level and secure. That measurement is what prevents the gap at the backsplash and the seam that lands in the middle of the sink.",
+        ],
+      },
+      {
+        heading: "Seams, overhangs and edges",
+        paragraphs: [
+          "Every seam is a decision. We place seams where they are least visible, away from the sink and the edge of the room, and confirm the overhang for seating or appliances. The edge profile changes both the look and the price, and it should be chosen with the cabinet door style in mind rather than from a sample board alone.",
+        ],
+      },
+      {
+        heading: "Sinks, cooktops and cutouts",
+        paragraphs: [
+          "Cutouts are planned from the actual appliance template, not a nominal size. Undermount sinks are dry fitted to confirm the reveal before the top is set, and faucet holes are drilled after the sink position is final. A small error here means a new top, so we check twice.",
+        ],
+      },
+      {
+        heading: "Removal and disposal",
+        paragraphs: [
+          "Old tops come out carefully to protect the cabinets and the floor. Plumbing is disconnected and capped, debris is hauled away, and we check the cabinet tops and the wall behind the old backsplash for damage before the new surface goes on.",
+        ],
+      },
+      {
+        heading: "Care by material",
+        paragraphs: [
+          "Laminate and solid surface tolerate most cleaners; stone needs a pH neutral product and periodic sealing; butcher block needs oil. We leave care instructions for the material installed and tell you what to avoid, because most countertop damage comes from the wrong cleaner rather than from daily use.",
+        ],
+      },
+    ],
     faqs: [
+      {
+        question: "Can a new countertop go on existing cabinets?",
+        answer:
+          "Usually yes, if the cabinets are level, secure and the right height. If they are not, we tell you before ordering material, because stone will crack over a run that flexes and a laminate top will show the unevenness.",
+      },
+      {
+        question: "Do you install a backsplash with the countertop?",
+        answer:
+          "Yes. Tile or slab backsplash can be part of the same project, and we plan the height and the cutouts before the top is fabricated so the two line up cleanly.",
+      },
       {
         question: "What countertop materials do you install?",
         answer:
@@ -1031,7 +1256,76 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
       "Finishes determine the method. Natural stone, glass, brushed metal and matte paint each need a different product so the clean does not damage the surface.",
       "The amount of construction residue drives the hours. Adhesive, grout haze and overspray take longer than dust alone.",
     ],
+    process: [
+      {
+        title: "Walkthrough and scope",
+        description:
+          "We walk the space, note the finishes that need special products and agree what is included before the crew arrives.",
+      },
+      {
+        title: "Dust removal, top down",
+        description:
+          "Ceilings, light fixtures, ledges and door frames are cleaned first so dust does not fall onto surfaces already finished.",
+      },
+      {
+        title: "Surfaces and glass",
+        description:
+          "Cabinets are wiped inside and out, windows and glass are cleaned, and adhesive and paint splatter are removed without scratching.",
+      },
+      {
+        title: "Floors and detail",
+        description:
+          "Floors are vacuumed and washed last, with edges and corners done by hand rather than by machine.",
+      },
+      {
+        title: "Final walkthrough",
+        description:
+          "We walk the space with you under good light and correct anything the punch list turns up before we leave.",
+      },
+    ],
+    sections: [
+      {
+        heading: "What post construction cleaning actually removes",
+        paragraphs: [
+          "Fine drywall dust, sawdust, adhesive residue, caulk smears, paint splatter, grout haze, fingerprints on new fixtures and the film that settles on glass. This is not a housekeeping clean. It is a construction clean, and it takes different tools and different products than routine cleaning because the residue is bonded to the surface.",
+        ],
+      },
+      {
+        heading: "Why the order of work matters",
+        paragraphs: [
+          "Dust falls. If floors are washed before ceilings and trim are cleaned, the floors get dirty again. We work from the top of the room down and from the back of the space toward the exit, so nothing is recleaned. Bathrooms and kitchens come last because that is where the fine dust collects on horizontal surfaces.",
+        ],
+      },
+      {
+        heading: "Materials that need different products",
+        paragraphs: [
+          "Natural stone etches with acidic cleaners. Brushed metal scratches with abrasive pads. Matte paint marks with the wrong cloth. Glass cleaner leaves a film on some coatings. We match the product to the finish and test in a hidden spot when the material is unfamiliar, because a cleaning mistake on a new countertop is expensive to correct.",
+        ],
+      },
+      {
+        heading: "Working around the punch list",
+        paragraphs: [
+          "Trades often return for small items after the first clean. We schedule around the punch list so a final visit happens after the last outlet cover and the last touch of paint. Cleaning before that point means the dust comes back and the work is paid for twice.",
+        ],
+      },
+      {
+        heading: "Preparing for photos or move-in",
+        paragraphs: [
+          "A real estate photographer needs surfaces clear, glass streak free and floors without footprints. A move in needs the same plus cabinets and closets ready to receive belongings. We ask which one it is, because it changes where the last hour of detail goes.",
+        ],
+      },
+    ],
     faqs: [
+      {
+        question: "Do you clean inside cabinets and drawers?",
+        answer:
+          "Yes. New cabinetry is wiped inside and out, including shelves, drawer boxes and the tracks. We remove construction dust and adhesive before anything is put away.",
+      },
+      {
+        question: "Can you remove paint and adhesive from glass?",
+        answer:
+          "Usually. We use a blade at a shallow angle or a solvent matched to the residue, and we test first on coated or textured glass. Overspray on windows is one of the most common items on a post construction clean.",
+      },
       {
         question: "When should post construction cleaning happen?",
         answer:
