@@ -75,7 +75,7 @@ const Navbar = () => {
               <img
                 {...responsive(tonysLogo)}
                 sizes="210px"
-                alt="Tony's Remodeling - Painting and Carpentry"
+                alt="Tony's Painting & Remodeling"
                 className="h-[46px] md:h-[56px] w-auto object-contain"
               />
             </a>

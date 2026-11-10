@@ -45,7 +45,7 @@ const SEO_BY_SLUG: Record<string, SeoEntry> = {
       name: "Interior Painting",
       provider: {
         "@type": "LocalBusiness",
-        name: "Tony's Painting and Remodeling",
+        name: "Tony's Painting & Remodeling",
         telephone: "+15089829675",
       },
       areaServed: "Massachusetts, USA",
@@ -73,7 +73,7 @@ const SEO_BY_SLUG: Record<string, SeoEntry> = {
       name: "Exterior Painting",
       provider: {
         "@type": "LocalBusiness",
-        name: "Tony's Painting and Remodeling",
+        name: "Tony's Painting & Remodeling",
         telephone: "+15089829675",
       },
       areaServed: "Massachusetts, USA",
@@ -101,7 +101,7 @@ const SEO_BY_SLUG: Record<string, SeoEntry> = {
       name: "Home Remodeling",
       provider: {
         "@type": "LocalBusiness",
-        name: "Tony's Painting and Remodeling",
+        name: "Tony's Painting & Remodeling",
         telephone: "+15089829675",
       },
       areaServed: "Massachusetts, USA",
@@ -542,6 +542,36 @@ const ServiceDetail = () => {
           </div>
         </section>
       )}
+
+      {/* Links internos entre serviços: ajuda o rastreamento e distribui autoridade */}
+      <section className="bg-background border-t border-border">
+        <div className="container py-14 md:py-20">
+          <p className="text-xs uppercase tracking-[0.25em] text-primary mb-3">More services</p>
+          <h2 className="font-display text-3xl md:text-4xl text-foreground leading-tight">
+            Other work we do across Massachusetts.
+          </h2>
+          <div className="mt-8 flex flex-wrap gap-3">
+            {SERVICE_SLUGS()
+              .filter((s) => s !== service.slug)
+              .map((s) => (
+                <Link
+                  key={s}
+                  to={`/services/${s}`}
+                  className="rounded-full border border-border px-4 py-2 text-sm text-foreground hover:border-primary hover:text-primary transition-colors"
+                >
+                  {SERVICES[s].name}
+                </Link>
+              ))}
+            <Link
+              to="/services"
+              className="rounded-full border border-primary px-4 py-2 text-sm font-medium text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
+            >
+              All services
+            </Link>
+          </div>
+        </div>
+      </section>
+
       <section className="bg-stone">
         <div className="container py-16 md:py-24">
           <div className="flex items-end justify-between mb-10">

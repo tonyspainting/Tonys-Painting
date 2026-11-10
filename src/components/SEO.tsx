@@ -24,7 +24,7 @@ interface SEOProps {
 }
 
 const BASE_URL = "https://tonyspaintingmv.com";
-const COMPANY_NAME = "Tony's Painting and Remodeling";
+const COMPANY_NAME = "Tony's Painting & Remodeling";
 const DEFAULT_OG_IMAGE = BASE_URL + "/og-image.jpg";
 
 export default function SEO({

@@ -4,6 +4,7 @@ import PageLayout from "@/components/site/PageLayout";
 import InnerHero from "@/components/site/InnerHero";
 import FadeUpSection from "@/components/site/FadeUpSection";
 import RippleButton from "@/components/site/RippleButton";
+import { getCityByLinkSlug } from "@/data/cities";
 
 interface CityPageProps {
   city: string;
@@ -17,14 +18,40 @@ interface CityPageProps {
   nearby: string[];
 }
 
-const SERVICES = [
-  "Interior Painting",
-  "Exterior Painting",
-  "Remodeling",
-  "Deck and Stairs",
-  "General Carpentry",
-  "Flooring",
-];
+// Nome do serviço -> slug da página de serviço. Mantém os cards da cidade
+// apontando para a página real do serviço, como fazem os grandes do setor.
+const SERVICE_SLUGS: Record<string, string> = {
+  "Interior Painting": "interior-painting",
+  "Exterior Painting": "exterior-painting",
+  "Remodeling": "remodeling",
+  "Deck and Stairs": "deck-stairs",
+  "General Carpentry": "carpentry",
+  "Flooring": "flooring",
+  "Ceramic Tile": "ceramic-tile",
+  "Plastering": "plastering",
+  "Fence": "fence",
+  "Countertop": "countertop",
+  "Construction Cleaning": "construction-cleaning",
+};
+
+const SERVICE_NAMES: Record<string, string> = {
+  "interior-painting": "Interior Painting",
+  "exterior-painting": "Exterior Painting",
+  "remodeling": "Remodeling",
+  "deck-stairs": "Deck and Stairs",
+  "carpentry": "General Carpentry",
+  "flooring": "Flooring",
+  "ceramic-tile": "Ceramic Tile",
+  "plastering": "Plastering",
+  "fence": "Fence",
+  "countertop": "Countertop",
+  "construction-cleaning": "Construction Cleaning",
+};
+
+const SERVICE_ITEMS = Object.entries(SERVICE_SLUGS).map(([name, serviceSlug]) => ({
+  name,
+  to: `/services/${serviceSlug}`,
+}));
 
 const CityPainting = ({
   city,
@@ -37,6 +64,12 @@ const CityPainting = ({
   keywords,
   nearby,
 }: CityPageProps) => {
+  // O slug da rota é "painting-contractor-<cidade>"; cities.ts guarda só "<cidade>".
+  const record = getCityByLinkSlug(slug);
+  const priorityServices = (record?.priorityServices ?? [])
+    .map((s) => ({ slug: s, name: SERVICE_NAMES[s] ?? s }))
+    .filter((s) => Boolean(SERVICE_NAMES[s.slug]));
+
   return (
     <PageLayout>
       <SEO
@@ -47,7 +80,7 @@ const CityPainting = ({
         schema={{
           "@context": "https://schema.org",
           "@type": "LocalBusiness",
-          name: "Tony's Painting and Remodeling",
+          name: "Tony's Painting & Remodeling",
           description: `Professional painting and remodeling contractor serving ${city}, ${region} since 2004.`,
           url: `https://tonyspaintingmv.com/${slug}`,
           telephone: "+15089829675",
@@ -63,9 +96,9 @@ const CityPainting = ({
           hasOfferCatalog: {
             "@type": "OfferCatalog",
             name: "Painting and Remodeling Services",
-            itemListElement: SERVICES.map((s) => ({
+            itemListElement: SERVICE_ITEMS.map((s) => ({
               "@type": "Offer",
-              itemOffered: { "@type": "Service", name: s },
+              itemOffered: { "@type": "Service", name: s.name },
             })),
           },
           sameAs: [
@@ -73,13 +106,18 @@ const CityPainting = ({
             "https://www.facebook.com/tonyspaintingmvLLC/",
           ],
         }}
+        breadcrumbs={[
+          { name: "Home", url: "https://tonyspaintingmv.com/" },
+          { name: "Service Areas", url: "https://tonyspaintingmv.com/services" },
+          { name: city, url: `https://tonyspaintingmv.com/${slug}` },
+        ]}
       />
 
       <FadeUpSection>
         <InnerHero
           title={headline}
           subtitle={description}
-          crumbs={[{ label: "Home", to: "/" }, { label: city }]}
+          crumbs={[{ label: "Home", to: "/" }, { label: "Services", to: "/services" }, { label: city }]}
         />
       </FadeUpSection>
 
@@ -95,10 +133,10 @@ const CityPainting = ({
           </FadeUpSection>
 
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "16px" }}>
-            {SERVICES.map((service) => (
-              <FadeUpSection key={service}>
+            {SERVICE_ITEMS.map((service) => (
+              <FadeUpSection key={service.name}>
                 <Link
-                  to="/contact"
+                  to={service.to}
                   style={{ textDecoration: "none" }}
                 >
                   <div style={{
@@ -114,7 +152,7 @@ const CityPainting = ({
                     onMouseEnter={e => (e.currentTarget.style.boxShadow = "0 4px 20px rgba(0,0,0,0.08)")}
                     onMouseLeave={e => (e.currentTarget.style.boxShadow = "none")}
                   >
-                    <span style={{ fontFamily: "Inter, sans-serif", fontWeight: 600, fontSize: "14px", color: "#1A1A1A" }}>{service}</span>
+                    <span style={{ fontFamily: "Inter, sans-serif", fontWeight: 600, fontSize: "14px", color: "#1A1A1A" }}>{service.name}</span>
                     <span style={{ color: "#C4291C", fontSize: "16px" }}>→</span>
                   </div>
                 </Link>
@@ -123,6 +161,83 @@ const CityPainting = ({
           </div>
         </div>
       </section>
+
+      {record && (
+        <section style={{ backgroundColor: "#FFFFFF", padding: "clamp(48px,6vw,80px) 24px" }}>
+          <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "40px" }}>
+              <FadeUpSection>
+                <h2 style={{ fontFamily: "'Playfair Display', serif", fontWeight: 900, fontSize: "clamp(26px,3vw,34px)", color: "#1A1A1A", letterSpacing: "-0.02em", marginBottom: "16px" }}>
+                  Painting in {city} and what the conditions do to a finish.
+                </h2>
+                <p style={{ color: "#6B6560", fontSize: "15px", lineHeight: 1.75 }}>{record.climate}</p>
+              </FadeUpSection>
+
+              <FadeUpSection delay={0.1}>
+                <h2 style={{ fontFamily: "'Playfair Display', serif", fontWeight: 900, fontSize: "clamp(26px,3vw,34px)", color: "#1A1A1A", letterSpacing: "-0.02em", marginBottom: "16px" }}>
+                  The homes we work on in {city}.
+                </h2>
+                <p style={{ color: "#6B6560", fontSize: "15px", lineHeight: 1.75 }}>{record.housing}</p>
+              </FadeUpSection>
+            </div>
+
+            {record.landmarks.length > 0 && (
+              <FadeUpSection delay={0.15}>
+                <p style={{ color: "#6B6560", fontSize: "13px", marginTop: "40px", marginBottom: "14px" }}>
+                  Areas we work around in {city}:
+                </p>
+                <div style={{ display: "flex", flexWrap: "wrap", gap: "10px" }}>
+                  {record.landmarks.map((landmark) => (
+                    <span
+                      key={landmark}
+                      style={{
+                        padding: "8px 16px",
+                        borderRadius: "50px",
+                        border: "1px solid #E8E2D8",
+                        backgroundColor: "#F5F1EB",
+                        color: "#1A1A1A",
+                        fontFamily: "Inter, sans-serif",
+                        fontSize: "13px",
+                        fontWeight: 500,
+                      }}
+                    >
+                      {landmark}
+                    </span>
+                  ))}
+                </div>
+              </FadeUpSection>
+            )}
+
+            {priorityServices.length > 0 && (
+              <FadeUpSection delay={0.2}>
+                <p style={{ color: "#6B6560", fontSize: "13px", marginTop: "40px", marginBottom: "14px" }}>
+                  Most requested services in {city}:
+                </p>
+                <div style={{ display: "flex", flexWrap: "wrap", gap: "10px" }}>
+                  {priorityServices.map((service) => (
+                    <Link
+                      key={service.slug}
+                      to={`/services/${service.slug}`}
+                      style={{
+                        padding: "8px 16px",
+                        borderRadius: "50px",
+                        border: "1px solid #C4291C",
+                        color: "#C4291C",
+                        fontFamily: "Inter, sans-serif",
+                        fontSize: "13px",
+                        fontWeight: 600,
+                        textDecoration: "none",
+                      }}
+                    >
+                      {service.name} in {city}
+                    </Link>
+                  ))}
+                </div>
+              </FadeUpSection>
+            )}
+          </div>
+        </section>
+      )}
 
       <section style={{ backgroundColor: "#FFFFFF", padding: "clamp(48px,6vw,80px) 24px" }}>
         <div style={{ maxWidth: "800px", margin: "0 auto" }}>
