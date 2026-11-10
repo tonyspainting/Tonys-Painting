@@ -111,6 +111,7 @@ const CityPainting = ({
           { name: "Service Areas", url: "https://tonyspaintingmv.com/services" },
           { name: city, url: `https://tonyspaintingmv.com/${slug}` },
         ]}
+        faqs={record?.faqs}
       />
 
       <FadeUpSection>
@@ -235,6 +236,47 @@ const CityPainting = ({
                 </div>
               </FadeUpSection>
             )}
+          </div>
+        </section>
+      )}
+
+      {record?.localNeeds && record.localNeeds.length > 0 && (
+        <section style={{ backgroundColor: "#F5F1EB", padding: "clamp(48px,6vw,80px) 24px" }}>
+          <div style={{ maxWidth: "900px", margin: "0 auto" }}>
+            <FadeUpSection>
+              <h2 style={{ fontFamily: "'Playfair Display', serif", fontWeight: 900, fontSize: "clamp(28px,3vw,40px)", color: "#1A1A1A", letterSpacing: "-0.02em", marginBottom: "20px" }}>
+                What homeowners in {city} usually need.
+              </h2>
+              <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+                {record.localNeeds.map((paragraph) => (
+                  <p key={paragraph} style={{ color: "#6B6560", fontSize: "15px", lineHeight: 1.75 }}>
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
+            </FadeUpSection>
+          </div>
+        </section>
+      )}
+
+      {record?.faqs && record.faqs.length > 0 && (
+        <section style={{ backgroundColor: "#FFFFFF", padding: "clamp(48px,6vw,80px) 24px" }}>
+          <div style={{ maxWidth: "800px", margin: "0 auto" }}>
+            <FadeUpSection>
+              <h2 style={{ fontFamily: "'Playfair Display', serif", fontWeight: 900, fontSize: "clamp(28px,3vw,40px)", color: "#1A1A1A", letterSpacing: "-0.02em", marginBottom: "28px" }}>
+                Questions from {city} homeowners.
+              </h2>
+              <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
+                {record.faqs.map((faq) => (
+                  <div key={faq.question}>
+                    <h3 style={{ fontFamily: "Inter, sans-serif", fontWeight: 600, fontSize: "17px", color: "#1A1A1A", marginBottom: "6px" }}>
+                      {faq.question}
+                    </h3>
+                    <p style={{ color: "#6B6560", fontSize: "15px", lineHeight: 1.75 }}>{faq.answer}</p>
+                  </div>
+                ))}
+              </div>
+            </FadeUpSection>
           </div>
         </section>
       )}
