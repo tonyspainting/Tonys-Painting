@@ -1,0 +1,12 @@
+node_modules
+dist
+dist-server
+.git
+.gitignore
+.dockerignore
+Dockerfile
+*.log
+.tmp-build
+.tmp-profile
+edge-dump.txt
+coverage
