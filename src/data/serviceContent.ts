@@ -10,6 +10,18 @@ export interface BudgetLink {
   to: string;
 }
 
+/** Bloco de conteúdo longo: um H2 e seus parágrafos. */
+export interface ServiceSection {
+  heading: string;
+  paragraphs: string[];
+}
+
+/** Etapa do processo exibida em colunas numeradas. */
+export interface ServiceStep {
+  title: string;
+  description: string;
+}
+
 export interface ServiceContent {
   /** Direct answer to the buyer intent question. Rendered as the Overview paragraph. */
   answer: string;
@@ -19,6 +31,10 @@ export interface ServiceContent {
   overviewHeading: string;
   /** Result oriented list used in the "What is included" column. Falls back to the service list. */
   included?: string[];
+  /** Step by step process rendered as a numbered row. */
+  process?: ServiceStep[];
+  /** Long form sections rendered after the overview. */
+  sections?: ServiceSection[];
   /** Answers rendered on screen and marked up as FAQPage. */
   faqs: ServiceAnswer[];
   /** Service slugs shown as next steps. */
@@ -113,7 +129,92 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
       "Color changes and finish type matter. Going from a dark wall to white can need an extra coat, and a washable matte or a satin enamel on trim costs more than a standard flat paint.",
       "Occupied homes take longer. We work around furniture, protect floors daily and often paint in phases so the family can keep using the house.",
     ],
+    process: [
+      {
+        title: "Walkthrough and written estimate",
+        description:
+          "We walk the rooms with you, measure, and note every surface that needs repair. You get a written scope with each room listed before anything is scheduled.",
+      },
+      {
+        title: "Protection and preparation",
+        description:
+          "Furniture is moved and covered, floors are protected, and trim, windows and hardware are masked. Holes and cracks are filled and sanded.",
+      },
+      {
+        title: "Priming and patching",
+        description:
+          "Repaired areas and bare spots are primed so the finish coats read evenly. Water stains and dark existing colors get a blocking coat.",
+      },
+      {
+        title: "Walls, trim and doors",
+        description:
+          "Edges are cut in by hand, walls are rolled in two coats, and trim, doors and casings are brushed for a smooth finish.",
+      },
+      {
+        title: "Final walkthrough",
+        description:
+          "We walk the job with you in daylight, touch up anything you point out, and leave the rooms clean with furniture back in place.",
+      },
+    ],
+    sections: [
+      {
+        heading: "What interior painting covers in a Massachusetts home",
+        paragraphs: [
+          "Walls, ceilings, trim, doors, window casings and the areas between them. Most projects are a set of rooms, a full floor or a whole house between tenants or before a sale. We paint occupied homes and empty ones, and we handle the patching and sanding that has to happen before a finish coat. If a room needs plaster work, it is scoped in the same estimate so the painter is not working over a surface that is still moving.",
+        ],
+      },
+      {
+        heading: "Preparation decides how the paint looks a year later",
+        paragraphs: [
+          "Paint fails at the edges first: cracked caulk around trim, nail holes that were never filled, grease above a stove, sanding dust left on a baseboard. Preparation starts with washing and dulling the surface, then filling and sanding, then caulking the gaps between trim and wall. We prime repairs and bare drywall. It is the slow part of the job, and it is the reason a finish still looks tight after a few winters.",
+        ],
+      },
+      {
+        heading: "Choosing the right paint and sheen",
+        paragraphs: [
+          "Walls in a family house usually get a washable matte. Bathrooms and kitchens do better with satin, which resists moisture and wipes clean. Trim and doors take a satin or semi-gloss enamel that can be scrubbed. Ceilings get a flat product that hides imperfections. We bring color and sheen samples, and we can match an existing color from a chip or a painted piece if you want to keep what you have.",
+        ],
+      },
+      {
+        heading: "How long interior painting takes",
+        paragraphs: [
+          "A single room is usually one day, including preparation and two coats. A full interior takes three to seven working days, longer when plaster repairs need drying time between coats. We give a start date and a finish window in writing, and we tell you which rooms are out of use on which days so the household can plan around the work.",
+        ],
+      },
+      {
+        heading: "Older homes, plaster and lead paint",
+        paragraphs: [
+          "Plaster walls are common in Massachusetts homes and they behave differently from drywall. They take patching well but need careful sanding and a skim coat where cracks have opened. In homes built before 1978 we treat sanding dust as a lead risk: we talk through the age of the paint, keep dust contained, and recommend testing before any dry sanding on painted trim or walls.",
+        ],
+      },
+      {
+        heading: "What the estimate includes",
+        paragraphs: [
+          "Every estimate lists the rooms, the surfaces in each room, the preparation planned and the products specified. It states what is excluded, such as wallpaper removal or major plaster repair, so there are no surprises later. The price does not change because a room took longer than expected unless you approve a change in scope.",
+        ],
+      },
+    ],
     faqs: [
+      {
+        question: "Do you paint ceilings?",
+        answer:
+          "Yes. Ceilings are included when they are part of the scope, and we use a flat ceiling product that hides roller marks and small imperfections. Stained ceilings get a blocking primer first so the stain does not come back through the paint.",
+      },
+      {
+        question: "Can you match my existing wall color?",
+        answer:
+          "Yes. Bring a chip, a paint can label or a sample of the painted surface. If the color is unknown we can match from a section of wall, and we test the match in the room before buying the full quantity.",
+      },
+      {
+        question: "Do you repair cracks and nail holes?",
+        answer:
+          "Yes, filling and sanding are part of the preparation. Larger cracks, water damage or loose plaster are quoted separately if they need more than a patch, and we tell you before we start.",
+      },
+      {
+        question: "How soon can furniture go back after painting?",
+        answer:
+          "Walls are usually safe to touch within a few hours. We wait until the finish is fully dry before moving furniture back, typically the next day, and we place everything where it was unless you ask otherwise.",
+      },
       {
         question: "How much does interior painting cost in Massachusetts?",
         answer:
@@ -153,7 +254,92 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
       "Materials range widely. Standard tile and stock cabinetry sit at one end, custom millwork and natural stone at the other, and the estimate names what is specified.",
       "Existing conditions show up once the wall is open. Old plumbing, uneven framing or moisture behind tile has to be fixed before finishes go on, and we price what we can see plus a defined approach for what we find.",
     ],
+    process: [
+      {
+        title: "Walkthrough and scope",
+        description:
+          "We walk the space, measure, and list every trade involved. At this stage we also flag whether the work needs a permit and what the inspections will cover.",
+      },
+      {
+        title: "Written estimate and schedule",
+        description:
+          "You receive the scope, the materials specified and a milestone schedule. Nothing is ordered until you approve the estimate in writing.",
+      },
+      {
+        title: "Demolition and rough work",
+        description:
+          "The work area is sealed off from the rest of the house. Walls open, framing and mechanical work happen, and inspections are scheduled before anything is closed up.",
+      },
+      {
+        title: "Finishes",
+        description:
+          "Tile, flooring, carpentry, plaster and paint go in sequence. Each trade is checked before the next one covers it.",
+      },
+      {
+        title: "Closeout",
+        description:
+          "We paint, close the punch list, clean the space and walk it with you. Any warranty question goes through the same contact you had from day one.",
+      },
+    ],
+    sections: [
+      {
+        heading: "What a Tony's remodel covers",
+        paragraphs: [
+          "Kitchens, bathrooms, basements, living spaces and the connective work between them: flooring, tile, carpentry, plastering, paint and the repairs that only show up once a wall is open. Because the trades are in house, a bathroom remodel does not wait for a separate flooring crew or a painter booked three weeks out. The same crew that sets the tile preps the wall behind it and finishes the trim in front of it.",
+        ],
+      },
+      {
+        heading: "One crew instead of five",
+        paragraphs: [
+          "Most remodeling delays come from handoffs. One contractor finishes, the next is not available, and the schedule slides by a week. We keep the sequence inside our own team, which means the person who framed the wall is talking to the person who tiles it. It also means one point of contact for questions, changes and punch list items, instead of a group text with five companies.",
+        ],
+      },
+      {
+        heading: "Materials, lead times and island logistics",
+        paragraphs: [
+          "On Martha's Vineyard and the outer Cape, the delivery is part of the project. Cabinetry, tile and stone are ordered against a real lead time, and anything coming by ferry is scheduled so a missed boat does not stop the crew. We confirm quantities before ordering, store materials on site where there is room, and inspect deliveries for damage before installation day.",
+        ],
+      },
+      {
+        heading: "Living through a remodel",
+        paragraphs: [
+          "Most clients stay in the house. We contain dust with plastic barriers and negative air where possible, keep a path through the home, and protect floors along the route. Water and power shutoffs are scheduled in advance and kept short. On a kitchen project we set up a temporary prep area so the household is not eating out for a month.",
+        ],
+      },
+      {
+        heading: "Permits and inspections in Massachusetts",
+        paragraphs: [
+          "Structural, plumbing, electrical and gas work generally needs a permit in Massachusetts towns, and so do many bathroom and kitchen remodels. We tell you at the estimate stage what your town requires, pull the permits we are responsible for, and schedule inspections so they do not hold up the finish work. If your town has historic district rules, we plan for that review as well.",
+        ],
+      },
+      {
+        heading: "How the budget is built",
+        paragraphs: [
+          "The estimate separates labor, materials and allowances. Allowances cover items you have not chosen yet, such as tile or fixtures, and they are adjusted with your approval when you pick. A contingency line covers what is found behind the wall. You see the full number before work starts, and any change is priced and approved in writing before it is built.",
+        ],
+      },
+    ],
     faqs: [
+      {
+        question: "Can you work with my designer or architect?",
+        answer:
+          "Yes. We build from drawings and specifications, flag anything that will not work in the field, and coordinate directly with the designer so decisions do not stall the schedule.",
+      },
+      {
+        question: "Do you supply materials or should I buy them?",
+        answer:
+          "Either way. We can supply and warranty the materials as part of the contract, or install what you purchase. When you buy, we confirm quantities and check the delivery before installation.",
+      },
+      {
+        question: "What happens if you find water damage or old wiring?",
+        answer:
+          "We stop, photograph it and show you before covering anything. The repair is priced as a change order and approved in writing, so the surprise is visible and priced before it is fixed.",
+      },
+      {
+        question: "How are payments scheduled?",
+        answer:
+          "The contract sets a deposit and payments tied to milestones, not to dates. You always pay for work that has been completed, and the final payment follows the punch list and walkthrough.",
+      },
       {
         question: "Do you handle full remodels or only single rooms?",
         answer:
@@ -193,7 +379,92 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
       "Previous coatings limit the options. A deck with old film-forming stain has to be brought back before a penetrating product will soak in evenly.",
       "Exposure and access matter. Waterfront decks on Martha's Vineyard and the Cape take more sun and salt, and decks with difficult access need more setup.",
     ],
+    process: [
+      {
+        title: "Deck inspection",
+        description:
+          "Every board, railing and stair is checked for rot, movement and loose fasteners. Repairs are quoted before any finish is applied.",
+      },
+      {
+        title: "Cleaning and brightening",
+        description:
+          "The wood is washed to remove dirt, mildew and the gray oxidized layer, then brightened so the grain takes the finish evenly.",
+      },
+      {
+        title: "Repairs",
+        description:
+          "Soft or cracked boards are replaced, fasteners are reset or replaced, and railings are tightened so the structure is sound.",
+      },
+      {
+        title: "Sanding and preparation",
+        description:
+          "Boards, benches and rails are sanded to open the grain, then dust is removed completely before any product goes on.",
+      },
+      {
+        title: "Staining and cure",
+        description:
+          "The finish is applied in the right number of coats for the wood and the exposure, with drying time built into the schedule.",
+      },
+    ],
+    sections: [
+      {
+        heading: "What we check before staining",
+        paragraphs: [
+          "A finish on a failing deck is money thrown away. Before we open a can we walk every board, check for soft spots and cupping, and test fasteners and railings. Stairs get particular attention because a loose tread is a safety issue, not a cosmetic one. If something needs replacing, it is quoted before the stain goes on so the repair and the finish are scheduled together.",
+        ],
+      },
+      {
+        heading: "Cleaning and brightening weathered wood",
+        paragraphs: [
+          "Gray wood is not dirty, it is oxidized. Washing removes dirt, pollen and mildew, and a wood brightener lifts the gray layer so the grain can take the finish. Pressure has to be controlled: too much and the soft grain is gouged, which shows through a transparent stain. After washing, the wood has to dry to the right moisture level, and that drying time is part of the schedule.",
+        ],
+      },
+      {
+        heading: "Oil, semi-transparent or solid stain",
+        paragraphs: [
+          "A penetrating oil soaks into the wood and leaves the grain visible, which suits cedar and mahogany. A semi-transparent stain adds color and some UV protection while keeping texture. A solid stain covers like a thin paint and lasts longer, but it builds a film that has to be maintained. We match the product to the wood, the exposure and how much maintenance you want to do.",
+        ],
+      },
+      {
+        heading: "Stairs, railings and built-in benches",
+        paragraphs: [
+          "The parts people touch take the most wear. Handrails, stair treads and bench seats are sanded and finished with the same care as the field of the deck, and we check the connections where railings meet posts. A deck that looks good but has a loose railing is not finished, so those details are part of the walkthrough.",
+        ],
+      },
+      {
+        heading: "Weather, drying and the right window",
+        paragraphs: [
+          "Stain needs dry wood and a couple of days without rain to cure properly. We watch the forecast, avoid applying late in the day when dew will sit on the surface, and stop if conditions turn. In coastal towns that means scheduling around wind and salt fog as well as rain, and telling you honestly when a date has to move.",
+        ],
+      },
+      {
+        heading: "Keeping a deck ahead of the weather",
+        paragraphs: [
+          "A light clean and a recoat every two to four years costs far less than a restoration. We suggest a maintenance window, note which faces fade fastest, and leave touch up material when there is any. Decks near the water on the Vineyard and the Cape usually need attention first on the south and west sides.",
+        ],
+      },
+    ],
     faqs: [
+      {
+        question: "How often should a deck be resealed?",
+        answer:
+          "Every two to four years in this climate. Decks in full sun or near the water fade faster, and a light recoat before the wood goes gray is the cheapest way to keep it protected.",
+      },
+      {
+        question: "Can you stain a brand new deck?",
+        answer:
+          "Pressure treated wood needs to dry and weather before it will absorb a finish, usually a few weeks to a couple of months. New cedar can be finished sooner. We test a small area to confirm the wood is ready.",
+      },
+      {
+        question: "Do you work on composite decks?",
+        answer:
+          "We clean and maintain composite decking, and we repair railings and stairs. Composite is not stained, so the work is cleaning, hardware and structure rather than a new finish coat.",
+      },
+      {
+        question: "Do you repair stairs and railings?",
+        answer:
+          "Yes. Loose treads, wobbly railings, rotted posts and failing fasteners are repaired before staining. If a stair structure needs rebuilding, that is quoted separately and scheduled with the finish work.",
+      },
       {
         question: "How much does deck staining cost in Massachusetts?",
         answer:

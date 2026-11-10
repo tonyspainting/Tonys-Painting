@@ -486,6 +486,49 @@ const ServiceDetail = () => {
         </div>
       </section>
 
+      {content?.process && content.process.length > 0 && (
+        <section className="bg-stone border-t border-border">
+          <div className="container py-16 md:py-24">
+            <p className="text-xs uppercase tracking-[0.25em] text-primary mb-3">How the work runs</p>
+            <h2 className="font-display text-3xl md:text-4xl text-foreground leading-tight max-w-2xl">
+              From the first walkthrough to the final walk.
+            </h2>
+            <ol className="mt-10 grid gap-8 md:grid-cols-3 lg:grid-cols-5">
+              {content.process.map((step, i) => (
+                <li key={step.title}>
+                  <span className="block font-display text-2xl text-primary">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <h3 className="mt-2 font-display text-xl text-foreground leading-snug">{step.title}</h3>
+                  <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{step.description}</p>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </section>
+      )}
+
+      {content?.sections && content.sections.length > 0 && (
+        <section className="bg-background border-t border-border">
+          <div className="container py-16 md:py-24">
+            <div className="max-w-3xl space-y-12">
+              {content.sections.map((section) => (
+                <div key={section.heading}>
+                  <h2 className="font-display text-2xl md:text-3xl text-foreground leading-tight">
+                    {section.heading}
+                  </h2>
+                  <div className="mt-4 space-y-4 text-base text-muted-foreground leading-relaxed">
+                    {section.paragraphs.map((paragraph) => (
+                      <p key={paragraph}>{paragraph}</p>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {faqs.length > 0 && (
         <section className="bg-background border-t border-border">
           <div className="container py-16 md:py-24 grid lg:grid-cols-3 gap-12 lg:gap-16">
