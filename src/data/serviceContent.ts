@@ -643,6 +643,18 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
           "Refinishing keeps original wood and usually costs less. Replacement makes sense when boards are cupped, heavily damaged, patched with different species or too thin to sand again. We measure the remaining thickness and show you the worn areas before recommending, because sanding through a floor is a mistake you cannot undo.",
         ],
       },
+      {
+        heading: "What can go wrong with a floor project",
+        paragraphs: [
+          "The failures we see most are moisture, movement and rushed finish. A floor laid over a damp subfloor cups within a season. A floor nailed too tight against a wall buckles when the humid months arrive. A finish applied without proper drying between coats stays soft and shows every chair leg. None of these are visible on the day of installation, which is why the preparation and the drying schedule matter more than the last coat.",
+        ],
+      },
+      {
+        heading: "Caring for a new or refinished floor",
+        paragraphs: [
+          "Keep the indoor humidity steady and avoid standing water. Felt pads under furniture legs and a mat at the door prevent most scratches. Sweep or vacuum fine grit before it grinds in, and use a cleaner made for the finish rather than an all purpose product. A recoat every several years, before the finish wears through in the traffic lanes, is far cheaper than a full sanding.",
+        ],
+      },
     ],
     faqs: [
       {
@@ -679,6 +691,16 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
         question: "When can furniture go back on new floors?",
         answer:
           "Usually after twenty four to seventy two hours, depending on the finish. We tell you the exact window and leave felt pads for the furniture legs.",
+      },
+      {
+        question: "How soon can I walk on a refinished floor?",
+        answer:
+          "Light foot traffic in socks is usually fine after the recommended drying time for the finish, often the next day. Rugs and heavy furniture wait longer, because they trap moisture and can mark a finish that has not fully cured.",
+      },
+      {
+        question: "Do you install stair treads and transitions?",
+        answer:
+          "Yes. Stair treads, nosings, thresholds and the transitions between wood, tile and carpet are part of the scope. Matching the existing stain on stairs is planned before sanding starts.",
       },
     ],
     relatedServices: ["remodeling", "carpentry", "ceramic-tile"],
@@ -752,6 +774,18 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
           "Taking out old tile is dusty work. We seal the room, cover surfaces and remove debris daily. A bathroom is out of use for the duration, so we plan the schedule with you and tell you when the water can go back on. If a second bathroom exists, we sequence work so the household is never without a shower.",
         ],
       },
+      {
+        heading: "What can go wrong with tile",
+        paragraphs: [
+          "Most failures start under the tile. A floor that flexes cracks the grout and then the tile. A shower without a proper membrane leaks into the framing long before anything shows on the surface. Thinset that skins over before the tile is set leaves hollow spots that sound wrong underfoot. Every one of these is cheaper to prevent at the layout stage than to repair after the grout has cured.",
+        ],
+      },
+      {
+        heading: "Keeping grout and stone looking right",
+        paragraphs: [
+          "Grout is porous until it is sealed, and even sealed grout needs a gentle routine. Sweep or vacuum grit, clean with a pH neutral product, and avoid acidic cleaners on stone and on cement grout. Reseal in wet areas every year or two. If a tile does crack, we can often replace a single piece by cutting out the grout around it, provided a spare tile was kept.",
+        ],
+      },
     ],
     faqs: [
       {
@@ -788,6 +822,16 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
         question: "Do you install heated floors?",
         answer:
           "Yes. We install electric radiant mats under tile in bathrooms and kitchens, with the thermostat placed where you want it. It has to be planned before the substrate goes down.",
+      },
+      {
+        question: "How do you handle a cracked tile?",
+        answer:
+          "If a spare tile exists, we cut the grout around the damaged piece, remove it carefully and set a replacement. If there is no spare, we look for the closest match or discuss replacing a small area so the repair is not obvious.",
+      },
+      {
+        question: "Do you level the floor before tiling?",
+        answer:
+          "We check flatness and correct it with a leveling compound or by adjusting the substrate. Large format tile especially needs a flat surface, otherwise the corners rock and the bond fails.",
       },
     ],
     relatedServices: ["remodeling", "flooring", "plastering"],
@@ -861,6 +905,18 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
           "If plaster has lost its grip across a large ceiling, is crumbling to the touch or has been patched so many times that the surface is unstable, replacement is cheaper than repeated repairs. That is a drywall scope rather than a plaster one, and we tell you honestly when it is the better value instead of selling another patch.",
         ],
       },
+      {
+        heading: "What can go wrong with a plaster repair",
+        paragraphs: [
+          "A patch that opens again usually means the cause was never fixed: a slow leak, a loose key or movement in the framing. A skim coat applied too thick in one pass shrinks and cracks. Sanding a repair without checking it under raking light leaves a shadow that only appears after the paint. We test the surrounding surface, build the repair in thin coats and check the finish before calling it done.",
+        ],
+      },
+      {
+        heading: "Choosing between plaster and drywall",
+        paragraphs: [
+          "Original plaster is denser, quieter and more forgiving of minor movement than drywall, and it is worth saving when the lath and keys are sound. Drywall is faster and cheaper for a full wall replacement, and it is the right answer when the plaster has failed across a large area. A hybrid approach, patching plaster and replacing only the unsound section, is often the best balance in an older home.",
+        ],
+      },
     ],
     faqs: [
       {
@@ -897,6 +953,16 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
         question: "Do you match texture on older walls?",
         answer:
           "Yes. We match the surrounding texture and sheen so the repair does not stand out. On historic homes we take extra care with corners, arches and the original profile.",
+      },
+      {
+        question: "How do you know if plaster is too far gone?",
+        answer:
+          "We press on the surface and check for hollow sounds, movement and powdering. If the plaster has separated across a large area or crumbles when touched, replacement is usually the honest recommendation.",
+      },
+      {
+        question: "Can you match a skip trowel or sand finish?",
+        answer:
+          "Yes. Those finishes are common in mid century homes and they are matched by hand, not with a roller. We test the texture on a sample board before applying it to the wall.",
       },
     ],
     relatedServices: ["interior-painting", "carpentry", "remodeling"],
