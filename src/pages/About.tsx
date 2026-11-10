@@ -44,7 +44,7 @@ const About = () => {
   return (
     <PageLayout>
       <SEO
-        title="About Tony's Painting & Remodeling | Licensed MA Contractor Since 2004"
+        title="About Tony's Painting | Licensed MA Contractor Since 2004"
         description="Founded in 2004, Tony's Painting & Remodeling serves Martha's Vineyard, Cape Cod and the South Shore with painting, remodeling and carpentry."
         canonical="/about"
         keywords="Tony's Painting history, painting company Massachusetts, Otoniel Santos painter, painting remodeling Massachusetts since 2004"

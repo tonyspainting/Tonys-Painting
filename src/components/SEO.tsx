@@ -79,7 +79,14 @@ export default function SEO({
       <meta name="description" content={description} />
       {keywords && <meta name="keywords" content={keywords} />}
       <link rel="canonical" href={canonicalUrl} />
-      {noindex && <meta name="robots" content="noindex, nofollow" />}
+      <meta
+        name="robots"
+        content={
+          noindex
+            ? "noindex, nofollow"
+            : "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+        }
+      />
 
       {/* Open Graph */}
       <meta property="og:type" content={ogType} />

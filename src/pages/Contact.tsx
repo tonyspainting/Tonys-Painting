@@ -33,7 +33,7 @@ const Contact = () => {
   return (
     <PageLayout>
       <SEO
-        title="Request a Free Painting Estimate | Tony's Painting & Remodeling"
+        title="Free Painting Estimate | Tony's Painting & Remodeling"
         description="Contact Tony's Painting & Remodeling for a free estimate. Interior and exterior painting and remodeling on Martha's Vineyard and Cape Cod. Call 508-982-9675."
         canonical="/contact"
         keywords="free painting estimate Massachusetts, painting quote Martha's Vineyard, contact painting contractor Cape Cod, hire painters South Shore MA"

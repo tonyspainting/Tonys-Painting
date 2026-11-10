@@ -76,8 +76,8 @@ const PortfolioCollectionPage = () => {
   return (
     <PageLayout>
       <SEO
-        title={`${collection.title} | Tony's Painting and Remodeling`}
-        description={collection.description}
+        title={`${collection.title} | Tony's Painting`}
+        description={collection.metaDescription ?? collection.description ?? ""}
         canonical={`/portfolio/${collection.slug}`}
       />
       <InnerHero

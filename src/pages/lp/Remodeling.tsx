@@ -4,10 +4,11 @@ import LandingTemplate from "@/components/lp/LandingTemplate";
 const LPRemodeling = () => (
   <>
     <SEO
-      title="Home Remodeling in New England"
+      title="Home Remodeling in New England | Tony's Painting"
       description="Flooring, tile, carpentry and more. One team for every job in New England. Licensed and insured. Free estimate."
       canonical="/lp/remodeling"
       keywords="remodeling New England, home remodeling New England, flooring tile carpentry MA"
+      noindex
     />
     <LandingTemplate
     tag="REMODELING"

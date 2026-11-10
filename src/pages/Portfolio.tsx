@@ -43,7 +43,7 @@ const Portfolio = () => {
   return (
     <PageLayout>
       <SEO
-        title="Painting and Remodeling Portfolio | Massachusetts Projects"
+        title="Painting Portfolio in Massachusetts | Tony's Painting"
         description="Browse our work across Martha's Vineyard, Cape Cod and the South Shore. Interior, exterior, remodeling and deck projects in Massachusetts since 2004."
         canonical="/portfolio"
         keywords="painting portfolio Massachusetts, painting projects Martha's Vineyard, before after painting Cape Cod, remodeling projects MA"

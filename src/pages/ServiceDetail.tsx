@@ -32,7 +32,7 @@ interface SeoEntry {
 
 const SEO_BY_SLUG: Record<string, SeoEntry> = {
   "interior-painting": {
-    title: "Interior Painting Services in Massachusetts | Tony's Painting",
+    title: "Interior Painting in Massachusetts | Tony's Painting",
     description:
       "Professional interior painting for homes in Martha's Vineyard and Cape Cod. Surface prep, clean work and a final walkthrough. Free estimates. Call 508-982-9675.",
     h1: "Interior painting services for Massachusetts homeowners.",
@@ -88,9 +88,9 @@ const SEO_BY_SLUG: Record<string, SeoEntry> = {
     ],
   },
   remodeling: {
-    title: "Home Remodeling Contractor in Massachusetts | Tony's Painting",
+    title: "Remodeling Contractor in Massachusetts | Tony's Painting",
     description:
-      "Kitchen, bathroom and living space remodeling for homes in Martha's Vineyard, Cape Cod and the South Shore. One crew, multiple trades. Free estimates. Call 508-982-9675.",
+      "Kitchen, bathroom and living space remodeling on Martha's Vineyard and Cape Cod. One crew, multiple trades. Free estimates. Call 508-982-9675.",
     h1: "Home remodeling services in Massachusetts.",
     h2: "What we handle on remodeling projects.",
     keywords:
@@ -130,7 +130,7 @@ const SEO_BY_SLUG: Record<string, SeoEntry> = {
     ],
   },
   flooring: {
-    title: "Flooring Installation and Refinishing in MA | Tony's Painting",
+    title: "Flooring Installation and Refinishing | Tony's Painting",
     description:
       "Hardwood, vinyl plank and engineered wood flooring on Martha's Vineyard and Cape Cod. Subfloor assessment included. Free estimates. Call 508-982-9675.",
     h1: "Flooring installation and refinishing in Massachusetts.",
@@ -146,7 +146,7 @@ const SEO_BY_SLUG: Record<string, SeoEntry> = {
   "ceramic-tile": {
     title: "Ceramic Tile Installation in Massachusetts | Tony's Painting",
     description:
-      "Bathroom and kitchen tile installation for homes in Martha's Vineyard, Cape Cod and the South Shore. Level lines, sealed grout. Free estimates. Call 508-982-9675.",
+      "Bathroom and kitchen tile installation on Martha's Vineyard and Cape Cod. Level lines and sealed grout. Free estimates. Call 508-982-9675.",
     h1: "Ceramic tile installation in Massachusetts.",
     h2: "How we set tile on every project.",
     keywords:
@@ -158,7 +158,7 @@ const SEO_BY_SLUG: Record<string, SeoEntry> = {
     ],
   },
   plastering: {
-    title: "Plastering and Skim Coating in Massachusetts | Tony's Painting",
+    title: "Plastering and Skim Coating in MA | Tony's Painting",
     description:
       "Plaster repair, skim coating and drywall patching on Martha's Vineyard and Cape Cod. A smooth finish ready for paint. Free estimates. Call 508-982-9675.",
     h1: "Plastering and wall repair in Massachusetts.",
@@ -172,9 +172,9 @@ const SEO_BY_SLUG: Record<string, SeoEntry> = {
     ],
   },
   carpentry: {
-    title: "General Carpentry Services in Massachusetts | Tony's Painting",
+    title: "General Carpentry in Massachusetts | Tony's Painting",
     description:
-      "Trim, moldings, built-ins and wood repairs for homes in Martha's Vineyard, Cape Cod and the South Shore. Proper cuts and fastening. Free estimates. Call 508-982-9675.",
+      "Trim, moldings, built-ins and wood repairs on Martha's Vineyard and Cape Cod. Proper cuts and fastening. Free estimates. Call 508-982-9675.",
     h1: "General carpentry for Massachusetts homeowners.",
     h2: "What we build and repair.",
     keywords:
@@ -186,9 +186,9 @@ const SEO_BY_SLUG: Record<string, SeoEntry> = {
     ],
   },
   fence: {
-    title: "Fence Installation and Repair in Massachusetts | Tony's Painting",
+    title: "Fence Installation and Repair in MA | Tony's Painting",
     description:
-      "Wood and vinyl fence installation and repair for homes in Martha's Vineyard, Cape Cod and the South Shore. Properly set posts, level finish. Free estimates. Call 508-982-9675.",
+      "Wood and vinyl fence installation and repair on Martha's Vineyard and Cape Cod. Properly set posts. Free estimates. Call 508-982-9675.",
     h1: "Fence installation and repair in Massachusetts.",
     h2: "How we build and repair fences.",
     keywords:
@@ -214,9 +214,9 @@ const SEO_BY_SLUG: Record<string, SeoEntry> = {
     ],
   },
   "construction-cleaning": {
-    title: "Post Construction Cleaning in Massachusetts | Tony's Painting",
+    title: "Post Construction Cleaning in MA | Tony's Painting",
     description:
-      "Post construction cleaning for residential spaces in Martha's Vineyard, Cape Cod and the South Shore. We get the space ready to use. Free estimates. Call 508-982-9675.",
+      "Post construction cleaning for homes on Martha's Vineyard and Cape Cod. We leave the space ready to use. Free estimates. Call 508-982-9675.",
     h1: "Post construction cleaning in Massachusetts.",
     h2: "What a post construction clean covers.",
     keywords:

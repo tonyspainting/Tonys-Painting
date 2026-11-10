@@ -49,6 +49,8 @@ export interface PortfolioCollection {
   categoryLabel: string;
   location: string;
   description?: string;
+  /** Meta description própria, quando o texto visível passa de 160 caracteres. */
+  metaDescription?: string;
   cover: string;
   images: PortfolioImage[];
   featured?: boolean;
@@ -145,6 +147,8 @@ export const COLLECTIONS: PortfolioCollection[] = [
     location: "Martha's Vineyard, MA",
     description:
       "Full interior repaint of a residence with vaulted wood ceilings, bay windows and a primary suite. Walls, trim and doors refreshed with a clean, bright finish that lets the natural wood stand out.",
+    metaDescription:
+      "Interior repaint of a Martha's Vineyard home with vaulted wood ceilings, bay windows and a primary suite. Walls, trim and doors refreshed.",
     cover: ri01.url,
     images: RESIDENTIAL_INTERIOR_IMAGES,
     featured: true,
@@ -253,6 +257,10 @@ export const COLLECTIONS: PortfolioCollection[] = [
     category: "Exterior",
     categoryLabel: "Decks",
     location: "Massachusetts",
+    description:
+      "A weathered gray deck brought back without rebuilding: deep cleaning, sanding, board and railing repair, then a rich brown stain that protects the wood and matches the view out to the water.",
+    metaDescription:
+      "Deck restoration in Massachusetts: deep cleaning, sanding, board repair and a protective stain. Done without rebuilding. Free estimates. Call 508-982-9675.",
     cover: dr2904.url,
     images: DECK_RESTORATION_IMAGES,
     details: {

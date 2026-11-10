@@ -16,6 +16,8 @@ const perPage = [
   /<title>[\s\S]*?<\/title>/i,
   /<meta\s+name="description"[^>]*>/i,
   /<link\s+rel="canonical"[^>]*>/i,
+  /<meta\s+name="robots"[^>]*>/gi,
+  /<meta\s+name="googlebot"[^>]*>/gi,
   /<meta\s+property="og:(title|description|url|type)"[^>]*>/gi,
   /<meta\s+name="twitter:(card|title|description|image)"[^>]*>/gi,
   /<meta\s+property="og:image"[^>]*>/gi,

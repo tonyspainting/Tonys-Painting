@@ -28,10 +28,11 @@ const LPInteriorPainting = () => {
   return (
     <>
       <SEO
-        title="Interior Painting Services in Martha's Vineyard and New England | Tony's Painting"
-        description="Licensed interior painters serving Martha's Vineyard, Edgartown, Falmouth, Hyannis and New England since 2004. Free estimate in 24 hours. Request a quote today."
+        title="Interior Painting in Martha's Vineyard | Tony's Painting"
+        description="Licensed interior painters serving Martha's Vineyard, Edgartown, Falmouth, Hyannis and New England since 2004. Free estimate in 24 hours."
         canonical="/lp/interior-painting"
         keywords="interior painting Martha's Vineyard, interior painters New England, interior house painting Edgartown, painting contractor Falmouth MA, interior painting Hyannis"
+        noindex
       />
       <InteriorPaintingTemplate
         tag="INTERIOR PAINTING IN NEW ENGLAND"

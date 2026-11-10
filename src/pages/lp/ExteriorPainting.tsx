@@ -4,10 +4,11 @@ import LandingTemplate from "@/components/lp/LandingTemplate";
 const LPExteriorPainting = () => (
   <>
     <SEO
-      title="Exterior Painting in New England"
+      title="Exterior Painting in New England | Tony's Painting"
       description="Exterior painting built for New England weather. Serving New England since 2004. Benjamin Moore certified. Free estimate."
       canonical="/lp/exterior-painting"
       keywords="exterior painting New England, exterior painters New England, exterior house painting MA"
+      noindex
     />
     <LandingTemplate
     tag="EXTERIOR PAINTING"
