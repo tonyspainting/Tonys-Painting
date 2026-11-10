@@ -572,63 +572,63 @@ const ServiceDetail = () => {
         </div>
       </section>
 
-      <section className="bg-stone">
-        <div className="container py-16 md:py-24">
-          <div className="flex items-end justify-between mb-10">
-            <div>
-              <p className="text-xs uppercase tracking-[0.25em] text-primary mb-3">Recent Work</p>
-              <h2 className="font-display text-3xl md:text-4xl text-foreground">Selected projects.</h2>
-            </div>
-          </div>
-          {(() => {
-            const gallery: Record<string, string[]> = {
-              "interior-painting": ["/images/interior-04.jpg", "/images/interior-03.jpg", "/images/interior-05.jpg", "/images/interior-01.jpg", "/images/interior-02.jpg", "/images/project-05.jpg"],
-              "exterior-painting": ["/images/project-02.jpg", "/images/project-12.jpg", "/images/project-14.jpg", "/images/project-13.jpg", "/images/project-03.jpg", "/images/project-01.jpg"],
-              "remodeling": ["/images/remodeling-02.jpg", "/images/flooring-01.jpg", "/images/project-04.jpg", "/images/project-16.jpg", "/images/project-15.jpg"],
-              "flooring": ["/images/flooring-01.jpg", "/images/flooring-03.jpg", "/images/flooring-02.jpg"],
-              "countertop": ["/images/interior-02.jpg", "/images/interior-01.jpg", "/images/interior-04.jpg", "/images/project-16.jpg"],
-              "deck-stairs": [deck01.url, deck02.url, deck03.url, deck04.url, deck05.url, deck06.url, deck07.url, deck08.url]
-            };
-            const images = content?.gallery ?? (service.slug ? (gallery[service.slug] || []) : []);
-            return (
-              <>
-                {/* Mobile: one-photo slide carousel */}
-                <div className="flex md:hidden overflow-x-auto snap-x snap-mandatory gap-4 -mx-6 px-6 pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-                  {images.map((src, i) => (
-                    <div
-                      key={i}
-                      className="aspect-[4/5] w-[82%] sm:w-[70%] shrink-0 snap-center bg-background overflow-hidden rounded-sm"
-                    >
-                      <img {...responsiveSource(src)} sizes="(max-width: 767px) 50vw, 33vw" alt={`Tony's ${service.name} project detail`} className="w-full h-full object-cover" loading="lazy" decoding="async" width={800} height={1000} style={{ objectPosition: "center" }} />
-                    </div>
-                  ))}
+      {(() => {
+        const gallery: Record<string, string[]> = {
+          "interior-painting": ["/images/interior-04.jpg", "/images/interior-03.jpg", "/images/interior-05.jpg", "/images/interior-01.jpg", "/images/interior-02.jpg", "/images/project-05.jpg"],
+          "exterior-painting": ["/images/project-02.jpg", "/images/project-12.jpg", "/images/project-14.jpg", "/images/project-13.jpg", "/images/project-03.jpg", "/images/project-01.jpg"],
+          "remodeling": ["/images/remodeling-02.jpg", "/images/flooring-01.jpg", "/images/project-04.jpg", "/images/project-16.jpg", "/images/project-15.jpg"],
+          "flooring": ["/images/flooring-01.jpg", "/images/flooring-03.jpg", "/images/flooring-02.jpg"],
+          "countertop": ["/images/interior-02.jpg", "/images/interior-01.jpg", "/images/interior-04.jpg", "/images/project-16.jpg"],
+          "deck-stairs": [deck01.url, deck02.url, deck03.url, deck04.url, deck05.url, deck06.url, deck07.url, deck08.url],
+        };
+        const images = content?.gallery ?? (service.slug ? (gallery[service.slug] || []) : []);
+        // Serviço sem fotos próprias não mostra a seção vazia.
+        if (images.length === 0) return null;
+        return (
+          <section className="bg-stone">
+            <div className="container py-16 md:py-24">
+              <div className="flex items-end justify-between mb-10">
+                <div>
+                  <p className="text-xs uppercase tracking-[0.25em] text-primary mb-3">Recent Work</p>
+                  <h2 className="font-display text-3xl md:text-4xl text-foreground">Selected projects.</h2>
                 </div>
-                {/* Desktop: 3-column grid */}
-                <div className="hidden md:grid md:grid-cols-3 gap-4 md:gap-6">
-                  {images.map((src, i) => (
-                    <div
-                      key={i}
-                      className="aspect-[4/5] bg-background overflow-hidden"
-                    >
-                      <img {...responsiveSource(src)} sizes="(max-width: 767px) 50vw, 33vw" alt={`Tony's ${service.name} project detail`} className="w-full h-full object-cover" loading="lazy" decoding="async" width={800} height={1000} style={{ objectPosition: "center" }} />
-                    </div>
-                  ))}
+              </div>
+              {/* Mobile: one-photo slide carousel */}
+              <div className="flex md:hidden overflow-x-auto snap-x snap-mandatory gap-4 -mx-6 px-6 pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+                {images.map((src, i) => (
+                  <div
+                    key={i}
+                    className="aspect-[4/5] w-[82%] sm:w-[70%] shrink-0 snap-center bg-background overflow-hidden rounded-sm"
+                  >
+                    <img {...responsiveSource(src)} sizes="(max-width: 767px) 50vw, 33vw" alt={`Tony's ${service.name} project detail`} className="w-full h-full object-cover" loading="lazy" decoding="async" width={800} height={1000} style={{ objectPosition: "center" }} />
+                  </div>
+                ))}
+              </div>
+              {/* Desktop: 3-column grid */}
+              <div className="hidden md:grid md:grid-cols-3 gap-4 md:gap-6">
+                {images.map((src, i) => (
+                  <div
+                    key={i}
+                    className="aspect-[4/5] bg-background overflow-hidden"
+                  >
+                    <img {...responsiveSource(src)} sizes="(max-width: 767px) 50vw, 33vw" alt={`Tony's ${service.name} project detail`} className="w-full h-full object-cover" loading="lazy" decoding="async" width={800} height={1000} style={{ objectPosition: "center" }} />
+                  </div>
+                ))}
+              </div>
+              {service.slug === "deck-stairs" && (
+                <div className="mt-8">
+                  <Link
+                    to="/portfolio/deck-restoration"
+                    className="text-sm font-medium text-primary underline underline-offset-4 hover:text-primary-dark transition-colors"
+                  >
+                    View the full Deck Restoration project
+                  </Link>
                 </div>
-              </>
-            );
-          })()}
-          {service.slug === "deck-stairs" && (
-            <div className="mt-8">
-              <Link
-                to="/portfolio/deck-restoration"
-                className="text-sm font-medium text-primary underline underline-offset-4 hover:text-primary-dark transition-colors"
-              >
-                View the full Deck Restoration project
-              </Link>
+              )}
             </div>
-          )}
-        </div>
-      </section>
+          </section>
+        );
+      })()}
 
       {service.slug === "deck-stairs" && (
         <section className="bg-background">
