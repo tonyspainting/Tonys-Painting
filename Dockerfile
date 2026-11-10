@@ -1,7 +1,8 @@
 # syntax=docker/dockerfile:1
 
 # ---------- build ----------
-FROM node:20-alpine AS build
+# Node 22+: o @supabase/supabase-js exige >=22 e a prerenderizacao instancia o client no SSR.
+FROM node:22-alpine AS build
 WORKDIR /app
 
 # O Vite embute estas variaveis no bundle durante o build.
