@@ -393,6 +393,18 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
           "The estimate separates labor, materials and allowances. Allowances cover items you have not chosen yet, such as tile or fixtures, and they are adjusted with your approval when you pick. A contingency line covers what is found behind the wall. You see the full number before work starts, and any change is priced and approved in writing before it is built.",
         ],
       },
+      {
+        heading: "What can go wrong in a remodel",
+        paragraphs: [
+          "Most remodel problems come from what is behind the wall, from decisions made late, or from trades that do not talk to each other. We open carefully, price changes before building them, and keep the sequence inside one team so a decision on tile does not stall the plumber. The goal is to surface surprises early, while they are still a conversation rather than a delay.",
+        ],
+      },
+      {
+        heading: "What happens after the final walkthrough",
+        paragraphs: [
+          "We close the punch list, clean the space and hand over what you need: permits closed, product information and care instructions. If something settles or needs adjustment in the first months, you call the same contact. A remodel is a relationship that continues after the last coat of paint.",
+        ],
+      },
     ],
     faqs: [
       {
@@ -439,6 +451,16 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
         question: "Do you provide a written estimate for remodeling?",
         answer:
           "Yes. We visit, measure and put the scope, materials and price in writing at no cost. Nothing starts until you approve it in writing.",
+      },
+      {
+        question: "Do you provide written change orders?",
+        answer:
+          "Yes. Any change in scope is priced and approved in writing before it is built, so the budget stays predictable.",
+      },
+      {
+        question: "Can you phase a remodel so we can stay in part of the house?",
+        answer:
+          "Yes. Kitchens and baths can often be phased, with a temporary setup in another room and a clear sequence for water and power shutoffs.",
       },
     ],
     relatedServices: ["flooring", "ceramic-tile", "carpentry"],
@@ -1042,6 +1064,18 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
           "Carpentry is not finished until it is ready for the painter. We set nails, fill the holes, sand the joints and caulk the seams that should be caulked, leaving the caulk lines that should not be visible clean. That preparation is what makes trim look crisp under a semi-gloss instead of wavy.",
         ],
       },
+      {
+        heading: "What can go wrong with trim and carpentry",
+        paragraphs: [
+          "Trim reveals how careful the installer was. Gaps at the ceiling filled with caulk instead of fitted, corners that do not meet, nails set too deep and splitting the wood, or a door that binds after a humid week. We cope inside corners, shim and fasten to the studs, and check every door and drawer through a full open and close before the work is called finished.",
+        ],
+      },
+      {
+        heading: "Caring for new trim and built-ins",
+        paragraphs: [
+          "Painted trim needs a light dusting and an occasional wipe with a damp cloth, never a soaking. Keep heavy objects from leaning on built-ins and keep the caulk line at the floor clean so it does not darken. If a door starts to stick seasonally, it is usually humidity rather than the hinge, and a small adjustment in the dry months prevents a bigger repair later.",
+        ],
+      },
     ],
     faqs: [
       {
@@ -1078,6 +1112,16 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
         question: "How long does trim work take?",
         answer:
           "A room of baseboard and casing is usually one to two days. A full house takes several days, plus paint. We give a schedule with the estimate.",
+      },
+      {
+        question: "Do you caulk the gap between trim and wall?",
+        answer:
+          "Yes, where a caulk line belongs, such as at the wall and the baseboard. We do not use caulk to hide a bad fit at a corner or a ceiling line; those get fitted properly instead.",
+      },
+      {
+        question: "Can you install trim on uneven walls?",
+        answer:
+          "Yes. We shim and scribe so the trim follows the wall without opening gaps, and we furr out where the wall is significantly out of plane.",
       },
     ],
     relatedServices: ["interior-painting", "remodeling", "plastering"],
@@ -1157,6 +1201,18 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
           "New pressure treated wood needs to dry before it will absorb a finish, usually several weeks. Cedar can be finished sooner. A penetrating stain on a new fence protects the wood without building a film, and a recoat every few years keeps it looking new rather than gray.",
         ],
       },
+      {
+        heading: "What can go wrong with a fence",
+        paragraphs: [
+          "Most fence failures are post failures. A post set too shallow heaves with frost and the whole run leans. A gate hung on a light post sags within a season. Boards nailed too tight split in the dry months and cup when it rains. We set posts to depth, brace them while they cure and leave the right gap between boards so the wood can move.",
+        ],
+      },
+      {
+        heading: "Keeping a fence straight and sound",
+        paragraphs: [
+          "Walk the line once a year, check the gates and look for posts that have started to lean. Re-stain or seal wood every few years before it grays, and keep soil and mulch from piling against the bottom of the boards where rot starts. A small repair now is cheaper than resetting a whole section later.",
+        ],
+      },
     ],
     faqs: [
       {
@@ -1193,6 +1249,16 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
         question: "Can you repair a fence instead of replacing it?",
         answer:
           "Yes. Post replacement, board repair, gate adjustment and re-staining are common repairs. If most posts are sound, repair is almost always the better value.",
+      },
+      {
+        question: "Do you stain both sides of the fence?",
+        answer:
+          "We stain the side you own unless the neighbor agrees to both sides and access allows. Staining both sides protects the boards better and slows cupping.",
+      },
+      {
+        question: "Can you tie into an existing fence line?",
+        answer:
+          "Yes, when the existing posts are sound and the height and style match. We check the line and the post spacing before agreeing to tie in.",
       },
     ],
     relatedServices: ["deck-stairs", "carpentry", "exterior-painting"],
@@ -1283,6 +1349,18 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
           "A countertop swap takes the kitchen out of service for at least a day, sometimes two when plumbing and a backsplash are involved. We tell you which days, keep the sink connected as late as possible and restore it as early as possible, and leave the room clean enough to use at the end of each day.",
         ],
       },
+      {
+        heading: "What can go wrong with a countertop install",
+        paragraphs: [
+          "A top that is not level rocks, and a rocking top cracks at a seam. A cutout measured from a nominal size rather than the actual sink leaves a visible gap. A seam placed in the wrong spot ruins the look of an expensive slab. We check the cabinets, template from the real appliances and plan the seams before fabrication, which is where these problems are prevented.",
+        ],
+      },
+      {
+        heading: "Caring for a new countertop",
+        paragraphs: [
+          "Wipe spills rather than letting them sit, especially on stone and butcher block. Use a cutting board and avoid setting hot pans directly on any surface. Stone needs resealing periodically, butcher block needs oil, and laminate and solid surface want a pH neutral cleaner. We leave the right product and the schedule for your material.",
+        ],
+      },
     ],
     faqs: [
       {
@@ -1329,6 +1407,16 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
         question: "How do you protect the new top during the rest of the remodel?",
         answer:
           "We cover it with a padded board while other trades are still working and ask that nothing heavy be set on the seams. The protection comes off at the final clean.",
+      },
+      {
+        question: "How long should I wait before using the counter?",
+        answer:
+          "Most tops can be used as soon as the adhesive or sealant cures, usually the same day. We tell you when the sink and dishwasher can be used again.",
+      },
+      {
+        question: "Can you move the sink or cooktop to a new spot?",
+        answer:
+          "Yes, but that is a plumbing and electrical change, not only a countertop one. We coordinate it with the other trades and reflect it in the schedule.",
       },
     ],
     relatedServices: ["remodeling", "carpentry", "ceramic-tile"],
@@ -1414,6 +1502,18 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
           "The last week of a project is when the dust is worst and the schedule is least predictable. We hold a cleaning slot that can move by a day without breaking, and we keep a second short visit available for the touch ups that always appear after the punch list. That way the clean happens once, at the right moment, instead of twice.",
         ],
       },
+      {
+        heading: "What happens if the clean comes too early",
+        paragraphs: [
+          "Dust does not stay where it lands. Cleaning before the last trades finish means the same surfaces are dirty again within a day, and the cost is paid twice. We would rather hold a slot and move it than arrive early. When the schedule is uncertain we plan the clean in two stages: a rough clean when the heavy work ends and a final detail clean after the punch list closes.",
+        ],
+      },
+      {
+        heading: "What to expect the week after",
+        paragraphs: [
+          "Fine dust can settle from ceilings and vents for a few days after any construction project. Running the HVAC with a clean filter and wiping horizontal surfaces once more usually settles it. If something looks missed, call within the week and we will return to correct it rather than have you live with it.",
+        ],
+      },
     ],
     faqs: [
       {
@@ -1460,6 +1560,16 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
         question: "What if dust settles again a few days later?",
         answer:
           "Some dust always settles after a clean as air moves through the house. We explain what to expect and can schedule a light re-clean once the final trades have left.",
+      },
+      {
+        question: "Do you clean porches and garages?",
+        answer:
+          "Yes, when they are part of the scope. Exterior concrete, porches and garages are quoted separately because the method is different from interior cleaning.",
+      },
+      {
+        question: "Do you provide a checklist of what was cleaned?",
+        answer:
+          "Yes. The walkthrough list becomes the checklist, and we note anything that needs a second visit.",
       },
     ],
     relatedServices: ["remodeling", "interior-painting", "flooring"],
