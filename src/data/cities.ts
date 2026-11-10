@@ -17,6 +17,8 @@ export interface CityRecord {
   priorityServices: string[];
   /** What homeowners here usually ask for, in local terms. */
   localNeeds?: string[];
+  /** O que muda no orçamento nesta cidade. */
+  budgetNotes?: string[];
   /** Local questions answered on the page and marked up as FAQPage. */
   faqs?: { question: string; answer: string }[];
 }
@@ -39,6 +41,11 @@ export const CITY_RECORDS: CityRecord[] = [
       "Edgartown work is seasonal. Most calls are for rentals and second homes that have to be ready before the summer calendar starts, and for year round owners who want the work done while the house is empty. That shapes the schedule: exterior work is front loaded in late spring, interior work fills the shoulder months.",
       "Historic homes near the harbor come with trim profiles, shutters and colors that have to be right. We match the existing color from a sample, repair rather than replace wood where it can be saved, and keep the details that give the house its value.",
     ],
+    budgetNotes: [
+      "Historic trim, shutters and porches add preparation and brush work. On a harbor house the millwork is a larger share of the scope than the siding, and that detail is where most of the labor goes.",
+      "Rental properties are usually painted in turnover windows, which can mean a tighter schedule and a premium for working around guests. Freight to the island adds to material cost, so we order once and confirm quantities.",
+      "Waterfront elevations near the harbor need more frequent attention, and the estimate separates those walls because they drive the maintenance cycle.",
+    ],
     faqs: [
       {
         question: "When should I book exterior painting in Edgartown?",
@@ -60,6 +67,21 @@ export const CITY_RECORDS: CityRecord[] = [
         answer:
           "Yes. Soft trim and sills are common near the water. We replace the damaged wood, prime it and finish it so the repair disappears into the trim.",
       },
+      {
+        question: "How far in advance should I schedule a summer repaint?",
+        answer:
+          "Book in late winter or early spring. Exterior work on the island fills quickly, and March or early April gives the widest choice of dates.",
+      },
+      {
+        question: "Do you handle ferry deliveries and materials?",
+        answer:
+          "Yes. We schedule deliveries around the boats and confirm quantities before ordering, so a missed crossing does not stop the crew.",
+      },
+      {
+        question: "Does a historic home cost more to paint?",
+        answer:
+          "Usually yes, because trim, shutters and porches take more preparation and brush work than siding. The estimate separates those items so you can see where the cost is.",
+      },
     ],
   },
   {
@@ -78,6 +100,10 @@ export const CITY_RECORDS: CityRecord[] = [
     localNeeds: [
       "Up island properties face open ocean wind and salt. Siding and trim on the exposed side fail faster here than anywhere else we work, so those walls are inspected first and coated with a product made for that exposure.",
       "Cedar and shingle exteriors need to breathe. A film forming paint traps moisture and peels from the bottom up, so we use breathable stains and clear finishes that let the wood dry from the inside out.",
+    ],
+    budgetNotes: [
+      "Ocean exposure drives the maintenance cycle. Walls facing Menemsha and the open water are recoated more often, and the estimate calls those elevations out separately.",
+      "Cedar and shingle exteriors need breathable products, which cost more than a standard acrylic and take more care to apply evenly. Access to remote properties and travel time are also part of the number.",
     ],
     faqs: [
       {
@@ -100,6 +126,21 @@ export const CITY_RECORDS: CityRecord[] = [
         answer:
           "Yes. Many clients are away for the season. We send photos at each stage and do the final walkthrough on video or in person when you return.",
       },
+      {
+        question: "How often does an exposed wall need recoating?",
+        answer:
+          "Every three to five years on the most exposed faces, longer on sheltered sides. Wind driven salt is what shortens the cycle.",
+      },
+      {
+        question: "Do you work on the island in winter?",
+        answer:
+          "Exterior work is limited by temperature and wind. Interiors run year round, and exterior projects are scheduled from late spring.",
+      },
+      {
+        question: "Can you work while the house is closed for the season?",
+        answer:
+          "Yes. Many Chilmark homes are seasonal. We coordinate access and send photos at each stage.",
+      },
     ],
   },
   {
@@ -118,6 +159,10 @@ export const CITY_RECORDS: CityRecord[] = [
     localNeeds: [
       "Tree cover and humidity change how paint cures. North facing walls stay damp longer, so we schedule those elevations for the sunniest part of the day and avoid coating late when dew will sit on the surface overnight.",
       "Farmhouses, converted barns and shingle homes are the norm. Many have long exterior runs and outbuildings, so the estimate covers each structure and the schedule groups them, keeping the crew from moving equipment every day.",
+    ],
+    budgetNotes: [
+      "Long exterior runs, outbuildings and shingle siding add surface area and time. A farmhouse with a barn and a shed is priced as three structures, not one.",
+      "Shade and humidity mean longer drying times, so preparation and coating take more calendar days even when the labor hours are similar. We schedule around dew rather than rushing a coat.",
     ],
     faqs: [
       {
@@ -140,6 +185,21 @@ export const CITY_RECORDS: CityRecord[] = [
         answer:
           "Most homes take five to ten working days, longer for large shingle properties or several buildings.",
       },
+      {
+        question: "Do you price barns and outbuildings separately?",
+        answer:
+          "Yes. Each structure is listed with its own surface area and condition, so the estimate shows where the work is.",
+      },
+      {
+        question: "How does shade affect the schedule?",
+        answer:
+          "North facing walls dry slower, so they are planned for the sunniest hours and never coated late in the day.",
+      },
+      {
+        question: "Can you match paint on an older farmhouse?",
+        answer:
+          "Yes. We match from a sample or a chip and test it on the house before ordering the full quantity.",
+      },
     ],
   },
   {
@@ -158,6 +218,10 @@ export const CITY_RECORDS: CityRecord[] = [
     localNeeds: [
       "Falmouth runs from Woods Hole to East Falmouth, and the exposure changes with it. Houses near the water deal with salt fog and wind, while inland village homes deal with shade and slower drying. We look at the actual location before specifying the coating.",
       "A large share of the work is on year round homes with Victorian and village detailing, plus summer properties that need to be ready by Memorial Day. Trim and porches take the most time because that is where the detail is.",
+    ],
+    budgetNotes: [
+      "Exposure changes block by block. A house near Woods Hole or the Heights needs a shorter cycle than one inland off Hatchville, and trim near the water drives the cost.",
+      "Victorian and village detailing means more brush work on porches and trim. Summer deadlines add a scheduling premium, so booking early is both easier and cheaper.",
     ],
     faqs: [
       {
@@ -180,6 +244,21 @@ export const CITY_RECORDS: CityRecord[] = [
         answer:
           "If the booking is early enough. Exterior work fills quickly in spring, so the earlier the walkthrough, the better the choice of dates.",
       },
+      {
+        question: "Does a water view change the maintenance cycle?",
+        answer:
+          "Yes. Salt fog and wind shorten the life of trim near the water, often to four or five years.",
+      },
+      {
+        question: "Do you charge more for summer deadlines?",
+        answer:
+          "We do not add a deadline fee, but a late booking limits the dates available. Early spring is the best window.",
+      },
+      {
+        question: "Do you paint porches and columns?",
+        answer:
+          "Yes. Porches, columns and railings are common in Falmouth and are brushed and finished carefully.",
+      },
     ],
   },
   {
@@ -198,6 +277,10 @@ export const CITY_RECORDS: CityRecord[] = [
     localNeeds: [
       "Bourne sits on both sides of the canal, and wind drives rain against the siding on either side. Fasteners, caulk lines and sill trim fail first, so those get checked before any paint goes on.",
       "Most of the housing is year round, with older canal side properties that need carpentry before paint. We price the repairs and the painting together so the sequence is right.",
+    ],
+    budgetNotes: [
+      "Wind off the canal drives rain into joints, so caulk and fasteners need more attention, and that preparation is a larger line in the estimate.",
+      "Older canal side homes often need carpentry before paint. We price the repairs separately so you can see what is structural and what is finish.",
     ],
     faqs: [
       {
@@ -220,6 +303,21 @@ export const CITY_RECORDS: CityRecord[] = [
         answer:
           "Five to ten working days for most homes, longer when carpentry is part of the scope.",
       },
+      {
+        question: "Does canal exposure cost more to paint?",
+        answer:
+          "The labor is similar; the preparation and the frequency are higher. We call out the exposed walls in the scope.",
+      },
+      {
+        question: "Can you repair siding and paint in one project?",
+        answer:
+          "Yes. Carpentry is priced separately, then scheduled with the paint so the sequence is right.",
+      },
+      {
+        question: "When is the best season in Bourne?",
+        answer:
+          "Late spring through early fall, with trim touch ups any time the temperature holds above fifty.",
+      },
     ],
   },
   {
@@ -238,6 +336,10 @@ export const CITY_RECORDS: CityRecord[] = [
     localNeeds: [
       "Pocasset is a village on Buzzards Bay, and waterfront homes take reflected sun and salt spray. Decks, railings and south facing siding wear first and are scheduled before the rest of the house.",
       "Many properties are cottages and raised homes with cedar decks, so deck maintenance and exterior painting often go together. Doing both in one visit keeps the finish consistent and saves a setup.",
+    ],
+    budgetNotes: [
+      "Waterfront decks take reflected sun and salt, so deck work is usually on a two to three year cycle, shorter than inland decks.",
+      "Small lots and raised homes add access time. Tight properties need staging and protection planned before the crew arrives, and that is part of the estimate.",
     ],
     faqs: [
       {
@@ -260,6 +362,21 @@ export const CITY_RECORDS: CityRecord[] = [
         answer:
           "When the scope allows, yes. It saves setup time and keeps the finish consistent across the house and the deck.",
       },
+      {
+        question: "Do you bundle deck and house painting?",
+        answer:
+          "Yes, when the scope allows. It saves setup time and keeps the finish consistent.",
+      },
+      {
+        question: "How often does a waterfront deck need sealing?",
+        answer:
+          "Every two to three years, with south facing boards needing attention first.",
+      },
+      {
+        question: "Can you work on a tight lot?",
+        answer:
+          "Yes. We plan staging, parking and protection for neighbors before starting.",
+      },
     ],
   },
   {
@@ -278,6 +395,10 @@ export const CITY_RECORDS: CityRecord[] = [
     localNeeds: [
       "Sandwich is the oldest town on the Cape, and the historic village has original trim and shutters that need care. Old layers of paint can hide checked wood and loose caulk, so preparation takes longer here than on a newer house.",
       "Route 6A runs through the historic district, where exterior colors and details are part of the character. We match what is there and repair rather than replace wherever the wood can be saved.",
+    ],
+    budgetNotes: [
+      "Historic district homes need color review and care with original trim, which adds time before the first coat.",
+      "Old layers of paint hide checked wood and loose caulk. Preparation is the largest variable here, and the estimate lists what we expect to find and how we will handle it.",
     ],
     faqs: [
       {
@@ -300,6 +421,21 @@ export const CITY_RECORDS: CityRecord[] = [
         answer:
           "Longer than new construction, often two to three weeks, because preparation and detail work take time.",
       },
+      {
+        question: "Do I need approval for exterior colors in the historic district?",
+        answer:
+          "Some properties do. We tell you at the estimate stage what the town requires and plan the review into the schedule.",
+      },
+      {
+        question: "Why is preparation higher on older homes?",
+        answer:
+          "Multiple paint layers, checked wood and loose caulk all take time to correct before a coating will hold.",
+      },
+      {
+        question: "Can you match original trim profiles?",
+        answer:
+          "Yes. We source or mill a match and blend new work with the existing trim.",
+      },
     ],
   },
   {
@@ -318,6 +454,10 @@ export const CITY_RECORDS: CityRecord[] = [
     localNeeds: [
       "Hyannis is a mix of homes, condos, rentals and commercial fronts, often on tight turnover schedules. Coatings need to be durable and washable because these surfaces are cleaned and used more than a typical house.",
       "Rental properties are usually painted between tenants, which means working in short windows and finishing a unit completely before the next arrival.",
+    ],
+    budgetNotes: [
+      "Rentals and commercial spaces need durable, washable coatings and fast turnarounds, which changes both the product specification and the scheduling.",
+      "Work in occupied buildings happens after hours or between tenants, and that premium is part of the number.",
     ],
     faqs: [
       {
@@ -340,6 +480,21 @@ export const CITY_RECORDS: CityRecord[] = [
         answer:
           "Yes, across Barnstable including Hyannisport and the West Yarmouth line.",
       },
+      {
+        question: "Do you paint commercial spaces after hours?",
+        answer:
+          "Yes. Storefronts and offices can be scheduled outside business hours to keep them open.",
+      },
+      {
+        question: "What coating works best for rentals?",
+        answer:
+          "A washable matte on walls, satin enamel on trim, and a scrubbable product in hallways and bathrooms.",
+      },
+      {
+        question: "Can you finish a unit between tenants?",
+        answer:
+          "Yes. We plan around the turnover date and finish before the next arrival.",
+      },
     ],
   },
   {
@@ -358,6 +513,10 @@ export const CITY_RECORDS: CityRecord[] = [
     localNeeds: [
       "Inland weather brings frost heave, snow load and strong late day sun. Wood expands and contracts more than on the coast, so caulk lines and trim joints need closer attention.",
       "Most work is on colonials, splits and newer construction, plus interior updates and kitchen or bathroom remodels. Interior work often runs through the winter, when exterior painting is limited by temperature.",
+    ],
+    budgetNotes: [
+      "Inland freeze and thaw moves wood more, so caulk and trim joints need more attention. Repainting cycles are longer than on the coast, but preparation is not lighter.",
+      "Larger colonials and splits have more wall area, and interior work in winter is scheduled around heat and ventilation.",
     ],
     faqs: [
       {
@@ -379,6 +538,21 @@ export const CITY_RECORDS: CityRecord[] = [
         question: "Do you cover the Route 24 and Route 106 areas?",
         answer:
           "Yes, across West Bridgewater including the Route 24 and Route 106 corridors.",
+      },
+      {
+        question: "How often should an inland house be repainted?",
+        answer:
+          "Every eight to ten years with good preparation, with trim touched up in between.",
+      },
+      {
+        question: "Do you work in winter?",
+        answer:
+          "Interior work yes. Exterior work depends on temperature and dry conditions.",
+      },
+      {
+        question: "Does a larger house cost more per square foot?",
+        answer:
+          "Usually less per square foot, because setup and travel are spread over more area, but the total is higher.",
       },
     ],
   },

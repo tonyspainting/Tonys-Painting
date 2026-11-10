@@ -259,8 +259,27 @@ const CityPainting = ({
         </section>
       )}
 
-      {record?.faqs && record.faqs.length > 0 && (
+      {record?.budgetNotes && record.budgetNotes.length > 0 && (
         <section style={{ backgroundColor: "#FFFFFF", padding: "clamp(48px,6vw,80px) 24px" }}>
+          <div style={{ maxWidth: "900px", margin: "0 auto" }}>
+            <FadeUpSection>
+              <h2 style={{ fontFamily: "'Playfair Display', serif", fontWeight: 900, fontSize: "clamp(28px,3vw,40px)", color: "#1A1A1A", letterSpacing: "-0.02em", marginBottom: "20px" }}>
+                What changes the budget in {city}.
+              </h2>
+              <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+                {record.budgetNotes.map((paragraph) => (
+                  <p key={paragraph} style={{ color: "#6B6560", fontSize: "15px", lineHeight: 1.75 }}>
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
+            </FadeUpSection>
+          </div>
+        </section>
+      )}
+
+      {record?.faqs && record.faqs.length > 0 && (
+        <section style={{ backgroundColor: "#F5F1EB", padding: "clamp(48px,6vw,80px) 24px" }}>
           <div style={{ maxWidth: "800px", margin: "0 auto" }}>
             <FadeUpSection>
               <h2 style={{ fontFamily: "'Playfair Display', serif", fontWeight: 900, fontSize: "clamp(28px,3vw,40px)", color: "#1A1A1A", letterSpacing: "-0.02em", marginBottom: "28px" }}>
