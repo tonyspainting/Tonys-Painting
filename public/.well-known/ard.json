@@ -1,0 +1,70 @@
+{
+  "@context": "https://agenticresourcediscovery.org/context/v1",
+  "entries": [
+    {
+      "@context": "https://agenticresourcediscovery.org/context/v1",
+      "identifier": "urn:air:tonyspaintingmv.com:site:tonys-painting",
+      "displayName": "Tony's Painting & Remodeling",
+      "type": "text/html",
+      "url": "https://tonyspaintingmv.com/",
+      "description": "Licensed and insured painting and remodeling contractor serving Martha's Vineyard, Cape Cod and the South Shore of Massachusetts since 2004. Interior and exterior painting, remodeling, flooring, tile, plastering, carpentry, decks, fences, countertops and post construction cleaning. Free written estimates.",
+      "tags": [
+        "painting",
+        "remodeling",
+        "martha's vineyard",
+        "cape cod",
+        "massachusetts",
+        "local business"
+      ],
+      "representativeQueries": [
+        "house painter in Edgartown Massachusetts",
+        "how much does exterior painting cost on Cape Cod",
+        "remodeling contractor on Martha's Vineyard",
+        "interior painting quote near Falmouth MA",
+        "deck staining contractor in Pocasset"
+      ]
+    },
+    {
+      "@context": "https://agenticresourcediscovery.org/context/v1",
+      "identifier": "urn:air:tonyspaintingmv.com:document:llms-txt",
+      "displayName": "Tony's Painting & Remodeling llms.txt",
+      "type": "text/plain",
+      "url": "https://tonyspaintingmv.com/llms.txt",
+      "description": "Machine-readable summary of the company: services, service areas, portfolio collections, contact details and the facts an AI assistant needs to answer questions accurately.",
+      "tags": ["llms.txt", "company profile", "services", "service areas"],
+      "representativeQueries": [
+        "what services does Tony's Painting and Remodeling offer",
+        "which towns does Tony's Painting serve in Massachusetts",
+        "Tony's Painting phone number and address",
+        "does Tony's Painting publish prices"
+      ]
+    },
+    {
+      "@context": "https://agenticresourcediscovery.org/context/v1",
+      "identifier": "urn:air:tonyspaintingmv.com:document:sitemap",
+      "displayName": "Tony's Painting & Remodeling sitemap",
+      "type": "application/xml",
+      "url": "https://tonyspaintingmv.com/sitemap.xml",
+      "description": "Complete list of indexable pages: services, service areas, portfolio collections and company pages.",
+      "tags": ["sitemap", "pages", "index"],
+      "representativeQueries": [
+        "list of service pages for Tony's Painting",
+        "which Massachusetts towns have a dedicated page"
+      ]
+    },
+    {
+      "@context": "https://agenticresourcediscovery.org/context/v1",
+      "identifier": "urn:air:tonyspaintingmv.com:document:estimate-form",
+      "displayName": "Request a free estimate",
+      "type": "text/html",
+      "url": "https://tonyspaintingmv.com/contact",
+      "description": "Free estimate request form and direct contact details, including phone and email. Every project is quoted after a walkthrough.",
+      "tags": ["estimate", "quote", "contact", "lead"],
+      "representativeQueries": [
+        "request a painting estimate in Martha's Vineyard",
+        "how do I contact Tony's Painting",
+        "schedule a painting walkthrough on Cape Cod"
+      ]
+    }
+  ]
+}
