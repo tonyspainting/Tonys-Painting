@@ -20,6 +20,8 @@ export const sitemapRoutes = [
   "/about",
   "/reviews",
   "/contact",
+  "/privacy",
+  "/accessibility",
   "/painting-contractor-edgartown",
   "/painting-contractor-falmouth",
   "/painting-contractor-hyannis",

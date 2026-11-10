@@ -310,8 +310,19 @@ const Footer = () => {
       </div>
 
       <div className="border-t border-white/5">
-        <div className="container py-6 flex flex-col md:flex-row justify-between items-center gap-2 text-xs text-background/50">
+        <div className="container py-6 flex flex-col md:flex-row justify-between items-center gap-3 text-xs text-background/50">
           <div>© {new Date().getFullYear()} Tony&apos;s Painting and Remodeling. All rights reserved.</div>
+          <nav aria-label="Legal" className="flex items-center gap-3">
+            <a href="/privacy" className="hover:text-primary transition-colors">
+              Privacy Policy
+            </a>
+            <span aria-hidden className="text-white/15">
+              ·
+            </span>
+            <a href="/accessibility" className="hover:text-primary transition-colors">
+              Accessibility Statement
+            </a>
+          </nav>
           <div>Built with care in New England.</div>
         </div>
       </div>
