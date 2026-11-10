@@ -32,8 +32,13 @@ export const sitemapRoutes = [
 ];
 
 
-// Área privada: recebe uma página vazia (sem conteúdo da home) e noindex.
-export const privateRoutes = ["/dashboard", "/login"];
+// Área privada e páginas de conversão: recebem HTML vazio (o React monta no navegador),
+// com título próprio e noindex. Sem isso o host devolve a home pré-renderizada nessas rotas.
+export const privateRoutes = [
+  { url: "/dashboard", title: "Tony's Dashboard", robots: "noindex, nofollow" },
+  { url: "/login", title: "Tony's Dashboard", robots: "noindex, nofollow" },
+  { url: "/thank-you", title: "Request received | Tony's Painting", robots: "noindex, follow" },
+];
 
 export const routes = [...sitemapRoutes, "/lp/interior-painting", "/lp/exterior-painting", "/lp/remodeling"];
 

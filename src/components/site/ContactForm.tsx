@@ -1,4 +1,4 @@
-import { useState, FormEvent } from "react";
+import { useEffect, useState, FormEvent } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -62,21 +62,30 @@ const ContactForm = ({ compact = false }: ContactFormProps) => {
   const { toast } = useToast();
   const navigate = useNavigate();
 
-  const searchParams = new URLSearchParams(typeof window !== "undefined" ? window.location.search : "");
-  const utmSource = searchParams.get("utm_source");
-  const utmMedium = searchParams.get("utm_medium");
+  const [utmSource, setUtmSource] = useState("");
+  const [utmMedium, setUtmMedium] = useState("");
 
-  const getAutoSource = () => {
-    if (utmSource === "google" && utmMedium === "cpc") return "Google Ads";
-    if (utmSource === "facebook" || utmSource === "instagram") return "Facebook or Instagram Ad";
-    if (utmSource) return utmSource;
-    return "";
-  };
-
-  const [formData, setFormData] = useState<FormState>({ ...emptyForm, referralSource: getAutoSource() });
+  const [formData, setFormData] = useState<FormState>({ ...emptyForm });
   const [errors, setErrors] = useState<Errors>({});
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+
+  // Origem do anúncio: só depois da montagem, para o HTML hidratado bater com o pré-renderizado.
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const source = params.get("utm_source") ?? "";
+    const medium = params.get("utm_medium") ?? "";
+    setUtmSource(source);
+    setUtmMedium(medium);
+    const auto = source === "google" && medium === "cpc"
+      ? "Google Ads"
+      : source === "facebook" || source === "instagram"
+        ? "Facebook or Instagram Ad"
+        : source;
+    if (auto) {
+      setFormData((prev) => (prev.referralSource ? prev : { ...prev, referralSource: auto }));
+    }
+  }, []);
 
   const setField = <K extends keyof FormState>(key: K, value: FormState[K]) => {
     setFormData((prev) => ({ ...prev, [key]: value }));
@@ -99,8 +108,6 @@ const ContactForm = ({ compact = false }: ContactFormProps) => {
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    console.log('Supabase URL:', import.meta.env.VITE_SUPABASE_URL ? 'present' : 'MISSING');
-    console.log('Supabase Key:', import.meta.env.VITE_SUPABASE_ANON_KEY ? 'present' : 'MISSING');
     const v = validate();
     setErrors(v);
     if (Object.keys(v).length > 0) return;

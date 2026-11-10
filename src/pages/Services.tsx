@@ -80,7 +80,7 @@ const Services = () => {
     <PageLayout>
       <SEO
         title="Painting & Remodeling Services in Massachusetts | Tony's"
-        description="Interior painting, exterior painting, cabinet refinishing, remodeling, flooring, tile, carpentry and more. Serving Martha's Vineyard, Cape Cod and the South Shore. Free estimates."
+        description="Interior and exterior painting, remodeling, flooring, tile, carpentry and more. Serving Martha's Vineyard, Cape Cod and the South Shore. Free estimates."
         canonical="/services"
         keywords="interior painting Massachusetts, exterior painting Massachusetts, home remodeling MA, cabinet painting MA, flooring contractor MA, tile contractor MA, deck staining MA"
         schema={{

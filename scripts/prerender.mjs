@@ -37,16 +37,20 @@ for (const url of routes) {
   console.log("pré-renderizado:", url);
 }
 
-// Rotas privadas: HTML sem conteúdo, com título próprio e noindex.
-for (const url of privateRoutes) {
+// Rotas privadas e de conversão: HTML sem conteúdo, com título próprio e noindex.
+// Sem isso o host cai no index.html da home e devolve a home no lugar da página.
+for (const route of privateRoutes) {
+  const url = typeof route === "string" ? route : route.url;
+  const title = typeof route === "string" ? "Tony's Dashboard" : route.title;
+  const robots = typeof route === "string" ? "noindex, nofollow" : route.robots;
   let page = template;
   for (const re of perPage) page = page.replace(re, "");
-  page = page.replace("</head>", `    <title>Tony's Dashboard</title>\n    <meta name="robots" content="noindex, nofollow" />\n  </head>`);
+  page = page.replace("</head>", `    <title>${title}</title>\n    <meta name="robots" content="${robots}" />\n  </head>`);
   page = page.replace(/<meta\s+name="robots" content="index[^>]*>/i, "");
   const out = path.join(dist, url, "index.html");
   fs.mkdirSync(path.dirname(out), { recursive: true });
   fs.writeFileSync(out, page.replace(/\n\s*\n/g, "\n"));
-  console.log("página privada (vazia):", url);
+  console.log("página vazia (noindex):", url);
 }
 
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>

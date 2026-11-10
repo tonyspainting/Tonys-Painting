@@ -57,7 +57,7 @@ const Reviews = () => {
     <PageLayout>
       <SEO
         title="5-Star Reviews | Tony's Painting and Remodeling"
-        description="Real Google reviews from clients across Martha's Vineyard, Cape Cod and the South Shore. See why homeowners in Massachusetts trust Tony's Painting & Remodeling."
+        description="Real Google reviews from clients across Martha's Vineyard, Cape Cod and the South Shore. See why Massachusetts homeowners trust Tony's Painting."
         canonical="/reviews"
         keywords="Tony's Painting reviews, painting company reviews Massachusetts, best painters Massachusetts, 5 star painting contractor MA"
         schema={{
