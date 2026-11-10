@@ -61,7 +61,7 @@ const InnerHero = ({
                     <Link
                       to={c.to}
                       style={{
-                        color: isImage ? "rgba(255,255,255,0.7)" : "#9CA3AF",
+                        color: isImage ? "rgba(255,255,255,0.85)" : "#5C5751",
                         fontSize: 12,
                         textDecoration: "none",
                         transition: "color 0.2s ease",

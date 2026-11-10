@@ -241,7 +241,7 @@ const Footer = () => {
               marginTop: "10px",
               fontFamily: "Inter, sans-serif",
               fontSize: "11px",
-              color: "#C4291C",
+              color: "#F2705F",
               textDecoration: "none",
               fontWeight: 500,
             }}
@@ -341,7 +341,7 @@ const Footer = () => {
         <span style={{
           fontFamily: 'Inter, sans-serif',
           fontSize: '11px',
-          color: 'rgba(255,255,255,0.25)',
+          color: 'rgba(255,255,255,0.65)',
           letterSpacing: '0.02em',
         }}>
           Website designed &amp; developed by

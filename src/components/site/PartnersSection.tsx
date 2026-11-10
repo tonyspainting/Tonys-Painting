@@ -12,7 +12,7 @@ const PartnersSection = () => {
           <p
             className="text-center uppercase"
             style={{
-              color: "#6B6560",
+              color: "#B8B2AA",
               fontSize: "11px",
               letterSpacing: "0.12em",
               marginBottom: "16px",

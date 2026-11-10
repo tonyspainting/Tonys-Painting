@@ -226,8 +226,8 @@ const GlassForm = () => {
         style={{
           fontFamily: "'Montserrat', sans-serif",
           fontWeight: 400,
-          fontSize: "10px",
-          color: "rgba(255,255,255,0.35)",
+          fontSize: "12px",
+          color: "rgba(255,255,255,0.75)",
           textAlign: "center",
           margin: 0,
         }}
@@ -483,7 +483,7 @@ const Hero = () => {
         }
 
         .hero-stat-sub {
-          color: rgba(255,255,255,0.45);
+          color: rgba(255,255,255,0.72);
           font-family: 'Montserrat', sans-serif;
           font-size: 11px;
           margin-top: 2px;

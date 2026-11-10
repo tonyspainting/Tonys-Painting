@@ -439,7 +439,7 @@ const About = () => {
         textAlign: 'center',
         borderTop: '1px solid rgba(255,255,255,0.05)',
       }}>
-        <p style={{ fontSize: '13px', color: 'rgba(255,255,255,0.45)', fontFamily: 'Inter', marginBottom: '12px', textTransform: 'uppercase', letterSpacing: '0.1em' }}>
+        <p style={{ fontSize: '13px', color: 'rgba(255,255,255,0.75)', fontFamily: 'Inter', marginBottom: '12px', textTransform: 'uppercase', letterSpacing: '0.1em' }}>
           20 years of trust
         </p>
         <h2 style={{
