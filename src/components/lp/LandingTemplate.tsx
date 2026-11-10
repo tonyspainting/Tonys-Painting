@@ -324,8 +324,14 @@ const LandingTemplate = ({ tag, headline, subline, service, heroReview, reviews,
         </div>
       )}
 
-      <footer style={{ backgroundColor: "#2C2C2A" }}>
-        <p style={{ textAlign: "center", color: "#6B6560", fontSize: "11px", padding: "14px 0", margin: 0 }}>Tony's Painting. All Rights Reserved.</p>
+      <footer style={{ backgroundColor: "#2C2C2A", padding: "14px 20px" }}>
+        <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", alignItems: "center", gap: "6px 12px", color: "#6B6560", fontFamily: "Inter, sans-serif", fontSize: "11px", textAlign: "center" }}>
+          <span>Tony&apos;s Painting. All Rights Reserved.</span>
+          <span aria-hidden>·</span>
+          <a href="/privacy" style={{ color: "#9CA3AF", textDecoration: "none" }}>Privacy Policy</a>
+          <span aria-hidden>·</span>
+          <a href="/accessibility" style={{ color: "#9CA3AF", textDecoration: "none" }}>Accessibility Statement</a>
+        </div>
       </footer>
     </div>
   );
