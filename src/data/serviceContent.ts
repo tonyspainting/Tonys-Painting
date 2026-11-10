@@ -1205,6 +1205,18 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
           "Laminate and solid surface tolerate most cleaners; stone needs a pH neutral product and periodic sealing; butcher block needs oil. We leave care instructions for the material installed and tell you what to avoid, because most countertop damage comes from the wrong cleaner rather than from daily use.",
         ],
       },
+      {
+        heading: "What we check before ordering material",
+        paragraphs: [
+          "Before a single piece is cut we confirm the cabinet run is level, the walls are straight enough for the backsplash, and the appliance openings match the appliances. On a remodel this happens after the cabinets are installed, never from a drawing. Catching a problem at this stage costs a conversation; catching it after fabrication costs a new top.",
+        ],
+      },
+      {
+        heading: "Living without a kitchen during the change",
+        paragraphs: [
+          "A countertop swap takes the kitchen out of service for at least a day, sometimes two when plumbing and a backsplash are involved. We tell you which days, keep the sink connected as late as possible and restore it as early as possible, and leave the room clean enough to use at the end of each day.",
+        ],
+      },
     ],
     faqs: [
       {
@@ -1241,6 +1253,16 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
         question: "Do you cut for sinks and cooktops?",
         answer:
           "Yes, cutouts are planned from the actual appliance and sink templates. Undermount sinks are dry fitted before the top is set.",
+      },
+      {
+        question: "Do stone countertops need sealing?",
+        answer:
+          "Natural stone is sealed at installation and then every year or two depending on the material. Quartz does not need sealing. We leave the right product and explain how often to reapply it.",
+      },
+      {
+        question: "How do you protect the new top during the rest of the remodel?",
+        answer:
+          "We cover it with a padded board while other trades are still working and ask that nothing heavy be set on the seams. The protection comes off at the final clean.",
       },
     ],
     relatedServices: ["remodeling", "carpentry", "ceramic-tile"],
@@ -1314,6 +1336,18 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
           "A real estate photographer needs surfaces clear, glass streak free and floors without footprints. A move in needs the same plus cabinets and closets ready to receive belongings. We ask which one it is, because it changes where the last hour of detail goes.",
         ],
       },
+      {
+        heading: "What is not included in a construction clean",
+        paragraphs: [
+          "We do not haul away construction debris, demolition material or old appliances, and we do not repair damaged finishes. Our job is to remove the residue the trades leave behind. If you need debris removal, we can coordinate it with the contractor or quote it separately so the space is empty before we clean.",
+        ],
+      },
+      {
+        heading: "Scheduling around the final trades",
+        paragraphs: [
+          "The last week of a project is when the dust is worst and the schedule is least predictable. We hold a cleaning slot that can move by a day without breaking, and we keep a second short visit available for the touch ups that always appear after the punch list. That way the clean happens once, at the right moment, instead of twice.",
+        ],
+      },
     ],
     faqs: [
       {
@@ -1350,6 +1384,16 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
         question: "Can you handle renovation dust in an occupied home?",
         answer:
           "Yes. We contain the work area, use HEPA vacuums and clean room by room so the rest of the house stays usable.",
+      },
+      {
+        question: "Do you bring your own supplies and equipment?",
+        answer:
+          "Yes. We bring vacuums with HEPA filters, cloths and the products matched to each surface. You do not need to supply anything.",
+      },
+      {
+        question: "What if dust settles again a few days later?",
+        answer:
+          "Some dust always settles after a clean as air moves through the house. We explain what to expect and can schedule a light re-clean once the final trades have left.",
       },
     ],
     relatedServices: ["remodeling", "interior-painting", "flooring"],
