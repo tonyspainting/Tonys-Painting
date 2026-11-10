@@ -75,7 +75,82 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
       "Trim, shutters, doors, soffits and fascia finished to the same standard as the walls",
       "Daily cleanup, walkthrough and a closed touch up list before we leave",
     ],
+    process: [
+      {
+        title: "Walk the house",
+        description:
+          "We inspect all four sides, note failing caulk and soft wood, and measure the surfaces to be painted. The estimate lists each material and the coating specified for it.",
+      },
+      {
+        title: "Wash and prepare",
+        description:
+          "Siding is washed to remove chalk, pollen and mildew. Loose paint is scraped and edges are sanded so the new coat has something sound to bond to.",
+      },
+      {
+        title: "Repair and prime",
+        description:
+          "Gaps are caulked, bare wood and repairs are primed, and any carpentry is completed before the finish coats begin.",
+      },
+      {
+        title: "Finish coats",
+        description:
+          "Walls, trim, doors, shutters and soffits are coated by brush, roller or spray according to the surface, with the specified number of coats.",
+      },
+      {
+        title: "Final walk",
+        description:
+          "We walk the exterior with you, check every elevation in daylight, close the touch up list and clean up around the house.",
+      },
+    ],
+    sections: [
+      {
+        heading: "What we paint on a Massachusetts exterior",
+        paragraphs: [
+          "Clapboard and shingle siding, trim, fascia, soffits, doors, shutters, porches, decks and the occasional outbuilding. Each surface takes a different product and a different amount of preparation. Cedar shingles need a breathable coating, vinyl and fiber cement need their own primer and finish, and older wood siding often needs more scraping than anyone expects from the outside.",
+        ],
+      },
+      {
+        heading: "Washing, scraping and sanding",
+        paragraphs: [
+          "Most exterior failures start with what is under the new paint, not with the paint itself. We wash to remove chalk, pollen, salt and mildew, then scrape loose coating and sand the edges so they feather into the sound paint. Bare wood gets sanded and dusted before primer. Skipping this work is the fastest way to have peeling again in two winters.",
+        ],
+      },
+      {
+        heading: "Primer and the right coating for each surface",
+        paragraphs: [
+          "Primer is chosen for the material and the condition. Bare wood, factory primed siding, masonry and metal each need a different base, and knots need a stain blocking primer or the resin will bleed through. On top of that goes a finish coat rated for New England weather, with the sheen matched to the surface so trim does not read chalky next to the walls.",
+        ],
+      },
+      {
+        heading: "Coastal exposure on the Vineyard and the Cape",
+        paragraphs: [
+          "Salt air, wind driven rain and strong sun on south and west walls break coatings down faster than inland conditions. Homes within sight of the water usually need a full repaint closer to seven years than ten, and trim near the shore fails first. We call out those elevations separately in the scope so the budget goes where the wear actually is.",
+        ],
+      },
+      {
+        heading: "Weather windows and scheduling",
+        paragraphs: [
+          "Exterior coatings need dry surfaces, temperatures above fifty degrees and enough time to cure before dew or rain. We build the schedule around the forecast, start on the elevations that dry first, and pause rather than apply a coat into conditions that will fail. That is why a start date comes with a finish window instead of a single day.",
+        ],
+      },
+      {
+        heading: "How long an exterior paint job lasts",
+        paragraphs: [
+          "Seven to ten years for most wood sided homes with proper preparation. Coastal properties sit at the shorter end, inland homes at the longer end. A light recoat of trim every four to five years extends the life of the whole job, and washing the siding once a year keeps pollen and salt from eating into the finish.",
+        ],
+      },
+    ],
     faqs: [
+      {
+        question: "Do you spray or brush the exterior?",
+        answer:
+          "It depends on the surface and the siding profile. Spraying is fast on large flat areas, and we back roll or brush to work the coating into the surface. Trim and doors are usually brushed for control. The estimate states the method for each area.",
+      },
+      {
+        question: "Do you repair rotten wood before painting?",
+        answer:
+          "Yes. Soft trim, rotted sill boards and loose caulk are identified during the estimate. Minor repairs are folded into the paint scope, and larger carpentry is quoted separately so you can approve it before work starts.",
+      },
       {
         question: "How much does exterior house painting cost in Massachusetts?",
         answer:
@@ -504,7 +579,82 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
       "Wood species and grade change the price. Oak, maple, engineered and luxury vinyl plank each have their own installation method and material cost.",
       "Finish choice matters. A matte oil finish, a water based polyurethane and a hard wax oil wear differently and take different application time.",
     ],
+    process: [
+      {
+        title: "Inspect the subfloor",
+        description:
+          "We check level, moisture, squeaks and previous patches. What is under the floor decides whether sanding or installation will actually last.",
+      },
+      {
+        title: "Clear and protect",
+        description:
+          "Furniture moves out, appliances are disconnected where needed, and the work area is sealed from the rest of the house.",
+      },
+      {
+        title: "Sand or install",
+        description:
+          "Existing floors are sanded evenly across the whole area, or new material is laid and fitted to the room and its transitions.",
+      },
+      {
+        title: "Stain and seal",
+        description:
+          "Stain is applied to the agreed color and the finish coats are built up, with drying time between coats.",
+      },
+      {
+        title: "Cure and walkthrough",
+        description:
+          "We protect the floor while it cures, walk the job with you, and tell you exactly when furniture can go back.",
+      },
+    ],
+    sections: [
+      {
+        heading: "What we install and refinish",
+        paragraphs: [
+          "Solid hardwood, engineered hardwood, laminate and luxury vinyl plank, plus sanding, staining and refinishing of existing hardwood. We also handle the transitions between rooms, the stair nosings and the thresholds that make a floor feel finished. If a floor is not worth saving, we say so and show you why before you spend on refinishing.",
+        ],
+      },
+      {
+        heading: "Why the subfloor decides the job",
+        paragraphs: [
+          "A finished floor follows whatever is under it. If the subfloor is out of level, the boards will telegraph it; if there is moisture, the finish will fail from below. We check moisture content, look for soft spots and confirm the joists are sound. Fixing the base is not glamorous, but it is the difference between a floor that lasts and one that squeaks and cups.",
+        ],
+      },
+      {
+        heading: "Sanding, staining and finish coats",
+        paragraphs: [
+          "We sand through the grits evenly across the whole floor rather than only the worn paths, because a floor sanded unevenly takes stain unevenly. Stain is applied and wiped to the agreed color, then the finish coats go on with drying time between each. Matte, satin and semi-gloss each show wear differently, which is worth deciding before the first coat.",
+        ],
+      },
+      {
+        heading: "Humidity and seasonal movement",
+        paragraphs: [
+          "Wood moves with the seasons, and Massachusetts homes swing from dry winter heat to humid summer air. That is normal, but it is why a floor needs room at the walls and why we check indoor conditions before installing. A floor installed tight into a humid season can cup or buckle when the heat comes on.",
+        ],
+      },
+      {
+        heading: "Dust, furniture and living through it",
+        paragraphs: [
+          "Sanding creates fine dust, so we seal doorways, use dust collection and clean at the end of each day. Rooms are out of use while finish cures, usually a few days. We plan the sequence with you so at least one path through the house stays open, and we tell you when to move furniture back and what to put under the legs.",
+        ],
+      },
+      {
+        heading: "Refinish or replace",
+        paragraphs: [
+          "Refinishing keeps original wood and usually costs less. Replacement makes sense when boards are cupped, heavily damaged, patched with different species or too thin to sand again. We measure the remaining thickness and show you the worn areas before recommending, because sanding through a floor is a mistake you cannot undo.",
+        ],
+      },
+    ],
     faqs: [
+      {
+        question: "How many times can hardwood floors be sanded?",
+        answer:
+          "Solid hardwood can usually take several sandings over its life, depending on the thickness and how much was removed before. Engineered floors have a wear layer that can often be refinished once. We check the thickness before quoting.",
+      },
+      {
+        question: "Do you move appliances and furniture?",
+        answer:
+          "We move furniture and disconnect appliances that need to come out, such as a refrigerator or washer. Very heavy items like a piano or a safe are handled with you so nothing is damaged moving it.",
+      },
       {
         question: "What flooring do you install?",
         answer:
@@ -544,7 +694,76 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
       "Tile type and size affect labor. Large format porcelain and natural stone need different thinset and more careful support than standard ceramic.",
       "Removal and disposal of old tile adds time, and so do niches, benches and shower details.",
     ],
+    process: [
+      {
+        title: "Layout and substrate check",
+        description:
+          "We check that the surface is flat and sound, then lay out the pattern from a fixed starting line so cuts fall where they should.",
+      },
+      {
+        title: "Waterproofing",
+        description:
+          "Showers and wet areas get a waterproof membrane with seams, corners and the drain connection detailed before any tile goes down.",
+      },
+      {
+        title: "Setting tile",
+        description:
+          "Tile is set with the correct thinset for the material, checked for level and spacing, and left to cure before grouting.",
+      },
+      {
+        title: "Grout and seal",
+        description:
+          "Grout is packed and shaped uniformly, the surface is cleaned, and cement based grout is sealed once it has cured.",
+      },
+      {
+        title: "Clean and walkthrough",
+        description:
+          "We clean the haze off the tile, check the job with you and explain how to care for the grout.",
+      },
+    ],
+    sections: [
+      {
+        heading: "What we tile",
+        paragraphs: [
+          "Bathroom floors, shower walls and pans, kitchen backsplashes, mudrooms, entryways and fireplace surrounds. We work with ceramic, porcelain, natural stone and large format tile, and we plan the layout around fixtures, outlets and the room's sight lines. The tile you choose matters, but the setting materials and the preparation under it matter more.",
+        ],
+      },
+      {
+        heading: "Layout before the first piece",
+        paragraphs: [
+          "The difference between a professional tile job and a homeowner attempt is usually visible at the edges: half inch slivers of tile at a door, cuts that do not line up with the faucet, grout joints that drift. We set a control line, work out where the cuts go, and adjust the layout so the visible walls carry full tiles and the cuts land where they are least seen.",
+        ],
+      },
+      {
+        heading: "Substrate and waterproofing",
+        paragraphs: [
+          "Tile needs a flat, stable surface and wet areas need a membrane. We check the substrate for flatness, screw down loose board, and prime or level where required. In a shower, the waterproofing goes on before tile and wraps the corners and drain flange. That layer, not the tile, is what keeps the framing dry.",
+        ],
+      },
+      {
+        heading: "Grout, sealant and long term",
+        paragraphs: [
+          "Grout choice affects maintenance. Cement based grout needs sealing in wet rooms and on floors; epoxy grout resists staining but is harder to work with. Change of plane joints get flexible sealant rather than grout so movement does not crack the line. With the right grout and a light cleaning routine, a tile floor can look the same in ten years.",
+        ],
+      },
+      {
+        heading: "Removal, dust and scheduling",
+        paragraphs: [
+          "Taking out old tile is dusty work. We seal the room, cover surfaces and remove debris daily. A bathroom is out of use for the duration, so we plan the schedule with you and tell you when the water can go back on. If a second bathroom exists, we sequence work so the household is never without a shower.",
+        ],
+      },
+    ],
     faqs: [
+      {
+        question: "Do you build and tile showers?",
+        answer:
+          "Yes. We build shower pans, waterproof the walls and floor, and tile the surround. Niches, benches and glass openings are planned before the membrane goes on so the details line up.",
+      },
+      {
+        question: "Can you install tile I already bought?",
+        answer:
+          "Yes, if the material is suitable for the location and there is enough quantity to allow for cuts and breakage. We check the tile and the coverage before scheduling, so a shortage does not stop the job.",
+      },
       {
         question: "How long does a tile project take?",
         answer:
@@ -584,7 +803,76 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
       "Height and access matter. Ceilings, stairwells and rooms full of furniture need staging and protection before work starts.",
       "Paint readiness is included. We sand, prime and leave the surface ready for the painter rather than handing back a dusty wall.",
     ],
+    process: [
+      {
+        title: "Diagnose the cause",
+        description:
+          "We check whether the crack is cosmetic or whether the plaster has separated from the lath, and look for water or movement behind it.",
+      },
+      {
+        title: "Stabilize and patch",
+        description:
+          "Loose plaster is secured or removed, the base is prepared, and the area is filled and built back to the surrounding plane.",
+      },
+      {
+        title: "Skim coat",
+        description:
+          "A thin coat is applied across the repaired area or the full wall, feathered into the existing finish.",
+      },
+      {
+        title: "Sand and check",
+        description:
+          "The surface is sanded flat and checked under raking light, because that is where imperfections show once paint goes on.",
+      },
+      {
+        title: "Prime and handoff",
+        description:
+          "The repair is primed and left ready for paint, with the room clean and the dust removed.",
+      },
+    ],
+    sections: [
+      {
+        heading: "Why old plaster cracks",
+        paragraphs: [
+          "Plaster on wood lath moves with the house. Over decades the keys that hold it to the lath can break, and the coat separates in long cracks or a sagging ceiling. Water from a roof leak or an old bathroom fan makes it worse. Repairing only the visible crack without addressing the loose area is why patches reopen, so we test the surrounding surface before filling anything.",
+        ],
+      },
+      {
+        heading: "Skim coating versus patching",
+        paragraphs: [
+          "A patch fixes a defined area. A skim coat resets the finish across a wall or ceiling, which is what you want when there are many small cracks, a previous repair that still shows, or a texture that has been sanded unevenly. Skim coating costs more per square foot but often saves a wall that would otherwise be replaced with drywall, and it keeps the original plaster.",
+        ],
+      },
+      {
+        heading: "Matching texture in older homes",
+        paragraphs: [
+          "Older plaster is not perfectly flat, and a smooth patch on a slightly textured wall reads as a bright spot under paint. We match the surrounding texture and sheen so the repair disappears. On historic homes we also take care with the profile at corners, arches and trim, where a heavy patch would erase detail that took a hundred years to accumulate.",
+        ],
+      },
+      {
+        heading: "Dust control",
+        paragraphs: [
+          "Sanding plaster makes fine dust that settles everywhere. We seal doorways with plastic, cover floors and furniture, and clean at the end of each day. Rooms under repair stay closed while work is active, and we tell you when each one can be used again. If someone in the house has asthma or allergies, say so and we plan around it.",
+        ],
+      },
+      {
+        heading: "When replacement is the right answer",
+        paragraphs: [
+          "If plaster has lost its grip across a large ceiling, is crumbling to the touch or has been patched so many times that the surface is unstable, replacement is cheaper than repeated repairs. That is a drywall scope rather than a plaster one, and we tell you honestly when it is the better value instead of selling another patch.",
+        ],
+      },
+    ],
     faqs: [
+      {
+        question: "Can you repair a plaster ceiling?",
+        answer:
+          "Yes. Sagging or cracked ceilings are common in older homes. We secure or remove the loose section, rebuild the plane and skim it, then prime it for paint. A ceiling that has dropped across a large area is assessed for replacement.",
+      },
+      {
+        question: "How long before a repaired wall can be painted?",
+        answer:
+          "Once the final coat is dry and sanded, usually a day or two depending on humidity. We prime the repair so the paint reads evenly, and we can coordinate with the painter so the room is not left half finished.",
+      },
       {
         question: "Can plaster walls be repaired instead of replaced?",
         answer:
