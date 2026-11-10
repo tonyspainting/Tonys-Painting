@@ -22,7 +22,7 @@ const Index = () => {
         keywords="house painters Massachusetts, interior painting Martha's Vineyard, exterior painting Cape Cod, painting contractor South Shore, home remodeling Massachusetts, cabinet refinishing MA"
         schema={{
           "@context": "https://schema.org",
-"@type": "PaintingContractor",
+          "@type": "HousePainter",
           name: "Tony's Painting & Remodeling",
           description:
             "Licensed residential painting and remodeling contractor serving Martha's Vineyard, Cape Cod and the South Shore of Massachusetts since 2004.",
