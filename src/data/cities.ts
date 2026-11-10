@@ -19,6 +19,8 @@ export interface CityRecord {
   localNeeds?: string[];
   /** O que muda no orçamento nesta cidade. */
   budgetNotes?: string[];
+  /** Coleção de portfólio mostrada como trabalho recente na cidade. */
+  portfolioSlug?: string;
   /** Local questions answered on the page and marked up as FAQPage. */
   faqs?: { question: string; answer: string }[];
 }
@@ -83,6 +85,7 @@ export const CITY_RECORDS: CityRecord[] = [
           "Usually yes, because trim, shutters and porches take more preparation and brush work than siding. The estimate separates those items so you can see where the cost is.",
       },
     ],
+    portfolioSlug: "residential-interior-martha-s-vineyard",
   },
   {
     city: "Chilmark",
@@ -142,6 +145,7 @@ export const CITY_RECORDS: CityRecord[] = [
           "Yes. Many Chilmark homes are seasonal. We coordinate access and send photos at each stage.",
       },
     ],
+    portfolioSlug: "exterior-painting-and-siding",
   },
   {
     city: "West Tisbury",
@@ -201,6 +205,7 @@ export const CITY_RECORDS: CityRecord[] = [
           "Yes. We match from a sample or a chip and test it on the house before ordering the full quantity.",
       },
     ],
+    portfolioSlug: "deck-restoration",
   },
   {
     city: "Falmouth",
@@ -260,6 +265,7 @@ export const CITY_RECORDS: CityRecord[] = [
           "Yes. Porches, columns and railings are common in Falmouth and are brushed and finished carefully.",
       },
     ],
+    portfolioSlug: "exterior-painting-and-siding",
   },
   {
     city: "Bourne",
@@ -319,6 +325,7 @@ export const CITY_RECORDS: CityRecord[] = [
           "Late spring through early fall, with trim touch ups any time the temperature holds above fifty.",
       },
     ],
+    portfolioSlug: "deck-restoration",
   },
   {
     city: "Pocasset",
@@ -378,6 +385,7 @@ export const CITY_RECORDS: CityRecord[] = [
           "Yes. We plan staging, parking and protection for neighbors before starting.",
       },
     ],
+    portfolioSlug: "deck-restoration",
   },
   {
     city: "Sandwich",
@@ -437,6 +445,7 @@ export const CITY_RECORDS: CityRecord[] = [
           "Yes. We source or mill a match and blend new work with the existing trim.",
       },
     ],
+    portfolioSlug: "exterior-painting-and-siding",
   },
   {
     city: "Hyannis",
@@ -496,6 +505,7 @@ export const CITY_RECORDS: CityRecord[] = [
           "Yes. We plan around the turnover date and finish before the next arrival.",
       },
     ],
+    portfolioSlug: "commercial-school-painting",
   },
   {
     city: "West Bridgewater",
@@ -555,6 +565,7 @@ export const CITY_RECORDS: CityRecord[] = [
           "Usually less per square foot, because setup and travel are spread over more area, but the total is higher.",
       },
     ],
+    portfolioSlug: "kitchen-and-bath-remodeling",
   },
 ];
 

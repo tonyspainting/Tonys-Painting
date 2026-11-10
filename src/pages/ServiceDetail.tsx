@@ -404,6 +404,13 @@ const SERVICES: Record<string, ServiceData> = {
 
 export const SERVICE_SLUGS = () => Object.keys(SERVICES);
 
+// Serviços sem coleção própria no conteúdo apontam para o trabalho mais próximo.
+const FALLBACK_PORTFOLIO: Record<string, string> = {
+  "ceramic-tile": "kitchen-and-bath-remodeling",
+  fence: "exterior-painting-and-siding",
+  "construction-cleaning": "interior-living-spaces",
+};
+
 const ServiceDetail = () => {
   const { slug } = useParams<{ slug: string }>();
   const service = slug ? SERVICES[slug] : undefined;
@@ -412,7 +419,8 @@ const ServiceDetail = () => {
 
   const seo = slug ? SEO_BY_SLUG[slug] : undefined;
   const content = slug ? SERVICE_CONTENT[slug] : undefined;
-  const portfolioTitle = getPortfolioTitle(content?.portfolioSlug);
+  const portfolioSlug = content?.portfolioSlug ?? (slug ? FALLBACK_PORTFOLIO[slug] : undefined);
+  const portfolioTitle = getPortfolioTitle(portfolioSlug);
   // Páginas que ainda não têm conteúdo novo mantêm as FAQs de reserva (texto + FAQPage).
   const faqs = content?.faqs ?? SERVICE_FAQS[slug ?? ""] ?? [];
   const includes = content?.included ?? service.includes;
@@ -573,9 +581,9 @@ const ServiceDetail = () => {
                   </li>
                 ))}
               </ul>
-              {content?.portfolioSlug && portfolioTitle && (
+              {portfolioSlug && portfolioTitle && (
                 <Link
-                  to={`/portfolio/${content.portfolioSlug}`}
+                  to={`/portfolio/${portfolioSlug}`}
                   className="inline-block mt-6 text-sm font-medium text-primary underline underline-offset-4 hover:text-primary-dark transition-colors"
                 >
                   See our {portfolioTitle.toLowerCase()} project
@@ -635,6 +643,12 @@ const ServiceDetail = () => {
                   <p className="text-xs uppercase tracking-[0.25em] text-primary mb-3">Recent Work</p>
                   <h2 className="font-display text-3xl md:text-4xl text-foreground">Selected projects.</h2>
                 </div>
+                <Link
+                  to="/portfolio"
+                  className="hidden md:inline-block text-sm font-medium text-primary underline underline-offset-4 hover:text-primary-dark transition-colors"
+                >
+                  See all projects
+                </Link>
               </div>
               {/* Mobile: one-photo slide carousel */}
               <div className="flex md:hidden overflow-x-auto snap-x snap-mandatory gap-4 -mx-6 px-6 pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">

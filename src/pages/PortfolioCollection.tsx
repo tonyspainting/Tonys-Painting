@@ -79,6 +79,11 @@ const PortfolioCollectionPage = () => {
         title={`${collection.title} | Tony's Painting`}
         description={collection.metaDescription ?? collection.description ?? ""}
         canonical={`/portfolio/${collection.slug}`}
+        breadcrumbs={[
+          { name: "Home", url: "https://tonyspaintingmv.com/" },
+          { name: "Portfolio", url: "https://tonyspaintingmv.com/portfolio" },
+          { name: collection.title, url: `https://tonyspaintingmv.com/portfolio/${collection.slug}` },
+        ]}
       />
       <InnerHero
         title={collection.title}

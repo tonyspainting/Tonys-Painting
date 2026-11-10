@@ -5,6 +5,7 @@ import InnerHero from "@/components/site/InnerHero";
 import FadeUpSection from "@/components/site/FadeUpSection";
 import RippleButton from "@/components/site/RippleButton";
 import { getCityByLinkSlug } from "@/data/cities";
+import { getCollectionBySlug } from "@/data/portfolio";
 
 interface CityPageProps {
   city: string;
@@ -66,6 +67,7 @@ const CityPainting = ({
 }: CityPageProps) => {
   // O slug da rota é "painting-contractor-<cidade>"; cities.ts guarda só "<cidade>".
   const record = getCityByLinkSlug(slug);
+  const portfolio = record?.portfolioSlug ? getCollectionBySlug(record.portfolioSlug) : undefined;
   const priorityServices = (record?.priorityServices ?? [])
     .map((s) => ({ slug: s, name: SERVICE_NAMES[s] ?? s }))
     .filter((s) => Boolean(SERVICE_NAMES[s.slug]));
@@ -273,6 +275,23 @@ const CityPainting = ({
                   </p>
                 ))}
               </div>
+              {portfolio && (
+                <p style={{ marginTop: "22px" }}>
+                  <Link
+                    to={`/portfolio/${portfolio.slug}`}
+                    style={{ color: "#C4291C", fontSize: "15px", fontWeight: 600, textDecoration: "none", borderBottom: "1px solid #C4291C", paddingBottom: "2px" }}
+                  >
+                    See our {portfolio.title} project
+                  </Link>
+                  <span style={{ color: "#9CA3AF", margin: "0 10px" }}>·</span>
+                  <Link
+                    to="/portfolio"
+                    style={{ color: "#C4291C", fontSize: "15px", fontWeight: 600, textDecoration: "none", borderBottom: "1px solid #C4291C", paddingBottom: "2px" }}
+                  >
+                    All projects
+                  </Link>
+                </p>
+              )}
             </FadeUpSection>
           </div>
         </section>
