@@ -3,5 +3,7 @@ Allow: /
 Disallow: /dashboard
 Disallow: /dashboard/*
 Disallow: /login
+Disallow: /blog/wp-admin/
 
 Sitemap: https://tonyspaintingmv.com/sitemap.xml
+Sitemap: https://tonyspaintingmv.com/blog/wp-sitemap.xml

@@ -19,7 +19,8 @@ const services = [
   { label: "Countertop", href: "/services/countertop" },
 ];
 
-const BLOG_URL = "https://blog.tonyspaintingmv.com/";
+// O blog agora vive no mesmo domínio, em /blog (WordPress).
+const BLOG_URL = "/blog/";
 
 const navLinks = [
   { label: "Portfolio", href: "/portfolio" },
