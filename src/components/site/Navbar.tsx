@@ -22,6 +22,7 @@ const services = [
 const BLOG_URL = "https://blog.tonyspaintingmv.com/";
 
 const navLinks = [
+  { label: "Portfolio", href: "/portfolio" },
   { label: "About", href: "/about" },
   { label: "Reviews", href: "/reviews" },
   { label: "Blog", href: BLOG_URL },
