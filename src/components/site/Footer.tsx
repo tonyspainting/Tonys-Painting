@@ -107,6 +107,7 @@ const Footer = () => {
               { label: "Portfolio", href: "/portfolio" },
               { label: "About", href: "/about" },
               { label: "Reviews", href: "/reviews" },
+              { label: "Blog", href: "https://blog.tonyspaintingmv.com/" },
             ].map((l) => (
               <li key={l.label}>
                 <a href={l.href} className="text-background/80 hover:text-primary transition-colors">

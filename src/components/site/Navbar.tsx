@@ -19,10 +19,12 @@ const services = [
   { label: "Countertop", href: "/services/countertop" },
 ];
 
+const BLOG_URL = "https://blog.tonyspaintingmv.com/";
+
 const navLinks = [
-  { label: "Portfolio", href: "/portfolio" },
   { label: "About", href: "/about" },
   { label: "Reviews", href: "/reviews" },
+  { label: "Blog", href: BLOG_URL },
   { label: "Contact", href: "/contact" },
 ];
 
