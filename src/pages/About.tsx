@@ -7,7 +7,6 @@ import FadeUpSection from "@/components/site/FadeUpSection";
 import RippleButton from "@/components/site/RippleButton";
 import otonielSantos from "@/assets/otoniel-santos-founder.png";
 import cintiaPhoto from "@/assets/cintia-sales.jpeg.asset.json";
-import gustavoPhoto from "@/assets/gustavo-sales.webp.asset.json";
 import viniciusPhoto from "@/assets/vinicius-sales.webp.asset.json";
 import marcelaPhoto from "@/assets/marcela-co-ceo.jpeg.asset.json";
 
@@ -368,61 +367,6 @@ const About = () => {
                       <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.64A2 2 0 012 .99h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
                     </svg>
                     (774) 823-7239
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            {/* GUSTAVO */}
-            <div style={{
-              background: '#FAFAFA',
-              borderRadius: '16px',
-              overflow: 'hidden',
-              border: '1px solid #E8E2D8',
-              boxShadow: '0 4px 20px rgba(0,0,0,0.06)',
-            }}>
-              <img
-                src={gustavoPhoto.url}
-                alt="Gustavo, Sales Representative at Tony's Painting"
-                style={{
-                  width: '100%',
-                  aspectRatio: '1/1',
-                  objectFit: 'cover',
-                  objectPosition: 'center top',
-                  display: 'block',
-                }}
-              />
-              <div style={{ padding: '24px' }}>
-                <h3 style={{
-                  fontFamily: "'Playfair Display', serif",
-                  fontWeight: 700,
-                  fontSize: '22px',
-                  color: '#1A1A1A',
-                  margin: '0 0 4px',
-                }}>Gustavo</h3>
-                <p style={{
-                  fontFamily: 'Inter, sans-serif',
-                  fontSize: '12px',
-                  fontWeight: 600,
-                  color: '#C4291C',
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.1em',
-                  margin: '0 0 16px',
-                }}>Sales Representative</p>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                  <a href="tel:5085601696" style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '8px',
-                    fontFamily: 'Inter, sans-serif',
-                    fontSize: '14px',
-                    color: '#1A1A1A',
-                    textDecoration: 'none',
-                  }}>
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#C4291C" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.64A2 2 0 012 .99h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
-                    </svg>
-                    (508) 560-1696
                   </a>
                 </div>
               </div>
