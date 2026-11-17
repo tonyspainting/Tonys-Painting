@@ -6,7 +6,7 @@ import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 import { cn } from "@/lib/utils";
-import { supabase } from "@/integrations/supabase/client";
+import { submitLead } from "@/lib/submitLead";
 
 declare global {
   interface Window {
@@ -83,20 +83,19 @@ const LPForm = ({ service, idPrefix = "lp" }: LPFormProps) => {
     if (Object.keys(v).length > 0) return;
 
     setSubmitting(true);
-    const { error } = await supabase.from("leads").insert({
-      name: formData.fullName,
-      phone: formData.phone,
-      email: formData.email,
-      service_type: formData.service,
-      message: formData.project,
-      prefer_phone: false,
-      status: "new",
-      source: getSource(),
-      campaign_name: utmCampaign || utmSource || null,
-    });
-    setSubmitting(false);
-
-    if (error) {
+    try {
+      await submitLead({
+        name: formData.fullName,
+        phone: formData.phone,
+        email: formData.email,
+        service: formData.service,
+        message: formData.project,
+        source: getSource(),
+        campaign: utmCampaign || utmSource || undefined,
+      });
+    } catch (error) {
+      console.error("Form submission failed:", error);
+      setSubmitting(false);
       toast({
         title: "Something went wrong",
         description: "Please try again or call us directly.",
@@ -104,12 +103,13 @@ const LPForm = ({ service, idPrefix = "lp" }: LPFormProps) => {
       });
       return;
     }
+    setSubmitting(false);
 
     // Disparar evento Lead no Meta Pixel
     if (typeof window.fbq === "function") {
       window.fbq("track", "Lead", {
         content_name: formData.service,
-        content_category: "Interior Painting",
+        content_category: "Landing page",
       });
     }
 

@@ -13,7 +13,7 @@ import {
 } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
 import { cn } from "@/lib/utils";
-import { supabase } from "@/integrations/supabase/client";
+import { submitLead } from "@/lib/submitLead";
 
 const SERVICES = [
   "Interior Painting",
@@ -113,24 +113,21 @@ const ContactForm = ({ compact = false }: ContactFormProps) => {
     if (Object.keys(v).length > 0) return;
 
     setSubmitting(true);
-    const { error } = await supabase.from("leads").insert({
-      name: formData.fullName,
-      phone: formData.phone,
-      email: formData.email,
-      service_type: formData.service,
-      message: [formData.address ? `Address: ${formData.address}` : "", formData.project]
-        .filter(Boolean)
-        .join("\n\n"),
-      prefer_phone: false,
-      status: "new",
-      source: formData.referralSource || "Website Form",
-      campaign_name: utmSource ? `${utmSource}/${utmMedium || "organic"}` : null,
-    });
-    setSubmitting(false);
-
-    if (error) {
-      console.error('Supabase insert error:', error);
-      console.error('Error details:', JSON.stringify(error, null, 2));
+    try {
+      await submitLead({
+        name: formData.fullName,
+        phone: formData.phone,
+        email: formData.email,
+        service: formData.service,
+        message: [formData.address ? `Address: ${formData.address}` : "", formData.project]
+          .filter(Boolean)
+          .join("\n\n"),
+        source: formData.referralSource || "Website Form",
+        campaign: utmSource ? `${utmSource}/${utmMedium || "organic"}` : undefined,
+      });
+    } catch (error) {
+      console.error("Form submission failed:", error);
+      setSubmitting(false);
       toast({
         title: "Something went wrong",
         description: "Please try again or call us directly.",
@@ -138,6 +135,7 @@ const ContactForm = ({ compact = false }: ContactFormProps) => {
       });
       return;
     }
+    setSubmitting(false);
     setSubmitted(true);
     navigate("/thank-you");
   };

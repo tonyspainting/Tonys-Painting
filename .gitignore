@@ -24,3 +24,7 @@ dist-ssr
 *.sw?
 
 dist-server
+
+# Variaveis locais
+.env
+.env.local

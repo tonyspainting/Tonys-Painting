@@ -5,11 +5,10 @@
 FROM node:22-alpine AS build
 WORKDIR /app
 
-# O Vite embute estas variaveis no bundle durante o build.
-ARG VITE_SUPABASE_URL
-ARG VITE_SUPABASE_PUBLISHABLE_KEY
-ENV VITE_SUPABASE_URL=$VITE_SUPABASE_URL
-ENV VITE_SUPABASE_PUBLISHABLE_KEY=$VITE_SUPABASE_PUBLISHABLE_KEY
+# O endpoint do formulário é opcional. Sem ele, o site usa o FormSubmit que
+# entrega em tonyspainting11@gmail.com.
+ARG VITE_FORM_ENDPOINT
+ENV VITE_FORM_ENDPOINT=$VITE_FORM_ENDPOINT
 
 COPY package.json package-lock.json ./
 RUN npm ci --no-audit --no-fund

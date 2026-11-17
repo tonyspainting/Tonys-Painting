@@ -3,7 +3,7 @@ import { motion, useReducedMotion } from "framer-motion";
 import { Shield, Star, CheckCircle2 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useToast } from "@/hooks/use-toast";
-import { supabase } from "@/integrations/supabase/client";
+import { submitLead } from "@/lib/submitLead";
 import heroBgDesktop from "@/assets/hero-bg-desktop.jpg";
 import heroBgMobile from "@/assets/hero-bg-mobile.jpg";
 
@@ -33,20 +33,18 @@ const GlassForm = () => {
     }
 
     setSubmitting(true);
-    const { error } = await supabase.from("leads").insert({
-      name: formData.fullName,
-      phone: formData.phone,
-      email: formData.email,
-      service_type: formData.service,
-      message: formData.project,
-      prefer_phone: false,
-      status: "new",
-    });
-    setSubmitting(false);
-
-    if (error) {
-      console.error('Supabase insert error:', error);
-      console.error('Error details:', JSON.stringify(error, null, 2));
+    try {
+      await submitLead({
+        name: formData.fullName,
+        phone: formData.phone,
+        email: formData.email,
+        service: formData.service,
+        message: formData.project,
+        source: "Homepage hero form",
+      });
+    } catch (error) {
+      console.error("Form submission failed:", error);
+      setSubmitting(false);
       toast({
         title: "Something went wrong",
         description: "Please try again or call us directly.",
@@ -54,6 +52,7 @@ const GlassForm = () => {
       });
       return;
     }
+    setSubmitting(false);
     navigate("/thank-you");
   };
 

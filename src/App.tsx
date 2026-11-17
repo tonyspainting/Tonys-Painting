@@ -1,6 +1,5 @@
 import type React from "react";
-import { lazy, Suspense, useEffect } from "react";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { useEffect } from "react";
 import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
@@ -31,16 +30,7 @@ import Pocasset from "./pages/city/Pocasset.tsx";
 import Sandwich from "./pages/city/Sandwich.tsx";
 
 import NotFound from "./pages/NotFound.tsx";
-import ProtectedRoute from "./components/ProtectedRoute.tsx";
 import ReviewButton from "./components/site/ReviewButton.tsx";
-
-// O CRM (dashboard e login) carrega sob demanda: tira o recharts e as telas
-// internas do bundle público, que hoje e o maior custo de JavaScript.
-const LoginPage = lazy(() => import("./pages/LoginPage.tsx"));
-const DashboardPage = lazy(() => import("./pages/DashboardPage.tsx"));
-
-
-const queryClient = new QueryClient();
 
 // Pré-renderização: true só durante o build (scripts/prerender.mjs). Evita que o HTML gerado saia com opacity 0.
 const IS_PRERENDER = typeof window === "undefined";
@@ -55,11 +45,9 @@ export const AnimatedRoutes = () => {
     isFirstPaint = false;
   }, []);
 
-  const isPublicPage = !location.pathname.startsWith('/dashboard') && location.pathname !== '/login';
-
   return (
     <>
-      {isPublicPage && <ReviewButton />}
+      <ReviewButton />
       <AnimatePresence mode="wait">
 
       <motion.div
@@ -83,24 +71,6 @@ export const AnimatedRoutes = () => {
           <Route path="/lp/interior-painting" element={<LPInteriorPainting />} />
           <Route path="/lp/exterior-painting" element={<LPExteriorPainting />} />
           <Route path="/lp/remodeling" element={<LPRemodeling />} />
-          <Route
-            path="/login"
-            element={
-              <Suspense fallback={null}>
-                <LoginPage />
-              </Suspense>
-            }
-          />
-          <Route
-            path="/dashboard"
-            element={
-              <ProtectedRoute>
-                <Suspense fallback={null}>
-                  <DashboardPage />
-                </Suspense>
-              </ProtectedRoute>
-            }
-          />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="/painting-contractor-edgartown" element={<Edgartown />} />
           <Route path="/painting-contractor-falmouth" element={<Falmouth />} />
@@ -121,13 +91,11 @@ export const AnimatedRoutes = () => {
 };
 
 export const AppProviders = ({ children }: { children: React.ReactNode }) => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      {children}
-    </TooltipProvider>
-  </QueryClientProvider>
+  <TooltipProvider>
+    <Toaster />
+    <Sonner />
+    {children}
+  </TooltipProvider>
 );
 
 const App = () => (

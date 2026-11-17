@@ -5,7 +5,7 @@ import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 import { cn } from "@/lib/utils";
-import { supabase } from "@/integrations/supabase/client";
+import { submitLead } from "@/lib/submitLead";
 
 type FormState = {
   fullName: string;
@@ -49,26 +49,22 @@ const LPMiniForm = ({ service, idPrefix = "lpmini" }: LPMiniFormProps) => {
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    console.log('Supabase URL:', import.meta.env.VITE_SUPABASE_URL ? 'present' : 'MISSING');
-    console.log('Supabase Key:', import.meta.env.VITE_SUPABASE_ANON_KEY ? 'present' : 'MISSING');
     const v = validate();
     setErrors(v);
     if (Object.keys(v).length > 0) return;
 
     setSubmitting(true);
-    const { error } = await supabase.from("leads").insert({
-      name: formData.fullName,
-      phone: formData.phone,
-      email: formData.email,
-      service_type: service,
-      prefer_phone: false,
-      status: "new",
-    });
-    setSubmitting(false);
-
-    if (error) {
-      console.error('Supabase insert error:', error);
-      console.error('Error details:', JSON.stringify(error, null, 2));
+    try {
+      await submitLead({
+        name: formData.fullName,
+        phone: formData.phone,
+        email: formData.email,
+        service,
+        source: "Landing page mini form",
+      });
+    } catch (error) {
+      console.error("Form submission failed:", error);
+      setSubmitting(false);
       toast({
         title: "Something went wrong",
         description: "Please try again or call us directly.",
@@ -76,6 +72,7 @@ const LPMiniForm = ({ service, idPrefix = "lpmini" }: LPMiniFormProps) => {
       });
       return;
     }
+    setSubmitting(false);
     navigate("/thank-you");
   };
 

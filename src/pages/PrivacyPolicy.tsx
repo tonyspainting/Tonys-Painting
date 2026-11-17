@@ -92,15 +92,16 @@ const PrivacyPolicy = () => (
       <p>We share information only with service providers that help us run the site and the business:</p>
       <ul className="list-disc pl-5 space-y-2">
         <li>
-          <strong className="text-foreground">Supabase</strong> stores the estimate requests in our
-          database.
+          <strong className="text-foreground">FormSubmit</strong> is the form service that delivers
+          your estimate request to our email inbox. We do not keep a database of website requests.
         </li>
         <li>
-          <strong className="text-foreground">Resend</strong> delivers the email notification when a
-          new request arrives.
+          <strong className="text-foreground">Google Workspace (Gmail)</strong> receives and stores
+          the email with your request.
         </li>
         <li>
-          <strong className="text-foreground">Lovable</strong> hosts this website.
+          <strong className="text-foreground">Our web host</strong> serves this website from a
+          private server.
         </li>
         <li>
           <strong className="text-foreground">Google Analytics</strong> measures traffic and page
@@ -126,9 +127,8 @@ const PrivacyPolicy = () => (
       <p>
         Cookies are small files stored by your browser. We use them for two purposes: measuring
         traffic (Google Analytics, typically a cookie named <code>_ga</code>) and measuring
-        advertising (Meta pixel, typically a cookie named <code>_fbp</code>). The site also stores a
-        login session in your browser if you sign in to the private dashboard, but visitors do not
-        need an account to use any public page.
+        advertising (Meta pixel, typically a cookie named <code>_fbp</code>). There is no account and
+        no login on this website.
       </p>
       <p>You can control cookies in your browser:</p>
       <ul className="list-disc pl-5 space-y-2">
@@ -157,9 +157,9 @@ const PrivacyPolicy = () => (
 
     <LegalSection title="How we protect information">
       <p>
-        The site runs over HTTPS. Access to the lead database is limited to authorized staff, and
-        the database enforces row level security so that only signed-in team members can read the
-        requests. We do not store payment data on the site.
+        The site runs over HTTPS. Estimate requests arrive as email in an inbox that only authorized
+        staff can open, and they are handled there rather than in a website database. We do not store
+        payment data on the site.
       </p>
       <p>
         No method of transmission or storage is completely secure, but we take reasonable steps to
