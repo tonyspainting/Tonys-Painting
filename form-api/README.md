@@ -37,7 +37,8 @@ curl http://localhost:3000/health
 
 1. **+ New → Application** no mesmo repositório `tonyspainting/Tonys-Painting`.
 2. **Base Directory**: `/form-api`
-3. **Build Pack**: Dockerfile (`/form-api/Dockerfile`)
+3. **Build Pack**: Dockerfile e **Dockerfile Location**: `/Dockerfile`
+   (o caminho é relativo ao Base Directory; colocar `/form-api/Dockerfile` gera `form-api/form-api` e quebra o build)
 4. **Ports Exposes**: `3000`
 5. **Domains**: `https://api.tonyspaintingmv.com`
 6. **Environment Variables**:
