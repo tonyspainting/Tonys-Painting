@@ -54,7 +54,7 @@ const PartnersSection = () => {
               marginBottom: "48px",
             }}
           >
-            Every project uses premium paints and materials from trusted brands. That is why our work holds up year after year.
+            Every project uses premium paints and materials from brands we trust, so the work holds up year after year.
           </p>
         </FadeUpSection>
 

@@ -167,7 +167,7 @@ const AboutSnippet = () => {
             Twenty years of residential painting and remodeling in Massachusetts.
           </h2>
           <p className="mt-6 text-sm md:text-lg text-muted-foreground leading-relaxed max-w-full md:max-w-xl">
-            Otoniel Santos founded Tony's in 2004 with a straightforward goal: do the work right and treat the homeowner's property with respect. Two decades later, that approach still drives every project we take on — in Martha's Vineyard, Cape Cod and the South Shore.
+            Otoniel Santos founded Tony's in 2004 with a straightforward goal: do the work right and treat the homeowner's property with respect. Two decades later, that approach still drives every project we take on, in Martha's Vineyard, Cape Cod and the South Shore.
           </p>
 
           <Button

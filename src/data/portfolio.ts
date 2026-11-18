@@ -290,8 +290,8 @@ export const COLLECTIONS: PortfolioCollection[] = [
       paragraphs: [
         "These projects range from a new waterfront deck with railing and stairs to cedar decks that were sanded and sealed to bring back their color. In Massachusetts, a deck is the main outdoor living space for most of the year, so it has to be built and finished to handle heavy use and hard weather.",
         "For new builds, we handle framing, decking, railings and stairs, using pressure-treated framing and cedar or composite decking depending on the look and budget. Every deck is built to code with proper footings, flashing at the house and hardware rated for exterior use. For refinishing, existing cedar is cleaned, sanded and sealed with a product that highlights the natural grain while blocking moisture and UV.",
-        "A new deck typically takes one to three weeks from start to finish. Refinishing an existing cedar deck takes two to four days.",
-        "Whether you need a new deck or want the one you have to look new again, our deck and stairs team serves Martha's Vineyard, Cape Cod and the South Shore. Request a free estimate and we will come out to measure and talk through options.",
+        "A new deck typically takes one to three weeks, including prep and final coats. Refinishing an existing cedar deck takes two to four days.",
+        "If you need a new deck, or want the one you have to look new again, our deck and stairs team serves Martha's Vineyard, Cape Cod and the South Shore. Request a free estimate and we will come out to measure and talk through options.",
       ],
       serviceLabel: "Deck and Stairs",
       serviceTo: "/services/deck-stairs",
@@ -307,7 +307,7 @@ export const COLLECTIONS: PortfolioCollection[] = [
     cover: REMODEL_IMAGES[0].src,
     images: REMODEL_IMAGES,
     details: {
-      heading: "Kitchen, bath and closet remodeling from layout to final finish.",
+      heading: "Kitchen, bath and closet remodels, finished down to the last detail.",
       paragraphs: [
         "These remodels in the Boston area and across Massachusetts covered the full range: a kitchen with new cabinets and counters, a primary bath with new tile and fixtures, and a custom closet with built-in storage. In each case we managed the project end to end, so the homeowner dealt with one team from demolition through the last coat of paint.",
         "Remodeling with Tony's means carpentry, tile, plastering, countertops and painting are all handled by our own crews. That matters because the hand-offs between trades are where most remodels lose time and quality. We plan the sequence up front, order materials early and keep the schedule tight.",

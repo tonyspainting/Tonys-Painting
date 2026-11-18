@@ -109,7 +109,7 @@ const Contact = () => {
                 color: "#6B6560",
               }}
             >
-              No commitment. We review every request and typically reach out within one business day.
+              No commitment. We review every request and typically reply within one business day.
             </p>
             <div style={{ marginTop: 16 }}>
               <ContactForm compact />

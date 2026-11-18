@@ -210,7 +210,7 @@ const About = () => {
 
           <div className="max-w-2xl">
             <p className="text-base md:text-lg text-foreground leading-relaxed">
-              We serve homeowners in Martha's Vineyard, Cape Cod and the South Shore of Massachusetts. Most of our work is residential — interior painting, exterior painting, remodeling and related trades.
+              We serve homeowners in Martha's Vineyard, Cape Cod and the South Shore of Massachusetts. Most of our work is residential: interior painting, exterior painting, remodeling and related trades.
             </p>
           </div>
         </div>

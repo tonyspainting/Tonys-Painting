@@ -69,7 +69,7 @@ const services = [
   },
   {
     name: 'Construction Cleaning',
-    description: "Post-construction cleanup that gets the space ready to live in. Dust, debris and residue — gone.",
+    description: "Post-construction cleanup that gets the space ready to live in. Dust, debris and residue, gone.",
     href: '/services/construction-cleaning',
     image: '/images/interior-05.jpg',
   },

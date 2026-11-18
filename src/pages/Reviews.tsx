@@ -122,7 +122,7 @@ const Reviews = () => {
               ★★★★★
             </div>
             <p className="mt-4 text-muted-foreground max-w-xl mx-auto leading-relaxed">
-              Our clients also review us on Google. Read what they say there, or add your own — it
+              Our clients also review us on Google. Read what they say there, or add your own. It
               helps other homeowners on Martha&apos;s Vineyard and Cape Cod find us.
             </p>
             <div className="mt-6 flex flex-wrap items-center justify-center gap-3">

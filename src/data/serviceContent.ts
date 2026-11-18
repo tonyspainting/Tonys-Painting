@@ -130,7 +130,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
       {
         heading: "Weather windows and scheduling",
         paragraphs: [
-          "Exterior coatings need dry surfaces, temperatures above fifty degrees and enough time to cure before dew or rain. We build the schedule around the forecast, start on the elevations that dry first, and pause rather than apply a coat into conditions that will fail. That is why a start date comes with a finish window instead of a single day.",
+          "Exterior coatings need dry surfaces, temperatures above fifty degrees and enough time to cure before dew or rain. We build the schedule around the forecast, start on the elevations that dry first, and pause rather than apply a coat into conditions that will fail. So a start date comes with a finish window, not a single day.",
         ],
       },
       {
@@ -1416,7 +1416,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
       {
         question: "Can you move the sink or cooktop to a new spot?",
         answer:
-          "Yes, but that is a plumbing and electrical change, not only a countertop one. We coordinate it with the other trades and reflect it in the schedule.",
+          "Yes, but that is a plumbing and electrical change, not a countertop swap. We coordinate it with the other trades and reflect it in the schedule.",
       },
     ],
     relatedServices: ["remodeling", "carpentry", "ceramic-tile"],

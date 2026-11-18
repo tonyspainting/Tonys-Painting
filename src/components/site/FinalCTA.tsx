@@ -11,7 +11,7 @@ const FinalCTA = () => {
             Ready to get a painting or remodeling estimate?
           </h2>
           <p className="mt-6 text-background/70 max-w-xl mx-auto leading-relaxed">
-            Describe your project and we'll get back to you within one business day. Interior, exterior, remodeling — no job is too large or too small.
+            Describe your project and we'll get back to you within one business day. Interior, exterior, remodeling. No job is too large or too small.
           </p>
           <div className="mt-10">
             <RippleButton

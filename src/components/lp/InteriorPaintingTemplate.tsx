@@ -68,7 +68,7 @@ const TRUST_SIGNALS = [
 const STEPS = [
   {
     n: "01",
-    title: "You reach out",
+    title: "You get in touch",
     desc: "Fill out the form or call us directly. We will get back to you within one business day.",
   },
   {

@@ -349,7 +349,7 @@ const Hero = () => {
             {...fadeUp(0.3)}
             className="hero-subline"
           >
-            Serving Martha's Vineyard, Cape Cod and the South Shore since 2004. Interior painting, exterior painting, remodeling and more — licensed, insured and free estimates.
+            Serving Martha's Vineyard, Cape Cod and the South Shore since 2004. Interior painting, exterior painting, remodeling and more. Licensed, insured and free estimates.
           </motion.p>
 
           {/* Mobile CTA */}

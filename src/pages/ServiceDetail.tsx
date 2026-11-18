@@ -246,7 +246,7 @@ const SERVICES: Record<string, ServiceData> = {
     name: "Interior Painting",
     heroTitle: "Interior Painting in Martha's Vineyard",
     description:
-      "Whether you are repainting a single room or the entire house, we start with proper surface prep. We fill holes, sand rough spots and prime where the finish coat needs a solid base. We protect your floors and furniture before we pick up a brush, keep the work area clean throughout and do a final walkthrough with you before we leave.",
+      "If you are repainting a single room or the entire house, we start with proper surface prep. We fill holes, sand rough spots and prime where the finish coat needs a solid base. We protect your floors and furniture before we pick up a brush, keep the work area clean throughout and do a final walkthrough with you before we leave.",
     includes: [
       "Living rooms and bedrooms",
       "Kitchens and bathrooms",

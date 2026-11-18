@@ -89,7 +89,7 @@ const VideoShowcase = () => {
                 lineHeight: 1.7,
               }}
             >
-              Watch how we approach every project with precision, care and attention to detail.
+              Watch how we work: careful prep, straight lines and a finish that holds up.
             </p>
           </FadeUpSection>
 

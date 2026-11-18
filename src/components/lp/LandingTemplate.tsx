@@ -16,7 +16,7 @@ export interface LandingTemplateProps {
 const TRUST_MOBILE = ["Licensed and Insured", "Free Estimates", "20+ Years Experience"];
 const TRUST_DESKTOP = ["Licensed and Insured", "Free Estimates, No Commitment", "5-Star Rated on Google", "Serving New England since 2004", "Response within one business day"];
 const STEPS = [
-  { n: "01", title: "You reach out", desc: "Fill out the form or call us directly. We respond within one business day." },
+  { n: "01", title: "You get in touch", desc: "Fill out the form or call us directly. We respond within one business day." },
   { n: "02", title: "We visit and estimate", desc: "A member of our team visits your space and provides a free detailed estimate." },
   { n: "03", title: "We get to work", desc: "Once you approve the estimate, we schedule the job and deliver on time." },
 ];

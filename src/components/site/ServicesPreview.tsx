@@ -17,7 +17,7 @@ const services = [
   },
   {
     name: 'Remodeling',
-    description: "Kitchens, bathrooms and living spaces — we handle flooring, tile, plastering and carpentry so you work with one contractor from start to finish.",
+    description: "Kitchens, bathrooms and living spaces. We handle flooring, tile, plastering and carpentry so you work with one contractor the whole way through.",
     href: '/services/remodeling',
     image: '/images/project-15.jpg',
   },
