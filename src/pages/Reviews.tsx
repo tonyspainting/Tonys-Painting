@@ -4,6 +4,7 @@ import PageLayout from "@/components/site/PageLayout";
 import InnerHero from "@/components/site/InnerHero";
 import FadeUpSection from "@/components/site/FadeUpSection";
 import RippleButton from "@/components/site/RippleButton";
+import { SOCIAL } from "@/data/business";
 
 const reviews = [
   {
@@ -116,7 +117,34 @@ const Reviews = () => {
             ))}
           </div>
 
-          {/* Google Review CTA hidden temporarily */}
+          <div className="mt-14 text-center">
+            <div aria-hidden style={{ fontSize: "20px", letterSpacing: "3px", color: "#C4291C" }}>
+              ★★★★★
+            </div>
+            <p className="mt-4 text-muted-foreground max-w-xl mx-auto leading-relaxed">
+              Our clients also review us on Google. Read what they say there, or add your own — it
+              helps other homeowners on Martha&apos;s Vineyard and Cape Cod find us.
+            </p>
+            <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
+              <a
+                href={SOCIAL.googleReviews}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-sm bg-foreground px-6 py-3 text-sm font-semibold text-background transition-opacity hover:opacity-90"
+              >
+                Read reviews on Google →
+              </a>
+              <a
+                href={SOCIAL.googleWriteReview}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-sm border border-border px-6 py-3 text-sm font-semibold text-foreground transition-colors hover:border-primary hover:text-primary"
+              >
+                Write a review
+              </a>
+            </div>
+          </div>
+
           {/* <div style={{
             textAlign: 'center',
             marginTop: '48px',

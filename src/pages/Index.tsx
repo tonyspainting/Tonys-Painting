@@ -1,5 +1,6 @@
 import SEO from "@/components/SEO";
 import { BUSINESS_CREDENTIALS } from "@/data/business";
+import { SOCIAL } from "@/data/business";
 import Navbar from "@/components/site/Navbar";
 import Hero from "@/components/site/Hero";
 import TrustBar from "@/components/site/TrustBar";
@@ -71,8 +72,9 @@ const Index = () => {
           priceRange: "$$",
           image: "https://tonyspaintingmv.com/og-image.jpg",
           sameAs: [
-            "https://www.instagram.com/tonyspainting_remodeling/",
-            "https://www.facebook.com/tonyspaintingmvLLC/",
+            SOCIAL.instagram,
+            SOCIAL.facebook,
+            SOCIAL.googleReviews,
           ],
           hasOfferCatalog: {
             "@type": "OfferCatalog",

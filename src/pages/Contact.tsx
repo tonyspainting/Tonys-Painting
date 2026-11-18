@@ -5,6 +5,7 @@ import InnerHero from "@/components/site/InnerHero";
 import ContactForm from "@/components/site/ContactForm";
 import { Separator } from "@/components/ui/separator";
 import { BUSINESS, BUSINESS_CREDENTIALS } from "@/data/business";
+import { SOCIAL } from "@/data/business";
 
 const contactBlocks = [
   {
@@ -49,6 +50,7 @@ const Contact = () => {
             telephone: "+15089829675",
             email: "Tonyspainting11@gmail.com",
             ...BUSINESS_CREDENTIALS,
+            sameAs: [SOCIAL.instagram, SOCIAL.facebook, SOCIAL.googleReviews],
             address: {
               "@type": "PostalAddress",
               streetAddress: "11 Cook Rd",

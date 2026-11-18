@@ -14,6 +14,14 @@ export const BUSINESS = {
   },
 } as const;
 
+/** Perfis oficiais usados em links e no schema (sameAs). */
+export const SOCIAL = {
+  instagram: "https://www.instagram.com/tonyspainting_remodeling/",
+  facebook: "https://www.facebook.com/tonyspaintingmvLLC/",
+  googleReviews: "https://maps.google.com/?cid=275691574893894892",
+  googleWriteReview: "https://g.page/r/CexcHtUGdNMDEAE/review",
+} as const;
+
 /** Campos de credencial/licença para o JSON-LD (schema.org). */
 export const BUSINESS_CREDENTIALS = {
   identifier: {
