@@ -365,30 +365,19 @@ const Footer = () => {
         }}>
           Website designed &amp; developed by
         </span>
-        <span
+        <img
+          src={prcLogo}
+          alt="PRC Group"
+          width={112}
+          height={112}
+          loading="lazy"
+          decoding="async"
           style={{
-            display: 'inline-flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            background: '#FFFFFF',
-            borderRadius: '8px',
-            padding: '4px 6px',
+            height: '28px',
+            width: 'auto',
+            display: 'block',
           }}
-        >
-          <img
-            src={prcLogo}
-            alt="PRC Group"
-            width={39}
-            height={40}
-            loading="lazy"
-            decoding="async"
-            style={{
-              height: '32px',
-              width: 'auto',
-              display: 'block',
-            }}
-          />
-        </span>
+        />
       </div>
 
       <style dangerouslySetInnerHTML={{ __html: `
