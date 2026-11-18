@@ -28,3 +28,5 @@ dist-server
 # Variaveis locais
 .env
 .env.local
+# Serviço de formulário
+form-api/node_modules
