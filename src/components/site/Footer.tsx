@@ -1,7 +1,7 @@
 import { responsive } from "@/lib/responsiveImage";
 import tonysLogo from "@/assets/tonys-logo.png";
 import elenardiLogo from "@/assets/elenardi-midia-logo.png";
-import { Instagram, Facebook } from "lucide-react";
+import { Instagram, Facebook, ShieldCheck } from "lucide-react";
 import { BUSINESS } from "@/data/business";
 
 
@@ -312,13 +312,25 @@ const Footer = () => {
       </div>
 
       <div className="border-t border-white/5">
-        <div className="container py-6 flex flex-col md:flex-row justify-between items-center gap-3 text-xs text-background/70">
-          <div>
-            © {new Date().getFullYear()} Tony&apos;s Painting and Remodeling. All rights reserved.
-            <span className="block md:inline md:ml-2 text-background/55">
-              MA HIC #{BUSINESS.hic.number} · Licensed &amp; insured
+        <div className="container py-5 flex flex-col sm:flex-row items-center justify-center gap-2 text-center text-xs text-background/75">
+          <ShieldCheck size={14} aria-hidden className="text-primary shrink-0" />
+          <span>
+            <strong className="font-semibold text-background">MA HIC #{BUSINESS.hic.number}</strong>
+            <span aria-hidden className="mx-2 text-white/20">
+              ·
             </span>
-          </div>
+            Licensed &amp; insured
+            <span aria-hidden className="mx-2 text-white/20">
+              ·
+            </span>
+            {BUSINESS.insurance.generalLiability} general liability
+          </span>
+        </div>
+      </div>
+
+      <div className="border-t border-white/5">
+        <div className="container py-6 flex flex-col md:flex-row justify-between items-center gap-3 text-xs text-background/70">
+          <div>© {new Date().getFullYear()} Tony&apos;s Painting and Remodeling. All rights reserved.</div>
           <nav aria-label="Legal" className="flex items-center gap-3">
             <a href="/privacy" className="hover:text-primary transition-colors">
               Privacy Policy
