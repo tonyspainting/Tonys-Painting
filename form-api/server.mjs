@@ -45,19 +45,30 @@ function send(res, status, body, origin) {
 }
 
 function readBody(req) {
+  const MAX_BODY = 20_000;
   return new Promise((resolve, reject) => {
     let size = 0;
+    let tooLarge = false;
     const chunks = [];
     req.on("data", (chunk) => {
       size += chunk.length;
-      if (size > 20_000) {
-        reject(new Error("Payload too large"));
-        req.destroy();
+      if (size > MAX_BODY) {
+        // Continua drenando para poder responder; não acumula mais nada.
+        tooLarge = true;
+        chunks.length = 0;
         return;
       }
       chunks.push(chunk);
     });
-    req.on("end", () => resolve(Buffer.concat(chunks).toString("utf8")));
+    req.on("end", () => {
+      if (tooLarge) {
+        const err = new Error("Payload too large");
+        err.status = 413;
+        reject(err);
+        return;
+      }
+      resolve(Buffer.concat(chunks).toString("utf8"));
+    });
     req.on("error", reject);
   });
 }
@@ -208,7 +219,11 @@ const server = http.createServer(async (req, res) => {
   let payload;
   try {
     payload = JSON.parse(await readBody(req));
-  } catch {
+  } catch (err) {
+    if (err && err.status === 413) {
+      send(res, 413, { error: "Payload too large." }, origin);
+      return;
+    }
     send(res, 400, { error: "Invalid JSON body." }, origin);
     return;
   }
