@@ -228,14 +228,6 @@ export const responsiveMap: Readonly<Record<string, ResponsiveImageMetadata>> = 
       480
     ]
   },
-  "elenardi-midia-logo": {
-    "width": 1146,
-    "height": 336,
-    "widths": [
-      100,
-      200
-    ]
-  },
   "partners-logos": {
     "width": 600,
     "height": 140,

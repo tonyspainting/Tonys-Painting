@@ -1,6 +1,5 @@
 import founder from "@/assets/otoniel-santos-founder.png";
 import tonysLogo from "@/assets/tonys-logo.png";
-import elenardiLogo from "@/assets/elenardi-midia-logo.png";
 import partnersLogo from "@/assets/partners-logos.png";
 import { responsiveMap } from "./responsiveMap";
 
@@ -15,7 +14,6 @@ export interface ResponsiveImageAttributes {
 const assetNames: Readonly<Record<string, string>> = {
   [founder]: "otoniel-santos-founder",
   [tonysLogo]: "tonys-logo",
-  [elenardiLogo]: "elenardi-midia-logo",
   [partnersLogo]: "partners-logos",
 };
 

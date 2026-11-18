@@ -30,7 +30,6 @@ def main() -> None:
         ("co_ceo", ROOT / "public/images/co_ceo.png", [480, 960], False),
         ("founder", ROOT / "src/assets/otoniel-santos-founder.png", [400, 800], False),
         ("tonys-logo", ROOT / "src/assets/tonys-logo.png", [240, 480], True),
-        ("elenardi-logo", ROOT / "src/assets/elenardi-midia-logo.png", [100, 200], True),
         ("partners", ROOT / "src/assets/partners-logos.png", [600], True),
     ]
     manifest = {}

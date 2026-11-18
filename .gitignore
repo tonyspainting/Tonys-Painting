@@ -31,3 +31,6 @@ dist-server
 # Serviço de formulário
 form-api/node_modules
 .tmp-build
+# Artefatos de auditoria
+lh-*.json
+prc-preview.png

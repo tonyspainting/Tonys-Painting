@@ -1,6 +1,6 @@
 import { responsive } from "@/lib/responsiveImage";
 import tonysLogo from "@/assets/tonys-logo.png";
-import elenardiLogo from "@/assets/elenardi-midia-logo.png";
+import prcLogo from "@/assets/prc-group-logo.png";
 import { Instagram, Facebook, ShieldCheck } from "lucide-react";
 import { BUSINESS } from "@/data/business";
 
@@ -365,25 +365,30 @@ const Footer = () => {
         }}>
           Website designed &amp; developed by
         </span>
-        <a
-          href="https://www.instagram.com/elenardimidia/"
-          target="_blank"
-          rel="noopener noreferrer"
+        <span
+          style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            background: '#FFFFFF',
+            borderRadius: '8px',
+            padding: '4px 6px',
+          }}
         >
           <img
-            {...responsive(elenardiLogo)}
-            sizes="82px"
-            alt="Elenardi Mídia"
+            src={prcLogo}
+            alt="PRC Group"
+            width={39}
+            height={40}
+            loading="lazy"
+            decoding="async"
             style={{
-              height: '24px',
+              height: '32px',
               width: 'auto',
-              opacity: 1,
-              transition: 'opacity 250ms ease',
+              display: 'block',
             }}
-            onMouseEnter={e => (e.currentTarget.style.opacity = '0.7')}
-            onMouseLeave={e => (e.currentTarget.style.opacity = '1')}
           />
-        </a>
+        </span>
       </div>
 
       <style dangerouslySetInnerHTML={{ __html: `
