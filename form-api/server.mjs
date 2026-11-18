@@ -1,8 +1,21 @@
 // Serviço mínimo que recebe o formulário do site e envia por e-mail via Resend.
 // Sem banco, sem CRM: o registro é o e-mail que chega em LEAD_TO.
 import http from "node:http";
+import { readFileSync } from "node:fs";
+import { dirname, join } from "node:path";
+import { fileURLToPath } from "node:url";
 
 const PORT = Number(process.env.PORT || 3000);
+
+// GIF de confete que abre o e-mail. O Gmail não roda JavaScript, então a
+// comemoração é um GIF inline (gmail anima GIFs).
+const CONFETTI_PATH = join(dirname(fileURLToPath(import.meta.url)), "assets", "lead-confetti.gif");
+let CONFETTI_B64 = "";
+try {
+  CONFETTI_B64 = readFileSync(CONFETTI_PATH).toString("base64");
+} catch {
+  console.warn("confetti gif not found", CONFETTI_PATH);
+}
 const RESEND_API_KEY = process.env.RESEND_API_KEY || "";
 const LEAD_TO = (process.env.LEAD_TO || "tonyspainting11@gmail.com")
   .split(",")
@@ -128,6 +141,11 @@ function buildEmail(lead) {
     : "";
 
   const html = `<div style="font-family:Arial,Helvetica,sans-serif;max-width:560px;margin:0 auto;padding:24px">
+  ${
+    CONFETTI_B64
+      ? '<img src="cid:lead-confetti" width="600" height="150" alt="New lead" style="display:block;width:100%;max-width:560px;height:auto;border-radius:10px;margin:0 0 20px">'
+      : ""
+  }
   <h2 style="margin:0 0 4px;color:#111">New estimate request</h2>
   <p style="margin:0 0 16px;color:#666">${esc(lead.name)} is interested in ${
     esc(lead.service || "painting or remodeling")
@@ -163,9 +181,18 @@ async function sendWithResend(lead) {
       from: LEAD_FROM,
       to: LEAD_TO,
       reply_to: lead.email,
-      subject: `New lead: ${lead.name}${lead.service ? ` - ${lead.service}` : ""}`,
+      subject: `🎉 New lead: ${lead.name}${lead.service ? ` - ${lead.service}` : ""}`,
       html,
       text,
+      attachments: CONFETTI_B64
+        ? [
+            {
+              filename: "lead-confetti.gif",
+              content: CONFETTI_B64,
+              content_id: "lead-confetti",
+            },
+          ]
+        : undefined,
     }),
   });
 

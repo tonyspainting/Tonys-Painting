@@ -4,6 +4,7 @@ WORKDIR /app
 
 COPY package.json ./
 COPY server.mjs ./
+COPY assets ./assets
 
 ENV NODE_ENV=production
 ENV PORT=3000

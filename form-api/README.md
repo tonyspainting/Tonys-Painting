@@ -11,6 +11,11 @@ Sem banco de dados e sem CRM: o registro do lead é o e-mail que chega na caixa 
 | `GET` | `/health` | Retorna `{ ok: true, configured: boolean }` |
 | `POST` | `/lead` | Recebe o formulário e envia o e-mail |
 
+O e-mail sai com o assunto `🎉 New lead: ...` e abre com um GIF de confete
+(`assets/lead-confetti.gif`, embutido como anexo inline `cid:lead-confetti`).
+Gmail não executa JavaScript em mensagens recebidas, então GIF é a forma de
+ter animação de verdade. Para regerar: `python scripts/make-lead-confetti.py`.
+
 Campos aceitos (JSON): `Name`, `Phone`, `Email`, `Service`, `Message`, `Source`, `Campaign`. Campos com `_honey` ou `honeypot` são tratados como robô e descartados.
 
 ## Variáveis de ambiente
