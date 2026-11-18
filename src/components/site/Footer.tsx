@@ -148,7 +148,7 @@ const Footer = () => {
           <ul className="space-y-2 text-sm text-background/80">
             <li>11 Cook Rd, Vineyard Haven, MA 02568</li>
             <li>2 Williams Ave, Pocasset, MA</li>
-            <li>240 W Center St, West Bridgewater, MA 02379</li>
+            <li>516 N Bedford St, Apt 3, East Bridgewater, MA 02333</li>
             <li>
               <a href="mailto:Tonyspainting11@gmail.com" className="hover:text-primary transition-colors">
                 Tonyspainting11@gmail.com

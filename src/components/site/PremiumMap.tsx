@@ -19,9 +19,9 @@ const LOCATIONS = [
   },
   {
     id: "bridgewater",
-    label: "West Bridgewater",
-    address: "240 W Center St, West Bridgewater, MA 02379",
-    query: "240 W Center St, West Bridgewater, MA 02379",
+    label: "East Bridgewater",
+    address: "516 N Bedford St, Apt 3, East Bridgewater, MA 02333",
+    query: "516 N Bedford St, East Bridgewater, MA 02333",
   },
 ];
 
