@@ -17,9 +17,6 @@ export interface LeadFields {
 
 export async function submitLead(fields: LeadFields): Promise<void> {
   const payload: Record<string, string> = {
-    _subject: "New lead from tonyspaintingmv.com",
-    _template: "table",
-    _captcha: "false",
     Name: fields.name,
     Phone: fields.phone,
     Email: fields.email,
