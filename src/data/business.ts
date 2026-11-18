@@ -9,7 +9,7 @@ export const BUSINESS = {
     label: "MA HIC #210672",
   },
   insurance: {
-    generalLiability: "$1M por ocorrência / $2M agregado",
+    generalLiability: "$1M per occurrence / $2M aggregate",
     short: "Licensed & insured",
   },
 } as const;
