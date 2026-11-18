@@ -230,8 +230,11 @@ const server = http.createServer(async (req, res) => {
     console.log("lead sent", JSON.stringify({ service: lead.service, source: lead.source }));
     send(res, 200, { ok: true }, origin);
   } catch (err) {
-    console.error("send failed:", err instanceof Error ? err.message : err);
-    send(res, 502, { error: "Could not send the message." }, origin);
+    const message = err instanceof Error ? err.message : String(err);
+    console.error("send failed:", message);
+    // DEBUG_ERRORS=true expõe a mensagem do Resend na resposta (útil na configuração).
+    const detail = process.env.DEBUG_ERRORS === "true" ? message : undefined;
+    send(res, 502, { error: "Could not send the message.", ...(detail ? { detail } : {}) }, origin);
   }
 });
 
