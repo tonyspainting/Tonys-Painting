@@ -118,10 +118,9 @@ const ContactForm = ({ compact = false }: ContactFormProps) => {
         name: formData.fullName,
         phone: formData.phone,
         email: formData.email,
+        address: formData.address,
         service: formData.service,
-        message: [formData.address ? `Address: ${formData.address}` : "", formData.project]
-          .filter(Boolean)
-          .join("\n\n"),
+        message: formData.project,
         source: formData.referralSource || "Website Form",
         campaign: utmSource ? `${utmSource}/${utmMedium || "organic"}` : undefined,
       });

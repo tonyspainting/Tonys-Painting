@@ -8,6 +8,7 @@ export interface LeadFields {
   name: string;
   phone: string;
   email: string;
+  address?: string;
   service?: string;
   message?: string;
   source?: string;
@@ -24,6 +25,7 @@ export async function submitLead(fields: LeadFields): Promise<void> {
     Email: fields.email,
   };
 
+  if (fields.address) payload.Address = fields.address;
   if (fields.service) payload.Service = fields.service;
   if (fields.message) payload.Message = fields.message;
   if (fields.source) payload.Source = fields.source;

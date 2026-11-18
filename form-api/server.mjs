@@ -75,17 +75,19 @@ function validate(data) {
   const name = String(data.Name ?? data.name ?? "").trim();
   const phone = String(data.Phone ?? data.phone ?? "").trim();
   const email = String(data.Email ?? data.email ?? "").trim();
+  const address = String(data.Address ?? data.address ?? "").trim();
   const service = String(data.Service ?? data.service ?? "").trim();
-  const message = String(data.Message ?? data.message ?? "").trim();
+  const message = String(data.Message ?? data.message ?? data.Project ?? data.project ?? "").trim();
   const source = String(data.Source ?? data.source ?? "").trim();
   const campaign = String(data.Campaign ?? data.campaign ?? "").trim();
 
   if (!name || !phone || !email) return { error: "Name, phone and email are required." };
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return { error: "Invalid email address." };
   if (name.length > 120 || phone.length > 40 || email.length > 160) return { error: "Field too long." };
+  if (address.length > 300) return { error: "Field too long." };
   if (message.length > 4000 || service.length > 120) return { error: "Field too long." };
 
-  return { lead: { name, phone, email, service, message, source, campaign } };
+  return { lead: { name, phone, email, address, service, message, source, campaign } };
 }
 
 function buildEmail(lead) {
@@ -93,6 +95,7 @@ function buildEmail(lead) {
     ["Name", lead.name],
     ["Phone", lead.phone],
     ["Email", lead.email],
+    ["Property address", lead.address],
     ["Service", lead.service],
     ["Source", lead.source],
     ["Campaign", lead.campaign],
@@ -108,7 +111,7 @@ function buildEmail(lead) {
     .join("");
 
   const message = lead.message
-    ? `<p style="margin:16px 0 4px;color:#666">Message</p><p style="margin:0;white-space:pre-wrap;color:#111">${esc(
+    ? `<p style="margin:16px 0 4px;color:#666">Project details</p><p style="margin:0;white-space:pre-wrap;color:#111">${esc(
         lead.message,
       )}</p>`
     : "";
@@ -131,7 +134,7 @@ function buildEmail(lead) {
 
   const text =
     rows.map(([label, value]) => `${label}: ${value}`).join("\n") +
-    (lead.message ? `\n\nMessage:\n${lead.message}` : "") +
+    (lead.message ? `\n\nProject details:\n${lead.message}` : "") +
     "\n\nSent from tonyspaintingmv.com";
 
   return { html, text };
