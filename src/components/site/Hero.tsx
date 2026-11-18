@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { useToast } from "@/hooks/use-toast";
 import { submitLead } from "@/lib/submitLead";
 import { SERVICE_OPTIONS } from "@/data/serviceOptions";
+import { REFERRAL_OPTIONS } from "@/data/referralOptions";
 import heroBgDesktop from "@/assets/hero-bg-desktop.jpg";
 import heroBgMobile from "@/assets/hero-bg-mobile.jpg";
 
@@ -18,14 +19,16 @@ const GlassForm = () => {
     fullName: "",
     phone: "",
     email: "",
+    address: "",
     service: "",
+    referralSource: "",
     project: "",
   });
   const [submitting, setSubmitting] = useState(false);
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    if (!formData.fullName || !formData.phone || !formData.email || !formData.service) {
+    if (!formData.fullName || !formData.phone || !formData.email || !formData.address || !formData.service) {
       toast({
         title: "Please fill in all required fields",
         variant: "destructive",
@@ -39,9 +42,10 @@ const GlassForm = () => {
         name: formData.fullName,
         phone: formData.phone,
         email: formData.email,
+        address: formData.address,
         service: formData.service,
         message: formData.project,
-        source: "Homepage hero form",
+        source: formData.referralSource || "Homepage hero form",
       });
     } catch (error) {
       console.error("Form submission failed:", error);
@@ -156,6 +160,19 @@ const GlassForm = () => {
         onBlur={(e) => (e.target.style.borderColor = "rgba(255,255,255,0.15)")}
       />
 
+      <input
+        placeholder="Property Address"
+        aria-label="Property address"
+        name="address"
+        autoComplete="street-address"
+        required
+        style={inputStyle}
+        value={formData.address}
+        onChange={(e) => setFormData({ ...formData, address: e.target.value })}
+        onFocus={(e) => (e.target.style.borderColor = "rgba(196,41,28,0.70)")}
+        onBlur={(e) => (e.target.style.borderColor = "rgba(255,255,255,0.15)")}
+      />
+
       <select
         required
         aria-label="Service needed"
@@ -172,6 +189,25 @@ const GlassForm = () => {
         {SERVICE_OPTIONS.map((s) => (
           <option key={s} value={s} style={{ color: "black" }}>
             {s}
+          </option>
+        ))}
+      </select>
+
+      <select
+        aria-label="How did you hear about us"
+        name="referral"
+        style={{ ...inputStyle, appearance: "none", cursor: "pointer" }}
+        value={formData.referralSource}
+        onChange={(e) => setFormData({ ...formData, referralSource: e.target.value })}
+        onFocus={(e) => (e.target.style.borderColor = "rgba(196,41,28,0.70)")}
+        onBlur={(e) => (e.target.style.borderColor = "rgba(255,255,255,0.15)")}
+      >
+        <option value="" style={{ color: "black" }}>
+          How did you hear about us? (optional)
+        </option>
+        {REFERRAL_OPTIONS.map((option) => (
+          <option key={option.value} value={option.value} style={{ color: "black" }}>
+            {option.label}
           </option>
         ))}
       </select>

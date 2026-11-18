@@ -15,17 +15,9 @@ import { useToast } from "@/hooks/use-toast";
 import { cn } from "@/lib/utils";
 import { submitLead } from "@/lib/submitLead";
 import { SERVICE_OPTIONS } from "@/data/serviceOptions";
+import { REFERRAL_OPTIONS } from "@/data/referralOptions";
 
-const SERVICES = SERVICE_OPTIONS;
-
-const REFERRAL_OPTIONS = [
-  { value: "Facebook or Instagram Ad", label: "I saw your ad on Facebook or Instagram" },
-  { value: "Friend or Family Referral", label: "A friend or family recommended you" },
-  { value: "Google Search", label: "I found you on Google" },
-  { value: "Van or Vehicle", label: "I saw your van or vehicle in my area" },
-  { value: "Yard Sign", label: "I saw a yard sign near my neighborhood" },
-  { value: "Other", label: "Other" },
-];
+const FORM_SERVICES = SERVICE_OPTIONS;
 
 type FormState = {
   fullName: string;
@@ -249,7 +241,7 @@ const ContactForm = ({ compact = false }: ContactFormProps) => {
             <SelectValue placeholder="Select a service" />
           </SelectTrigger>
           <SelectContent>
-            {SERVICES.map((s) => (
+            {FORM_SERVICES.map((s) => (
               <SelectItem key={s} value={s}>
                 {s}
               </SelectItem>
@@ -275,12 +267,11 @@ const ContactForm = ({ compact = false }: ContactFormProps) => {
             <SelectValue placeholder="Select an option" />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="Facebook or Instagram Ad">I saw your ad on Facebook or Instagram</SelectItem>
-            <SelectItem value="Friend or Family Referral">A friend or family member recommended you</SelectItem>
-            <SelectItem value="Google Search">I found you on Google</SelectItem>
-            <SelectItem value="Van or Vehicle">I saw your van or truck in my area</SelectItem>
-            <SelectItem value="Yard Sign">I saw a yard sign near my neighborhood</SelectItem>
-            <SelectItem value="Other">Other</SelectItem>
+            {REFERRAL_OPTIONS.map((option) => (
+              <SelectItem key={option.value} value={option.value}>
+                {option.label}
+              </SelectItem>
+            ))}
           </SelectContent>
         </Select>
       </div>
