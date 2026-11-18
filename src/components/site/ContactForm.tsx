@@ -231,6 +231,7 @@ const ContactForm = ({ compact = false }: ContactFormProps) => {
         >
           <SelectTrigger
             id="service"
+            aria-label="Service needed"
             aria-invalid={!!errors.service}
             className={cn(
               "mt-1.5 rounded-sm",
@@ -261,6 +262,7 @@ const ContactForm = ({ compact = false }: ContactFormProps) => {
           onValueChange={(v) => setField("referralSource", v)}
         >
           <SelectTrigger
+            aria-label="How did you hear about us"
             className="mt-1.5 rounded-sm"
             style={inputStyle}
           >

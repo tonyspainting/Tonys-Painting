@@ -119,7 +119,7 @@ const InnerHero = ({
               fontFamily: "Montserrat, sans-serif",
               fontSize: 14,
               lineHeight: 1.55,
-              color: isImage ? "rgba(255,255,255,0.8)" : "#6B6560",
+              color: isImage ? "rgba(255,255,255,0.8)" : "#57514B",
             }}
           >
             {subtitle}

@@ -1,5 +1,5 @@
 import FadeUpSection from "@/components/site/FadeUpSection";
-import partnersLogos from "@/assets/partners-logos.png";
+import partnersLogos from "@/assets/partners-logos.webp";
 
 const PartnersSection = () => {
   return (
@@ -63,7 +63,10 @@ const PartnersSection = () => {
             <img
               src={partnersLogos}
               alt="Cabot Stains, Benjamin Moore, Sherwin-Williams, and EPA Lead-Safe Certified Firm"
+              width={600}
+              height={140}
               loading="lazy"
+              decoding="async"
               className="w-full h-auto"
               style={{
                 maxWidth: "560px",

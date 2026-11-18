@@ -6,8 +6,8 @@ import { useToast } from "@/hooks/use-toast";
 import { submitLead } from "@/lib/submitLead";
 import { SERVICE_OPTIONS } from "@/data/serviceOptions";
 import { REFERRAL_OPTIONS } from "@/data/referralOptions";
-import heroBgDesktop from "@/assets/hero-bg-desktop.jpg";
-import heroBgMobile from "@/assets/hero-bg-mobile.jpg";
+import heroBgDesktop from "@/assets/hero-bg-desktop.webp";
+import heroBgMobile from "@/assets/hero-bg-mobile.webp";
 
 const HERO_IMAGE = heroBgMobile;
 const HERO_IMAGE_DESKTOP = heroBgDesktop;
