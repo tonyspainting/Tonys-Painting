@@ -1,8 +1,8 @@
 // Envio dos formulários por e-mail, sem banco de dados e sem CRM.
-// O padrão entrega em tonyspainting11@gmail.com via FormSubmit.
-// Para trocar de serviço (Web3Forms, Formspree...), defina VITE_FORM_ENDPOINT no build.
+// Padrão: API própria da Tony's (form-api + Resend), no domínio api.tonyspaintingmv.com.
+// VITE_FORM_ENDPOINT pode sobrescrever (útil para testar outro serviço no build).
 const FORM_ENDPOINT =
-  import.meta.env.VITE_FORM_ENDPOINT || "https://formsubmit.co/ajax/tonyspainting11@gmail.com";
+  import.meta.env.VITE_FORM_ENDPOINT || "https://api.tonyspaintingmv.com/lead";
 
 export interface LeadFields {
   name: string;
