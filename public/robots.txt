@@ -3,4 +3,4 @@ Allow: /
 Disallow: /blog/wp-admin/
 
 Sitemap: https://tonyspaintingmv.com/sitemap.xml
-Sitemap: https://tonyspaintingmv.com/blog/wp-sitemap.xml
+Sitemap: https://tonyspaintingmv.com/blog/sitemap_index.xml
