@@ -62,8 +62,8 @@ const GlassForm = () => {
   };
 
   const inputStyle = {
-    background: "rgba(255, 255, 255, 0.08)",
-    border: "1px solid rgba(255, 255, 255, 0.15)",
+    background: "rgba(255, 255, 255, 0.10)",
+    border: "1px solid rgba(255, 255, 255, 0.20)",
     borderRadius: "8px",
     padding: "0 14px",
     height: "44px",
@@ -79,16 +79,16 @@ const GlassForm = () => {
     <form
       onSubmit={handleSubmit}
       style={{
-        background: "rgba(196, 41, 28, 0.056)",
-        backdropFilter: "blur(10px)",
-        WebkitBackdropFilter: "blur(10px)",
-        border: "1px solid rgba(196, 41, 28, 0.144)",
+        background: "rgba(22, 20, 19, 0.62)",
+        backdropFilter: "blur(14px) saturate(120%)",
+        WebkitBackdropFilter: "blur(14px) saturate(120%)",
+        border: "1px solid rgba(255, 255, 255, 0.14)",
         borderRadius: "16px",
         padding: "28px",
         display: "flex",
         flexDirection: "column",
         gap: "14px",
-        boxShadow: "0 8px 32px rgba(0, 0, 0, 0.30), inset 0 1px 0 rgba(255,255,255,0.08)",
+        boxShadow: "0 8px 32px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255,255,255,0.08)",
         willChange: "transform",
       }}
     >
