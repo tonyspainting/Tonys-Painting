@@ -22,6 +22,41 @@ export const SOCIAL = {
   googleWriteReview: "https://g.page/r/CexcHtUGdNMDEAE/review",
 } as const;
 
+export interface BusinessLocation {
+  id: string;
+  label: string;
+  street: string;
+  city: string;
+  region: string;
+  postalCode?: string;
+}
+
+/** As três bases de operação. A primeira é a sede registrada (HIC e apólice). */
+export const LOCATIONS: BusinessLocation[] = [
+  { id: "vineyard", label: "Vineyard Haven", street: "11 Cook Rd", city: "Vineyard Haven", region: "MA", postalCode: "02568" },
+  { id: "pocasset", label: "Pocasset", street: "2 Williams Ave", city: "Pocasset", region: "MA" },
+  {
+    id: "east-bridgewater",
+    label: "East Bridgewater",
+    street: "516 N Bedford St, Apt 3",
+    city: "East Bridgewater",
+    region: "MA",
+    postalCode: "02333",
+  },
+];
+
+export function formatLocation(location: BusinessLocation): string {
+  const tail = [location.city, location.region].filter(Boolean).join(", ");
+  const withZip = location.postalCode ? `${tail} ${location.postalCode}` : tail;
+  return `${location.street}, ${withZip}`;
+}
+
+/** Consulta usada no Google Maps: apartamento atrapalha o geocoding. */
+export function locationQuery(location: BusinessLocation): string {
+  const street = location.street.replace(/,\s*(apt|unit|suite|#)\s*[\w-]+/gi, "");
+  return formatLocation({ ...location, street });
+}
+
 /** Campos de credencial/licença para o JSON-LD (schema.org). */
 export const BUSINESS_CREDENTIALS = {
   identifier: {

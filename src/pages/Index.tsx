@@ -1,5 +1,5 @@
 import SEO from "@/components/SEO";
-import { BUSINESS_CREDENTIALS } from "@/data/business";
+import { BUSINESS_CREDENTIALS, LOCATIONS } from "@/data/business";
 import { SOCIAL } from "@/data/business";
 import Navbar from "@/components/site/Navbar";
 import Hero from "@/components/site/Hero";
@@ -76,6 +76,18 @@ const Index = () => {
             SOCIAL.facebook,
             SOCIAL.googleReviews,
           ],
+          location: LOCATIONS.map((location) => ({
+            "@type": "Place",
+            name: `Tony's Painting & Remodeling - ${location.label}`,
+            address: {
+              "@type": "PostalAddress",
+              streetAddress: location.street,
+              addressLocality: location.city,
+              addressRegion: location.region,
+              ...(location.postalCode ? { postalCode: location.postalCode } : {}),
+              addressCountry: "US",
+            },
+          })),
           hasOfferCatalog: {
             "@type": "OfferCatalog",
             name: "Painting and Remodeling Services",

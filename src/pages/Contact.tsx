@@ -4,7 +4,8 @@ import PageLayout from "@/components/site/PageLayout";
 import InnerHero from "@/components/site/InnerHero";
 import ContactForm from "@/components/site/ContactForm";
 import { Separator } from "@/components/ui/separator";
-import { BUSINESS, BUSINESS_CREDENTIALS } from "@/data/business";
+import PremiumMap from "@/components/site/PremiumMap";
+import { BUSINESS, BUSINESS_CREDENTIALS, LOCATIONS, formatLocation, locationQuery } from "@/data/business";
 import { SOCIAL } from "@/data/business";
 
 const contactBlocks = [
@@ -51,6 +52,18 @@ const Contact = () => {
             email: "Tonyspainting11@gmail.com",
             ...BUSINESS_CREDENTIALS,
             sameAs: [SOCIAL.instagram, SOCIAL.facebook, SOCIAL.googleReviews],
+            location: LOCATIONS.map((location) => ({
+              "@type": "Place",
+              name: `Tony's Painting & Remodeling - ${location.label}`,
+              address: {
+                "@type": "PostalAddress",
+                streetAddress: location.street,
+                addressLocality: location.city,
+                addressRegion: location.region,
+                ...(location.postalCode ? { postalCode: location.postalCode } : {}),
+                addressCountry: "US",
+              },
+            })),
             address: {
               "@type": "PostalAddress",
               streetAddress: "11 Cook Rd",
@@ -220,6 +233,45 @@ const Contact = () => {
               <span className="text-sm md:text-base text-foreground">{item}</span>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* Three bases */}
+      <section className="bg-background border-t border-border">
+        <div className="container py-16 md:py-20">
+          <div className="max-w-2xl">
+            <p className="text-xs uppercase tracking-[0.25em] text-primary mb-4">Where we work from</p>
+            <h2 className="font-display text-3xl md:text-4xl text-foreground leading-tight">
+              Three bases, one crew.
+            </h2>
+            <p className="mt-4 text-muted-foreground leading-relaxed">
+              We keep materials and crews on the Vineyard, in Pocasset and in East Bridgewater, which
+              is how we reach the islands and the mainland without losing a day to travel.
+            </p>
+          </div>
+
+          <div className="mt-10 grid gap-6 md:grid-cols-3">
+            {LOCATIONS.map((location) => (
+              <div key={location.id} className="border border-border bg-surface p-6">
+                <h3 className="font-display text-xl text-foreground">{location.label}</h3>
+                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                  {formatLocation(location)}
+                </p>
+                <a
+                  href={`https://maps.google.com/?q=${encodeURIComponent(locationQuery(location))}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-4 inline-flex items-center gap-2 text-sm text-primary hover:underline"
+                >
+                  Get directions →
+                </a>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-10">
+            <PremiumMap variant="contact" />
+          </div>
         </div>
       </section>
     </PageLayout>

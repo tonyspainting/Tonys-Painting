@@ -2,7 +2,7 @@ import { responsive } from "@/lib/responsiveImage";
 import tonysLogo from "@/assets/tonys-logo.png";
 import prcLogo from "@/assets/prc-group-logo.png";
 import { Instagram, Facebook, ShieldCheck } from "lucide-react";
-import { BUSINESS } from "@/data/business";
+import { BUSINESS, LOCATIONS, formatLocation } from "@/data/business";
 
 
 const Footer = () => {
@@ -146,9 +146,9 @@ const Footer = () => {
         <div>
           <div className="text-xs uppercase tracking-[0.2em] text-background/70 mb-4">Contact</div>
           <ul className="space-y-2 text-sm text-background/80">
-            <li>11 Cook Rd, Vineyard Haven, MA 02568</li>
-            <li>2 Williams Ave, Pocasset, MA</li>
-            <li>516 N Bedford St, Apt 3, East Bridgewater, MA 02333</li>
+            {LOCATIONS.map((location) => (
+              <li key={location.id}>{formatLocation(location)}</li>
+            ))}
             <li>
               <a href="mailto:Tonyspainting11@gmail.com" className="hover:text-primary transition-colors">
                 Tonyspainting11@gmail.com

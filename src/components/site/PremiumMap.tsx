@@ -1,29 +1,16 @@
 import { useState } from "react";
+import { LOCATIONS as BUSINESS_LOCATIONS, formatLocation, locationQuery } from "@/data/business";
 
 interface PremiumMapProps {
   variant?: "footer" | "contact";
 }
 
-const LOCATIONS = [
-  {
-    id: "vineyard",
-    label: "Vineyard Haven",
-    address: "11 Cook Rd, Vineyard Haven, MA 02568",
-    query: "11 Cook Rd, Vineyard Haven, MA 02568",
-  },
-  {
-    id: "pocasset",
-    label: "Pocasset",
-    address: "2 Williams Ave, Pocasset, MA",
-    query: "2 Williams Ave, Pocasset, MA",
-  },
-  {
-    id: "bridgewater",
-    label: "East Bridgewater",
-    address: "516 N Bedford St, Apt 3, East Bridgewater, MA 02333",
-    query: "516 N Bedford St, East Bridgewater, MA 02333",
-  },
-];
+const LOCATIONS = BUSINESS_LOCATIONS.map((location) => ({
+  id: location.id,
+  label: location.label,
+  address: formatLocation(location),
+  query: locationQuery(location),
+}));
 
 const PremiumMap = ({ variant = "footer" }: PremiumMapProps) => {
   const isFooter = variant === "footer";
