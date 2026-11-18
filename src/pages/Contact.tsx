@@ -4,6 +4,7 @@ import PageLayout from "@/components/site/PageLayout";
 import InnerHero from "@/components/site/InnerHero";
 import ContactForm from "@/components/site/ContactForm";
 import { Separator } from "@/components/ui/separator";
+import { BUSINESS, BUSINESS_CREDENTIALS } from "@/data/business";
 
 const contactBlocks = [
   {
@@ -47,6 +48,7 @@ const Contact = () => {
             name: "Tony's Painting and Remodeling",
             telephone: "+15089829675",
             email: "Tonyspainting11@gmail.com",
+            ...BUSINESS_CREDENTIALS,
             address: {
               "@type": "PostalAddress",
               streetAddress: "11 Cook Rd",
@@ -110,6 +112,19 @@ const Contact = () => {
             <div style={{ marginTop: 16 }}>
               <ContactForm compact />
             </div>
+            <p
+              style={{
+                marginTop: 12,
+                fontFamily: "Montserrat, sans-serif",
+                fontSize: 11,
+                letterSpacing: "0.04em",
+                color: "#57514B",
+                textAlign: "center",
+              }}
+            >
+              MA HIC #{BUSINESS.hic.number} · Licensed &amp; insured ·{" "}
+              {BUSINESS.insurance.generalLiability} general liability
+            </p>
           </div>
 
           {/* Sidebar */}

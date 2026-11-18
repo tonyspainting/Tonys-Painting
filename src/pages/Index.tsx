@@ -1,4 +1,5 @@
 import SEO from "@/components/SEO";
+import { BUSINESS_CREDENTIALS } from "@/data/business";
 import Navbar from "@/components/site/Navbar";
 import Hero from "@/components/site/Hero";
 import TrustBar from "@/components/site/TrustBar";
@@ -31,6 +32,7 @@ const Index = () => {
           email: "Tonyspainting11@gmail.com",
           foundingDate: "2004",
           founder: { "@type": "Person", name: "Otoniel Santos" },
+          ...BUSINESS_CREDENTIALS,
           address: {
             "@type": "PostalAddress",
             streetAddress: "11 Cook Rd",

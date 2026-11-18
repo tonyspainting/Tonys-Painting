@@ -6,6 +6,7 @@ import { useToast } from "@/hooks/use-toast";
 import { submitLead } from "@/lib/submitLead";
 import { SERVICE_OPTIONS } from "@/data/serviceOptions";
 import { REFERRAL_OPTIONS } from "@/data/referralOptions";
+import { BUSINESS } from "@/data/business";
 import heroBgDesktop from "@/assets/hero-bg-desktop.webp";
 import heroBgMobile from "@/assets/hero-bg-mobile.webp";
 
@@ -257,7 +258,7 @@ const GlassForm = () => {
           margin: 0,
         }}
       >
-        Licensed and insured. Serving MA since 2004.
+        MA HIC #{BUSINESS.hic.number} · Licensed &amp; insured · Serving MA since 2004.
       </p>
     </form>
   );

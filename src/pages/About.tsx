@@ -4,6 +4,7 @@ import SEO from "@/components/SEO";
 import PageLayout from "@/components/site/PageLayout";
 import InnerHero from "@/components/site/InnerHero";
 import FadeUpSection from "@/components/site/FadeUpSection";
+import { BUSINESS } from "@/data/business";
 import RippleButton from "@/components/site/RippleButton";
 import otonielSantos from "@/assets/otoniel-santos-founder.png";
 import cintiaPhoto from "@/assets/cintia-sales.jpeg.asset.json";
@@ -66,6 +67,15 @@ const About = () => {
         subtitle="Otoniel Santos started this company with a straightforward goal: do the work right and treat every home with respect."
         crumbs={[{ label: "Home", to: "/" }, { label: "About Us" }]}
       />
+
+      <section className="bg-background">
+        <div className="container pt-10 md:pt-12">
+          <p className="text-center text-xs tracking-[0.08em] uppercase text-muted-foreground">
+            MA HIC #{BUSINESS.hic.number} · Licensed &amp; insured ·{" "}
+            {BUSINESS.insurance.generalLiability} general liability
+          </p>
+        </div>
+      </section>
 
       {/* Leadership */}
       <section className="bg-background">

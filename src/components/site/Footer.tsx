@@ -2,6 +2,7 @@ import { responsive } from "@/lib/responsiveImage";
 import tonysLogo from "@/assets/tonys-logo.png";
 import elenardiLogo from "@/assets/elenardi-midia-logo.png";
 import { Instagram, Facebook } from "lucide-react";
+import { BUSINESS } from "@/data/business";
 
 
 const Footer = () => {
@@ -312,7 +313,12 @@ const Footer = () => {
 
       <div className="border-t border-white/5">
         <div className="container py-6 flex flex-col md:flex-row justify-between items-center gap-3 text-xs text-background/70">
-          <div>© {new Date().getFullYear()} Tony&apos;s Painting and Remodeling. All rights reserved.</div>
+          <div>
+            © {new Date().getFullYear()} Tony&apos;s Painting and Remodeling. All rights reserved.
+            <span className="block md:inline md:ml-2 text-background/55">
+              MA HIC #{BUSINESS.hic.number} · Licensed &amp; insured
+            </span>
+          </div>
           <nav aria-label="Legal" className="flex items-center gap-3">
             <a href="/privacy" className="hover:text-primary transition-colors">
               Privacy Policy
