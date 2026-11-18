@@ -14,14 +14,9 @@ import {
 import { useToast } from "@/hooks/use-toast";
 import { cn } from "@/lib/utils";
 import { submitLead } from "@/lib/submitLead";
+import { SERVICE_OPTIONS } from "@/data/serviceOptions";
 
-const SERVICES = [
-  "Interior Painting",
-  "Exterior Painting",
-  "Remodeling",
-  "Multiple Services",
-  "Not Sure Yet",
-];
+const SERVICES = SERVICE_OPTIONS;
 
 const REFERRAL_OPTIONS = [
   { value: "Facebook or Instagram Ad", label: "I saw your ad on Facebook or Instagram" },

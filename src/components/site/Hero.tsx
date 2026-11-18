@@ -4,6 +4,7 @@ import { Shield, Star, CheckCircle2 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useToast } from "@/hooks/use-toast";
 import { submitLead } from "@/lib/submitLead";
+import { SERVICE_OPTIONS } from "@/data/serviceOptions";
 import heroBgDesktop from "@/assets/hero-bg-desktop.jpg";
 import heroBgMobile from "@/assets/hero-bg-mobile.jpg";
 
@@ -168,18 +169,7 @@ const GlassForm = () => {
         <option value="" disabled style={{ color: "black" }}>
           Service Needed
         </option>
-        {[
-          "Interior Painting",
-          "Exterior Painting",
-          "Remodeling",
-          "Deck and Stairs",
-          "Flooring",
-          "Ceramic Tile",
-          "Plastering",
-          "Countertop",
-          "Fence",
-          "Other",
-        ].map((s) => (
+        {SERVICE_OPTIONS.map((s) => (
           <option key={s} value={s} style={{ color: "black" }}>
             {s}
           </option>
