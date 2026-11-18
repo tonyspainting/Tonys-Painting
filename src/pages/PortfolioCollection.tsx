@@ -10,6 +10,7 @@ import RippleButton from "@/components/site/RippleButton";
 import BeforeAfter from "@/components/site/BeforeAfter";
 import NotFound from "./NotFound";
 import { COLLECTIONS, getCollectionBySlug, type PortfolioImage } from "@/data/portfolio";
+import { PORTFOLIO_EXTRAS } from "@/data/portfolioExtras";
 import { useColumnCount } from "@/hooks/useColumnCount";
 
 interface MasonryItem {
@@ -20,6 +21,7 @@ interface MasonryItem {
 const PortfolioCollectionPage = () => {
   const { slug } = useParams<{ slug: string }>();
   const collection = getCollectionBySlug(slug);
+  const extra = collection ? PORTFOLIO_EXTRAS[collection.slug] : undefined;
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
   const touchStartX = useRef<number | null>(null);
   const columnCount = useColumnCount();
@@ -184,12 +186,35 @@ const PortfolioCollectionPage = () => {
                     {p}
                   </p>
                 ))}
+                {(extra?.paragraphs ?? []).map((p) => (
+                  <p key={p} className="mt-4 text-muted-foreground leading-relaxed">
+                    {p}
+                  </p>
+                ))}
                 <Link
                   to={collection.details.serviceTo}
                   className="inline-flex items-center gap-2 text-sm text-primary hover:underline mt-6"
                 >
                   Learn more about our {collection.details.serviceLabel} service
                 </Link>
+                {extra && extra.related.length > 0 && (
+                  <div className="mt-8">
+                    <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
+                      Related services
+                    </p>
+                    <div className="mt-3 flex flex-wrap gap-2">
+                      {extra.related.map((item) => (
+                        <Link
+                          key={item.to}
+                          to={item.to}
+                          className="rounded-sm border border-border px-3 py-1.5 text-sm text-foreground/80 transition-colors hover:border-primary hover:text-primary"
+                        >
+                          {item.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                )}
               </div>
             </FadeUpSection>
           </div>
