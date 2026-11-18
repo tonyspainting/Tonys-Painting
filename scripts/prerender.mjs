@@ -2,6 +2,7 @@
 // e gera o sitemap.xml. Se algo falhar aqui, o site continua funcionando como antes (só sem pré-renderização).
 import fs from "node:fs";
 import path from "node:path";
+import { execSync } from "node:child_process";
 import { fileURLToPath, pathToFileURL } from "node:url";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -55,9 +56,42 @@ for (const route of privateRoutes) {
   console.log("página vazia (noindex):", url);
 }
 
+// <lastmod> dá ao Google um motivo concreto para recrawlear. Usa a data do
+// último commit (estável entre builds) e cai para a data do build quando o
+// .git não está disponível no container.
+function sitemapLastmod() {
+  try {
+    const out = execSync("git log -1 --format=%cs", {
+      cwd: root,
+      stdio: ["ignore", "pipe", "ignore"],
+    })
+      .toString()
+      .trim();
+    if (/^\d{4}-\d{2}-\d{2}$/.test(out)) return out;
+  } catch {
+    // sem git no ambiente de build
+  }
+  return new Date().toISOString().slice(0, 10);
+}
+
+const priorityFor = (url) => {
+  if (url === "/") return "1.0";
+  if (url.startsWith("/services") || url.startsWith("/painting-contractor")) return "0.8";
+  if (url.startsWith("/portfolio")) return "0.6";
+  if (url === "/privacy" || url === "/accessibility") return "0.3";
+  return "0.7";
+};
+
+const lastmod = sitemapLastmod();
+
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${sitemapRoutes.map((u) => `  <url><loc>${siteUrl}${u === "/" ? "/" : u}</loc></url>`).join("\n")}
+${sitemapRoutes
+  .map((u) => {
+    const loc = `${siteUrl}${u === "/" ? "/" : u}`;
+    return `  <url><loc>${loc}</loc><lastmod>${lastmod}</lastmod><priority>${priorityFor(u)}</priority></url>`;
+  })
+  .join("\n")}
 </urlset>
 `;
 fs.writeFileSync(path.join(dist, "sitemap.xml"), sitemap);

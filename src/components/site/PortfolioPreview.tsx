@@ -1,4 +1,5 @@
 import { responsiveSource } from "@/lib/responsiveImage";
+import { COLLECTIONS } from "@/data/portfolio";
 import { useState, useRef, useEffect } from "react";
 import FadeUpSection from "@/components/site/FadeUpSection";
 
@@ -142,6 +143,18 @@ const PortfolioPreview = () => {
             ))}
           </div>
         </div>
+
+        <nav aria-label="Portfolio collections" className="mt-12 flex flex-wrap items-center justify-center gap-x-7 gap-y-3">
+          {COLLECTIONS.map((collection) => (
+            <a
+              key={collection.slug}
+              href={`/portfolio/${collection.slug}`}
+              className="text-sm text-foreground/70 hover:text-primary underline-offset-4 hover:underline transition-colors"
+            >
+              {collection.title}
+            </a>
+          ))}
+        </nav>
       </div>
 
       <style dangerouslySetInnerHTML={{ __html: `
