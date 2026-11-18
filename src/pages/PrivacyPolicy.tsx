@@ -92,8 +92,9 @@ const PrivacyPolicy = () => (
       <p>We share information only with service providers that help us run the site and the business:</p>
       <ul className="list-disc pl-5 space-y-2">
         <li>
-          <strong className="text-foreground">FormSubmit</strong> is the form service that delivers
-          your estimate request to our email inbox. We do not keep a database of website requests.
+          <strong className="text-foreground">Resend</strong> delivers the estimate request email
+          from leads@tonyspaintingmv.com to our inbox. We do not keep a database of website
+          requests.
         </li>
         <li>
           <strong className="text-foreground">Google Workspace (Gmail)</strong> receives and stores

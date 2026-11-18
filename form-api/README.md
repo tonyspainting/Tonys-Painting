@@ -67,7 +67,7 @@ No app principal (o site), adicione a variável **de build** e faça o deploy:
 VITE_FORM_ENDPOINT=https://api.tonyspaintingmv.com/lead
 ```
 
-Sem essa variável, o site continua usando o FormSubmit (fallback em `src/lib/submitLead.ts`).
+Sem essa variável, o site usa a API própria, configurada em `src/lib/submitLead.ts`.
 
 ## Teste depois do deploy
 

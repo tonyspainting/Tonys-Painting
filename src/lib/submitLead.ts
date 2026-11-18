@@ -1,6 +1,6 @@
 // Envio dos formulários por e-mail, sem banco de dados e sem CRM.
-// Padrão: API própria da Tony's (form-api + Resend), no domínio api.tonyspaintingmv.com.
-// VITE_FORM_ENDPOINT pode sobrescrever (útil para testar outro serviço no build).
+// Endpoint: API própria da Tony's (form-api + Resend) em api.tonyspaintingmv.com.
+// VITE_FORM_ENDPOINT pode sobrescrever o endereço no build, se necessário.
 const FORM_ENDPOINT =
   import.meta.env.VITE_FORM_ENDPOINT || "https://api.tonyspaintingmv.com/lead";
 
@@ -37,10 +37,10 @@ export async function submitLead(fields: LeadFields): Promise<void> {
     body: JSON.stringify(payload),
   });
 
-  // O FormSubmit responde 200 com success:"false" quando o formulário ainda não
-  // foi ativado, então checar apenas o status HTTP daria falso positivo.
+  // A API responde com { error } quando algo falha, então checar só o status
+  // HTTP daria falso positivo.
   const data = await response.json().catch(() => null);
-  if (!response.ok || (data && String(data.success) === "false")) {
-    throw new Error(data?.message || `Form endpoint returned ${response.status}`);
+  if (!response.ok) {
+    throw new Error(data?.error || data?.message || `Form endpoint returned ${response.status}`);
   }
 }
