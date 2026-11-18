@@ -11,6 +11,7 @@ import { submitLead } from "@/lib/submitLead";
 declare global {
   interface Window {
     fbq?: (...args: unknown[]) => void;
+    __pendingFbq?: unknown[][];
   }
 }
 
@@ -105,12 +106,18 @@ const LPForm = ({ service, idPrefix = "lp" }: LPFormProps) => {
     }
     setSubmitting(false);
 
-    // Disparar evento Lead no Meta Pixel
+    // Disparar evento Lead no Meta Pixel. O pixel carrega depois do load, então
+    // se ainda não estiver pronto o evento fica na fila para ser enviado depois.
+    const leadEvent = [
+      "track",
+      "Lead",
+      { content_name: formData.service, content_category: "Landing page" },
+    ];
     if (typeof window.fbq === "function") {
-      window.fbq("track", "Lead", {
-        content_name: formData.service,
-        content_category: "Landing page",
-      });
+      window.fbq(...leadEvent);
+    } else {
+      window.__pendingFbq = window.__pendingFbq || [];
+      window.__pendingFbq.push(leadEvent);
     }
 
     navigate("/thank-you");

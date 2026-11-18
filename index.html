@@ -94,18 +94,39 @@
     <meta name="theme-color" content="#C4291C" />
     <link rel="apple-touch-icon" href="/favicon.ico" />
 
-    <!-- Meta Pixel Code -->
+    <!-- Meta Pixel Code (carregado depois do load: não bloqueia o LCP) -->
     <script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1004158805431458');
-fbq('track', 'PageView');
+      window.__tonysLoadPixel = function () {
+        if (window.__tonysPixelLoaded) return;
+        window.__tonysPixelLoaded = true;
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '1004158805431458');
+        fbq('track', 'PageView');
+        // Eventos disparados antes do pixel carregar (ex.: Lead das LPs).
+        (window.__pendingFbq || []).forEach(function (args) { fbq.apply(null, args); });
+        window.__pendingFbq = [];
+      };
+      (function () {
+        function run() {
+          if (window.requestIdleCallback) {
+            window.requestIdleCallback(window.__tonysLoadPixel, { timeout: 3000 });
+          } else {
+            window.__tonysLoadPixel();
+          }
+        }
+        if (document.readyState === 'complete') {
+          setTimeout(run, 800);
+        } else {
+          window.addEventListener('load', function () { setTimeout(run, 800); }, { once: true });
+        }
+      })();
     </script>
     <!-- End Meta Pixel Code -->
 
