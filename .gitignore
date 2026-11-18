@@ -30,3 +30,4 @@ dist-server
 .env.local
 # Serviço de formulário
 form-api/node_modules
+.tmp-build
