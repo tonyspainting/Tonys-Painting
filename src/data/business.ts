@@ -38,10 +38,10 @@ export const LOCATIONS: BusinessLocation[] = [
   {
     id: "east-bridgewater",
     label: "East Bridgewater",
-    street: "516 N Bedford St, 2nd Floor",
+    street: "516 N Bedford St, Suite 2",
     city: "East Bridgewater",
     region: "MA",
-    postalCode: "02333",
+    postalCode: "02333-1185",
   },
 ];
 
@@ -53,9 +53,10 @@ export function formatLocation(location: BusinessLocation): string {
 
 /** Consulta usada no Google Maps: apartamento atrapalha o geocoding. */
 export function locationQuery(location: BusinessLocation): string {
-  // O Maps geocodifica melhor só com a rua; apto/andar atrapalham.
+  // O Maps geocodifica melhor só com a rua e o ZIP de 5 dígitos; suíte e +4 atrapalham.
   const street = location.street.split(",")[0];
-  return formatLocation({ ...location, street });
+  const postalCode = location.postalCode?.replace(/-\d{4}$/, "");
+  return formatLocation({ ...location, street, postalCode });
 }
 
 /** Campos de credencial/licença para o JSON-LD (schema.org). */
