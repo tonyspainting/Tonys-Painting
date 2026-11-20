@@ -38,7 +38,7 @@ export const LOCATIONS: BusinessLocation[] = [
   {
     id: "east-bridgewater",
     label: "East Bridgewater",
-    street: "516 N Bedford St, Apt 3",
+    street: "516 N Bedford St, 2nd Floor",
     city: "East Bridgewater",
     region: "MA",
     postalCode: "02333",
@@ -53,7 +53,8 @@ export function formatLocation(location: BusinessLocation): string {
 
 /** Consulta usada no Google Maps: apartamento atrapalha o geocoding. */
 export function locationQuery(location: BusinessLocation): string {
-  const street = location.street.replace(/,\s*(apt|unit|suite|#)\s*[\w-]+/gi, "");
+  // O Maps geocodifica melhor só com a rua; apto/andar atrapalham.
+  const street = location.street.split(",")[0];
   return formatLocation({ ...location, street });
 }
 
